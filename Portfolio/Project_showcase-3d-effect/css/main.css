@@ -13,7 +13,7 @@
 
 /* BOOTSTRAP SETTINGS SECTION */
 
-/* gutter 20px (10px + 10px). Comment this code for default gutter start at 1.5rem (24px) wide. */
+/* gutter 20px (10px + 10px). Прокомментируйте этот код для желоба по умолчанию, 1.5rem (24px) wide. */
 .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl { --bs-gutter-x: .625rem; }
 .row, .row > * { --bs-gutter-x: 1.25rem; }
 
