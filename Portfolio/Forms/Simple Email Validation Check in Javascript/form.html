@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Email Validation Check</title>
+</head>
+
+<body>
+    <div class="box">
+        <form action="#" id="form">
+            <label for="">Введите почту</label>
+            <div class="inputBox">
+                <input type="text" id="email" placeholder="Введите адрес электронной почты" onkeyup="validate()">
+            </div>
+            <span id="text"></span>
+        </form>
+    </div>
+    <script>
+        function validate() {
+            let form = document.getElementById('form');
+            let email = document.getElementById('email').value;
+            let text = document.getElementById('text');
+            let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/; // Паттерн
+
+            if (email.match(pattern)) {
+                form.classList.add("valid");
+                form.classList.remove("invalid");
+                text.innerHTML = "Ваш адрес электронной почты действителен."
+                text.style.color = "#4caf50";
+            }
+            else {
+                form.classList.remove('valid')
+                form.classList.add("invalid");
+                text.innerHTML = "Пожалуйста, введите действительный адрес электронной почты."
+                text.style.color = "#f44336";
+            }
+            if (email == "") {
+                form.classList.remove('valid')
+                form.classList.remove("invalid");
+                text.innerHTML = "";
+            }
+        }
+    </script>
+</body>
+
+</html>
