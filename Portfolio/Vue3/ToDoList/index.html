@@ -16,29 +16,29 @@
     <div id="app">
         <div class="header">
             <div class="container">
-                <div class="logo">ToDo List</div>
+                <div class="logo">Заметки</div>
                 <div class="form">
-                    <input type="text" v-bind:value="valueInput" v-on:input="handlyInput" v-on:keypress.enter="addTask">
-                    <button class="btn" v-on:click="addTask">Add a new task</button>
+                    <input type="text" v-bind:value="valueInput" v-on:input="handlyInput" v-on:keypress.enter="addTask" placeholder="Введите заметку">
+                    <button class="btn" v-on:click="addTask">Добавить</button>
                 </div>
             </div>
         </div>
         <div class="container">
             <h2>
-                <span>To Do</span>
+                <span>Не выполнено</span>
                 <span class="mask-num">{{ needDoList.length }}</span>
             </h2>
             <ul class="mask-list">
-                <li v-for="(mask, index) in needDoList" :key="mask.id">
+                <li class="list-item" v-for="(mask, index) in needDoList" :key="mask.id">
                     <div>
                         <input type="checkbox" v-on:change="doCheck(index, 'need')">
                         <span>{{ mask.title }}</span>
                     </div>
-                    <button class="btn-remove" v-on:click="removeMask(index, 'need')">Remove</button>
+                    <button class="btn-remove" v-on:click="removeMask(index, 'need')">Удалить</button>
                 </li>
             </ul>
             <h2>
-                <span>Done</span>
+                <span>Выполнено</span>
                 <span class="mask-num">{{ completeList.length }}</span>
             </h2>
             <ul class="mask-list complete-list">
