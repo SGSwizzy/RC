@@ -47,6 +47,7 @@ header ul {
 
 header ul li {
     list-style: none;
+    transition: opacity 0.3s;
 }
 
 header ul li a {
@@ -73,6 +74,10 @@ header ul li a::before {
 header ul li a:hover::before {
     transform: scaleX(1);
     transform-origin: left;
+}
+
+.nav:hover li:not(:hover) {
+    opacity: 0.5;
 }
 
 .search {
