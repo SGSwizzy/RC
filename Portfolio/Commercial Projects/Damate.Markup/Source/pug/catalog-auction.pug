@@ -1,0 +1,114 @@
+extends ../pug/layouts/layout
+//- include include/_auction-item
+//- include include/_auction-list
+include ../pug/include/_nav-on-page
+include ../pug/include/_auction-item-purchase
+include ../pug/include/_auction-list-purchase
+
+block meta
+    title Листинг товаров
+    meta(name='description', content='')
+block vars
+    - let page = 'catalog';
+
+block Content
+    +breadcrumbs([
+      {
+        link: '#',
+        title: 'Главная',
+      },
+      {
+        link: '#',
+        title: 'Мясная биржа',
+      },
+      {
+        link: '#',
+        title: 'Продажа живого скота',
+      },
+    ])
+
+    section.listing 
+        .container
+            +nav-on-page([
+                {
+                    title: 'Покупка живого скота',
+                    href: '#',
+                },
+                {
+                    title: 'Продажа живого скота',
+                    href: '#',
+                },
+            ], 'Продажа живого скота')
+
+            .filter-panel__mob
+                .listing-panel__btn-wrapper
+                    .listing-panel__btn 
+                        +svgSprite('filter', 18, 12)
+                    span Настроить фильтр
+
+            +page-title("Продажа живого скота")
+        .listing-filter
+            .container
+                .listing-filter-head 
+                    .listing-filter-head__title Фильтр
+                    .listing-filter-head__close
+                .listing-panel-row
+                    .listing-filter__list
+                        .listing-filter__item.listing-filter__item--sort.listing-filter__item--mob
+                            .listing-filter__title Сортировать
+                            select.form__select.js-select.listing-filter__select
+                                option(value="Все") По возрастанию цены
+                                option(value="Бараны") По убыванию цены
+                                option(value="Овцы") По возрастанию цены
+                                option(value="Овцы") По возрастанию цены
+                                option(value="Овцы") По возрастанию цены
+                                option(value="Овцы") По возрастанию цены
+                        .listing-filter__item.listing-filter__item--breed
+                            .listing-filter__title Порода
+                            select.form__select.js-select.listing-filter__select
+                                option(value="Все") Любая
+                                option(value="Бараны") Курдючные
+                                option(value="Овцы") Меринос
+                                option(value="Овцы") Жирохвостик
+                                option(value="Овцы") Карачевские
+                                option(value="Овцы") Кроссы
+                        .listing-filter__item.listing-filter__item--gender
+                            .listing-filter__title Пол особи
+                            select.form__select.js-select.listing-filter__select
+                                option(value="Все") Все
+                                option(value="Бараны") Бараны
+                                option(value="Овцы") Овцы
+                        .listing-filter__item.listing-filter__item--weigh
+                            .listing-filter__title ЖВ в кг
+                            select.form__select.js-select.listing-filter__select
+                                option(value="65-110") 65-110
+                                option(value="65-110") 110-155
+                                option(value="65-110") 155-200
+                        .listing-filter__item.listing-filter__item--price-burse
+                            .listing-filter__title Текущая цена на торгах
+                            .listing-filter__panel 10 000 - 15 000
+                                +svgSprite('arrow-ios-bottom')
+                            .listing-filter__range
+                                .listing-filter__range-title Диапазон цены
+                                .listing-filter__range-slider
+                                    .range-slider.js-range-slider(data-min-value="50000" data-max-value="200000")
+                                    #range-value-min
+                                    #range-value-max
+                    .listing-filter-bottom
+                        .listing-filter__clear
+                            span Сбросить настройки
+                        .listing-filter__close.btn.btn--primary Закрыть
+        .product-listing
+            .container
+                .listing-sort-panel
+                    .listing-sort__item
+                        .listing-sort__title Сортировка
+                        .listing-sort__select.select
+                            select.form__select.js-select.listing-filter__select
+                                option(value="Все") По убыванию срока поставки
+                                option(value="Бараны") По убыванию срока поставки
+                                option(value="Овцы") По убыванию срока поставки
+                                option(value="Овцы") По убыванию срока поставки
+                    .listing-sort__btn
+                +auctionListPurchase(productsOffer)
+                include ../pug/include/_pagination

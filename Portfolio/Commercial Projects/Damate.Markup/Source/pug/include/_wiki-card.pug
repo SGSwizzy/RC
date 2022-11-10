@@ -1,0 +1,21 @@
+include _label-category
+include _date
+
+mixin wiki-card(data={})
+
+  - const { imgSrc, imgWidth, imgHeight, imgAlt, imgLabel, favorite, title, cardUrl, text, category, categoryUrl, dataTime, time } = data;
+
+  .wiki-card&attributes(attributes)
+      a(href=cardUrl).wiki-card__img
+          img(src=require('../images/wiki/' + imgSrc) width=imgWidth, height=imgHeight alt=imgAlt)
+          if imgLabel
+            +label-category(imgLabel)
+      .wiki-card__content
+        if favorite 
+          .btn-favorite
+        a(href=cardUrl).wiki-card__title!=title
+        if text
+          .wiki-card__text!=text
+        .wiki-card__bottom
+            a(href=categoryUrl).wiki-card__category!=category
+            +date({dataTime: dataTime, time: time})

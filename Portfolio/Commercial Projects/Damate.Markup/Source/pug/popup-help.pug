@@ -1,0 +1,27 @@
+extends ../pug/layouts/layout
+block meta
+    title Мне нужна помощь
+    meta(name='description', content='')
+
+
+block Content
+    .modal
+        .modal-overlay
+        form.modal-content 
+            .modal__close
+            .modal__title Мне нужна помощь
+            .modal__line
+            .sign__cell
+                .sign__cell--info-clear Если в вас возникли вопросы, связанные с работой нашего сервиса, пожалуйста, оставьте свой номер телефона, и наш менеджер свяжется в вами для консультации.
+                .modal__line.modal__line--cell
+                .row
+                    .col.col-12
+                        .form__field.form__field--floating
+                            label.form__label Как к вам можно обращаться?
+                            input.form__field-input(type='text' value='' placeholder='Как к вам можно обращаться?' name="")
+                    .col.col-12
+                        .form__field.form__field--floating
+                            label.form__label Ваш номер мобильного телефона в формате +7 888 8888888
+                            input.form__field-input(type='text' value='' placeholder='Ваш номер мобильного телефона в формате +7 888 8888888' name="")
+            .modal__footer
+                button.btn.btn--third(type='button') Отправить

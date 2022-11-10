@@ -1,0 +1,89 @@
+///*libs*/
+@import "../../node_modules/swiper/swiper-bundle.min.css";
+@import "../../node_modules/choices.js/public/assets/styles/choices.min.css";
+@import "../../node_modules/nouislider/dist/nouislider.min.css";
+
+/*global*/
+@import "global/reset",
+        "global/fonts",
+        "global/variables",
+        "global/mixin",
+        "global/grid",
+        "global/typography",
+        "global/common";
+
+/*elements*/
+@import "elements/pagination",
+        "elements/widget-social",
+        "elements/list",
+        /*"elements/contextmenu",*/
+        "elements/link",
+        "elements/btn",
+        /*"elements/checkbox",*/
+        "elements/radio",
+        /*"elements/toggle",*/
+        "elements/badge",
+        /*"elements/tags",
+        "elements/tooltip",*/
+        "elements/tabs",
+        "elements/toast",
+        /*"elements/accordion",
+        "elements/table",*/
+        "elements/form",
+        /* "elements/notification",
+        "elements/panel",
+        "elements/search-line",
+        "elements/uploader",*/
+        "elements/quantity",
+        "elements/carousel",
+        "elements/characteristics",
+        "elements/page-title";
+
+
+/*blocks*/
+@import "blocks/header",
+        "blocks/header-location",
+        "blocks/header-search",
+        "blocks/modal",
+        "blocks/nav-panel",
+        "blocks/nav",
+        "blocks/header-catalog",
+        "blocks/promo",
+        "blocks/breadcrumbs",
+        "blocks/catalog",
+        "blocks/product-item",
+        "blocks/offer-item",
+        "blocks/news-item",
+
+        "blocks/listing",
+        "blocks/goods",
+        "blocks/purchase",
+        "blocks/news",
+        "blocks/news-article",
+        "blocks/service",
+        "blocks/service-section",
+        "blocks/service-catalog",
+        "blocks/service-card",
+        "blocks/gallery",
+        "blocks/info",
+        "blocks/add-to-favorite",
+        "blocks/video",
+        "blocks/nav-on-page",
+        "blocks/wiki",
+        "blocks/wiki-card",
+        "blocks/wiki-detailed",
+        "blocks/profile-info",
+        "blocks/requests",
+
+        "blocks/banner",
+        "blocks/orders",
+        "blocks/order-feature",
+        "blocks/order-details",
+        "blocks/calendar",
+        "blocks/date",
+        "blocks/label-category",
+        "blocks/basket",
+        "blocks/sign",
+        "blocks/card-auction",
+
+        "blocks/footer";

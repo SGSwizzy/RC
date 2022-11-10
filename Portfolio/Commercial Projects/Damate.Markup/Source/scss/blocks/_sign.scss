@@ -1,0 +1,68 @@
+.sign__link {
+    font-size: 14px;
+
+    &--cell {
+        text-decoration: none;
+        color: #00a5bd;
+    }
+}
+
+.sign__link--pass {
+    padding-right: 20px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #00a5bd;
+}
+
+.sign__form {
+    padding-top: 24px;
+
+    &--kit {
+        color: red;
+    }
+}
+
+.sign__cell {
+    font-size: 14px;
+
+    &--info {
+        padding-left: 40px;
+        color: #737b82;
+        background: url("../../images/svg/info.svg") no-repeat left center / 20px;
+        @media #{$mobile-widths} {
+            padding: 24px 0 24px 40px;
+            background-position: left;
+        }
+    }
+
+    &--info-clear {
+        padding-left: 36px;
+        font-size: 16px;
+        line-height: 24px;
+        color: #1a1e1f;
+        background: url("../../images/svg/info_clear.svg") no-repeat left top / 20px;
+        @media #{$mobile-widths} {
+            padding: 24px 0 24px 40px;
+            background-position: left;
+        }
+    }
+
+    &--info-num {
+        padding-top: 24px;
+        padding-left: 40px;
+        color: #1a1e1f;
+        background: url("../../images/svg/info_clear.svg") no-repeat left center / 20px;
+
+        @media #{$mobile-widths} {
+            padding: 24px 0 24px 40px;
+            background-position: left;
+        }
+    }
+}
+
+.sign__btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

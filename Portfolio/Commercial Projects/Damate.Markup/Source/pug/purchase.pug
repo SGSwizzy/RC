@@ -1,0 +1,135 @@
+extends ../pug/layouts/layout
+include ../pug/include/_products-carousel
+include ../pug/include/_offers-carousel
+include ../pug/include/_product-item
+include ../pug/include/_offer-item
+include ../pug/include/_news-carousel
+include ../pug/include/_product-list
+
+block meta
+    title Листинг товаров
+    meta(name='description', content='')
+
+block vars
+    - let page = 'goods'
+
+block Content
+
+    +breadcrumbs(
+        [
+        {
+            link: '#',
+            title: 'Главная', 
+        },
+        {
+            link: '#',
+            title: 'Мясная биржа',
+        },
+        {
+            link: '#',
+            title: 'Покупка живого скота',
+        },
+        {
+            link: '#',
+            title: 'Меринос',
+        },
+    ]
+    )
+
+    .goods
+        .container 
+                .goods-head
+                    .title-favorite
+                        +page-title("Меринос")
+                        +add-to-favorite
+                    .goods__number №123-456
+
+
+                .goods-item 
+                    .goods-slider 
+                        .goods-slider__item
+                           img(src=require("../images/product/product-big-2.png"), alt="Слайд")
+                    .goods-panel 
+                        button.goods-purchase__btn.btn.btn--secondary(type='button') Условия закупки
+                            .btn__ico
+                                include ../images/svg/document.svg
+                        button.goods-purchase__btn.btn.btn--third(type='button') Мне нужна помощь
+                            .btn__ico
+                                include ../images/svg/help.svg
+                        button.goods-purchase__btn.btn.btn--primary.btn--cart(type='button') Откликнуться
+                            .btn__ico
+                                include ../images/svg/responded.svg
+                    .goods-section.goods-info 
+                        .goods-section__title Детали закупки
+                        .goods-row
+                            .goods__cell.goods__cell--seller Покупатель
+                            .goods__cell.goods__cell--value ООО «КавказМясо» 
+                        .goods-row 
+                            .goods__cell.goods__cell--adress Место закупки
+                            .goods__cell.goods__cell--value г. Черкесск, ул. Пятигорское шоссе, д. 20. 
+                        .goods-row
+                            .goods__cell.goods__cell--gender Пол особи 
+                            .goods__cell.goods__cell--value баран
+                        .goods-row
+                            .goods__cell.goods__cell--age Возраст особи
+                            .goods__cell.goods__cell--value 1 год
+                        .goods-row 
+                            .goods__cell.goods__cell--weight Диапазон ЖВ
+                            .goods__cell.goods__cell--value от 40 до 45 кг                  
+                        .goods-row 
+                            .goods__cell.goods__cell--period Срок закупки
+                            .goods__cell.goods__cell--value до 18.03.22                 
+                        .goods-row 
+                            .goods__cell.goods__cell--average Средняя цена за кг ЖВ
+                            .goods__cell.goods__cell--value 165 ₽                  
+                        .goods-row 
+                            .goods__cell.goods__cell--min Минимальная цена за кг ЖВ
+                            .goods__cell.goods__cell--value 140 ₽                  
+                        .goods-row 
+                            .goods__cell.goods__cell--number Количество предложений
+                            .goods__cell.goods__cell--value 12                   
+                    .goods-desc     
+                        .goods-desc__title Комментарий к закупке
+                        .goods-desc__text Бараны и матки достигают половой зрелости в возрасте 7–8 месяцев. Овцы шароле имеют круглогодичный цикл размножения. Средний показатель окота в декабре 180–190%, в феврале -около 200–215%, чаще рождаются двойни, иногда тройни. У маток отмечаются легкие окоты. Бараны-производителя отличаются «трудолибием», активностью и неутомимостью, могут оплодотворять самок в течение года на протяжении 6–7 сезонов. Иссследования показали, что бараны шароле дают больше ягнят, чем бараны производители других пород.Среднесуточные привесы ягнят до 56 дня составляют 380–650 г. в зависимости от пола и количества рожденных особей в одном помете.
+                    .goods-section.recent-offers
+                        .goods-section__title Последние предложения
+                        .recent-offers-table.table 
+                            .table-row.table-row-head
+                                .table-cell Номер участника
+                                .table-cell Дата поставки
+                                .table-cell Кол-во голов
+                                .table-cell Цена за кг ЖВ
+                                .table-cell Статус заявки
+                            .table-row
+                                .table-cell.table-cell__num 1000122
+                                .table-cell 16.03.2022
+                                .table-cell 12
+                                .table-cell 130 ₽
+                                .table-cell.table-cell__status._accept Принята
+                            .table-row
+                                .table-cell.table-cell__num 1000122
+                                .table-cell 26.02.2022
+                                .table-cell 33
+                                .table-cell 140 ₽
+                                .table-cell.table-cell__status._decline Отклонена
+                            .table-row
+                                .table-cell.table-cell__num 1000122
+                                .table-cell 01.03.2022
+                                .table-cell 44
+                                .table-cell 140 ₽
+                                .table-cell.table-cell__status._accept Принята
+                            .table-row
+                                .table-cell.table-cell__num 1000122
+                                .table-cell 21.01.2022
+                                .table-cell 100
+                                .table-cell 125 ₽
+                                .table-cell.table-cell__status._considerate На рассмотрении
+                    a.btn.btn--back-to-catalog
+                        include ../images/svg/arrow-back-button.svg
+                        | Назад к списку закупок
+        .goods-recommend
+            .container
+                span.goods-recommend__title Рекомендуемые предложения
+                +offersCarousel(productsOffer)
+                a.section__more.btn.btn--secondary(href='/offers') Перейти к закупкам
+

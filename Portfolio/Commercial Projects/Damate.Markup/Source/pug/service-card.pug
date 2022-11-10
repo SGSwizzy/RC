@@ -1,0 +1,58 @@
+extends ../pug/layouts/layout
+include ../pug/include/_service-carousel
+include ../pug/include/_service-section-item
+
+block meta
+    title Ветеринарный аудит
+    meta(name='description', content='')
+
+block Content
+    +breadcrumbs(breadcrumbsCatalogData)
+    .container
+        .title-favorite.title-favorite--service-card
+            +page-title("Ветеринарный аудит").page-title--service-card
+            +add-to-favorite
+    .service-card
+        .goods-item
+            .goods-img
+                img(src=require("../images/service/service-1.jpg"), alt="")
+            .goods-price
+                .goods-price__num Стоимость услуги от
+                    span 10 000 ₽
+                button.goods-price__btn.btn.btn--primary.btn--cart(type='button') Добавить услугу в корзину
+                    .btn__ico
+                        +svgSprite('cart')
+            .goods-desc
+                .goods-desc__title Описание
+                .goods-desc__text Оказываем услугу по зоотехническому и ветеринарному аудиту хозяйств, занимающихся разведением крупного рогатого скота молочного направления продуктивности. Основной задачей проведения аудита является помощь животноводческому предприятию повысить рентабельность производства.
+            .video
+                <iframe width="800" height="450" src="https://www.youtube.com/embed/9Hq9rf0XgrI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            .news-article-section
+                .news-article__subtitle Выгода
+                ul.news-article-list
+                    li Комплексная оценка текущего состояния животных, условий содержания, кормовой базы, рационов.
+                    li Оценка заболеваний по стаду.
+                    li Оценка продуктивности и рентабельности кормления.
+                    li Составление отчета с рекомендациями по решению текущих задач на ферме.
+                    li Составление индивидуальной кормовой программы, c включением расчета рационов для всех видов животных.
+                    li Составление индивидуальной рецептуры премиксов, исходя из потребностей животного.
+                    li Составление плана работы на квартал/полугодие/год с целевыми значениями.
+            .news-article-section
+                .news-article__subtitle Преимущества
+                ul.news-article-list
+                    li Комплексная оценка текущего состояния животных, условий содержания, кормовой базы, рационов.
+                    li Оценка заболеваний по стаду.
+                    li Оценка продуктивности и рентабельности кормления.
+                    li Составление отчета с рекомендациями по решению текущих задач на ферме.
+                    li Составление индивидуальной кормовой программы, c включением расчета рационов для всех видов животных.
+                    li Составление индивидуальной рецептуры премиксов, исходя из потребностей животного.
+                    li Составление плана работы на квартал/полугодие/год с целевыми значениями.
+            a.btn.btn--back-to-catalog
+                include ../images/svg/arrow-back-button.svg
+                | Назад в каталог услуг
+        .goods-recommend
+            .container
+                span.goods-recommend__title Рекомендуемые услуги
+                +serviceCarousel(serviceSectionData)
+                .goods-recommend__button
+                    a.btn.btn--back-to-catalog Перейти в каталог

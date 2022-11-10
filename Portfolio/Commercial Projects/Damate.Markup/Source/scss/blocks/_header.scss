@@ -1,0 +1,209 @@
+.header {
+    position: relative;
+
+    .container {
+        position: static;
+    }
+}
+
+.header__top {
+    padding: 16px 0;
+    background: $color-invert;
+    position: relative;
+    z-index: 12;
+    @media #{$tablet-widths} {
+        padding: 16px 0;
+    }
+
+    @media #{$mobile-widths} {
+        padding: 12px;
+        background: $color-secondary;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+
+        @media #{$mobile-widths} {
+            justify-content: flex-end;
+        }
+    }
+}
+
+
+.header__phone {
+    margin-left: 12px;
+    @include link($color-secondary, $color, none);
+    white-space: nowrap;
+    display: flex;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 24px;
+
+    @media #{$desktop-widths} {
+        margin-left: 8px;
+        font-size: 11px;
+    }
+
+    @media #{$tablet-widths} {
+        margin-left: 16px;
+        font-size: 13px;
+    }
+
+    @media #{$mobile-widths} {
+        display: none;
+    }
+}
+
+.header__phone-ico {
+    margin-right: 8px;
+    align-self: center;
+    @include size(24px);
+
+    svg {
+        @include size(100%);
+        fill: #A9B4BF;
+    }
+}
+
+.header__hamburger {
+    display: none;
+
+    @media #{$tablet-widths} {
+        display: block;
+        @include ico($color-secondary, 24px, 0 0 0 32px);
+        cursor: pointer;
+    }
+
+    @media #{$mobile-widths} {
+        margin-left: 16px;
+        order: 3;
+    }
+
+    svg {
+        @media #{$mobile-widths} {
+            fill: $color-invert
+        }
+    }
+}
+
+.header__bottom {
+    padding: 16px 0;
+    background: $color-secondary;
+
+    @media #{$tablet-widths} {
+        padding: 16px 0;
+    }
+
+    @media #{$mobile-widths} {
+        padding: 0;
+        height: 0;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.header__logo {
+    margin-right: 2.3%;
+    display: block;
+    flex: 0 0 94px;
+    @include size(94px, 56px);
+    background: url(../../images/svg/logo.svg) no-repeat center /100%;
+    text-indent: -999px;
+    overflow: hidden;
+
+    @media #{$mobile-widths} {
+        margin-right: auto;
+        @include size(67px, 40px);
+        flex: 0 0 67px;
+    }
+}
+
+.header__back {
+    display: none;
+    @media #{$mobile-widths} {
+        display: block;
+        @include ico($color-invert, 24px, 0 24px 0 0);
+        cursor: pointer;
+    }
+}
+
+.header__links {
+    display: flex;
+    align-self: center;
+    flex-grow: 1;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+
+    @media #{$mobile-widths} {
+        padding: 12px 20px 8px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        justify-content: space-between;
+        background: $color-invert;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.12);
+        z-index: $z-index-header;
+    }
+}
+
+.header__links-item {
+    margin-left: 24px;
+    @include link($color-invert, $color-invert);
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 24px;
+    white-space: nowrap;
+
+    @media #{$desktop-widths} {
+        margin-left: 16px;
+        font-size: 12px;
+    }
+
+    @media #{$tablet-widths} {
+        margin-left: 40px;
+        font-size: 14px;
+    }
+
+    @media #{$mobile-widths} {
+        margin: 0;
+        flex-direction: column;
+        font-size: 13px;
+        line-height: 24px;
+        color: $color;
+        @include link($color, $color, none);
+    }
+}
+
+.header__links-item-ico {
+    @include ico($color-invert);
+    position: relative;
+
+    @media #{$desktop-widths} {
+        @include size(20px);
+        margin-right: 4px;
+    }
+
+    @media #{$tablet-widths} {
+        @include size(24px);
+        margin-right: 8px;
+    }
+
+    @media #{$mobile-widths} {
+        @include ico($color-secondary, 24px, 0 0 4px 0);
+    }
+}
+
+.header__links-item-badge {
+    @include badge-size();
+    @include badge-style();
+    position: absolute;
+    right: -10px;
+    top: -10px;
+}

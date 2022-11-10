@@ -1,0 +1,17 @@
+extends ../pug/layouts/layout
+block meta
+    title Предложение отправлено
+    meta(name='description', content='')
+
+
+block Content
+    .modal
+        .modal-overlay
+        form.modal-content
+            .modal__close
+            .modal__title Предложение отправлено
+            .modal__line.modal__line--cell
+            .sign__cell
+                .sign__cell--info-clear Спасибо, ваше предложение отправлено на рассмотрение администрации портала!
+            .modal__footer
+                button.btn.btn--primary(type='button') Понятно

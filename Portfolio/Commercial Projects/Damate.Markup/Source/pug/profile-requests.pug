@@ -1,0 +1,95 @@
+extends ../pug/layouts/layout
+include ../pug/include/_nav-on-page
+include ../pug/include/_tabs-controls
+include ../pug/include/_offer-purchase
+include ../pug/include/_offer-delivery
+
+block meta
+    title Мои заявки на поставку
+    meta(name='description' content='')
+
+block vars
+    - let page = 'request-for-delivery';
+
+block Content
+    +breadcrumbs(breadcrumbsCatalogData)
+
+    .container 
+        +nav-on-page([
+            {
+                ico: 'person',
+                title: 'Личная информация',
+                href: '#',
+            },
+            {
+                title: 'Мои закупки',
+                href: '#',
+                badge:'6',
+            },
+            {
+                title: 'Мои заказы ',
+                href: '#',
+                badge:'3',
+            },
+        ], 'Мои закупки')
+
+        +page-title("Мои закупки")
+
+            
+        .tabs.tabs--requests
+            +tabs-controls([
+                {   
+                    id: 0,
+                    title: 'Мои заявки на поставку',
+                    active: true,
+                },
+                {   
+                    id: 1,
+                    title: 'Мои заявки на покупку',
+                },
+            ])
+
+            .tabs__body
+                .tabs__content.tabs__content--active 
+                    form.form(action="#")
+                        .form-radio
+                            .form-radio__item
+                                input(type="radio", name="delivery", id="delivery-1", checked) 
+                                label(for="delivery-1") Все
+                            .form-radio__item
+                                input(type="radio", name="delivery", id="delivery-2") 
+                                label(for="delivery-2") Принятые
+                            .form-radio__item
+                                input(type="radio", name="delivery", id="delivery-3") 
+                                label(for="delivery-3") На рассмотрении
+                            .form-radio__item
+                                input(type="radio", name="delivery", id="delivery-4") 
+                                label(for="delivery-4") Отклоненные
+
+                        .requests
+                            ul.requests__list
+                                each item in myOffersDelivery
+                                    li.requests__item
+                                        +offer-delivery(item)
+
+                .tabs__content 
+                    form.form(action="#")
+                        .form-radio
+                            .form-radio__item
+                                input(type="radio", name="purchase", id="purchase-1", checked) 
+                                label(for="purchase-1") Все
+                            .form-radio__item
+                                input(type="radio", name="purchase", id="purchase-2") 
+                                label(for="purchase-2") Лидирующие
+                            .form-radio__item
+                                input(type="radio", name="purchase", id="purchase-3") 
+                                label(for="purchase-3") Перебитые
+                            .form-radio__item
+                                input(type="radio", name="purchase", id="purchase-4") 
+                                label(for="purchase-4") Завершенные
+
+                        .requests
+                            ul.requests__list
+                                each item in myOffersPurchase
+                                        li.requests__item
+                                            +offer-purchase(item)

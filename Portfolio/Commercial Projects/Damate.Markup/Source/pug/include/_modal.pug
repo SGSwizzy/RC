@@ -1,0 +1,31 @@
+.modal(style="display: none;")
+    .modal-overlay 
+    .modal-content 
+        .modal__close
+        .modal__title Подписаться на рассылку
+        .modal__info Выберите рассылки на которые вы хотите подписаться:
+        form.modal-form 
+            .radio
+                input(type="radio" id="sub_news" name="sub").radio__input
+                label.radio__check(for="sub_news") 
+                div.radio__text Подписка на новости АПК
+            .radio
+                input(type="radio" name="sub" id="sub-inform").radio__input
+                label.radio__check(for="sub-inform") 
+                div.radio__text Информационная рассылка
+            .radio
+                input(type="radio" id="sub_lots" name="sub").radio__input
+                label.radio__check(for="sub_lots")
+                div.radio__text Подписка на новые лоты
+            .form-item 
+                label.form__label(for="mail" ) Введите ваш email
+                input.form__input(type="email" id="mail") 
+            button.form__btn.btn.btn--primary Отправить
+.modal(style="display: none;")
+    .modal-overlay 
+    .modal-content.modal--xl
+        .modal__close
+        .modal__title Меринос
+        .modal__gallery
+            img(src=require("../../images/gallery/gallery-4.png"), alt="")
+                    

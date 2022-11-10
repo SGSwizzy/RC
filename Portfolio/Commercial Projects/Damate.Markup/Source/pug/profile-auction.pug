@@ -1,0 +1,59 @@
+extends ../pug/layouts/layout
+include ../pug/include/_nav-on-page
+include ../pug/include/_tabs-controls
+include ../pug/include/_offer-auction
+
+block meta
+    title Мои продажи живого скота
+    meta(name='description' content='')
+
+block vars
+    - let page = 'profile-auction';
+
+block Content
+    +breadcrumbs(breadcrumbsCatalogData)
+
+    .container 
+        +nav-on-page([
+            {
+                ico: 'person',
+                title: 'Личная информация',
+                href: '#',
+            },
+            {
+                title: 'Мои покупки живого скота',
+                href: '#',
+                badge:'4',
+            },
+            {
+                title: 'Моя продажи живого скота',
+                href: '#',
+                badge:'23',
+            },
+        ], 'Моя продажи живого скота')
+
+        +page-title("Мои продажи живого скота")
+
+        .tabs
+            +tabs-controls([
+                {   
+                    id: 0,
+                    title: 'Активные аукционы',
+                    active: true,
+                },
+                {   
+                    id: 1,
+                    title: 'завершенные аукционы',
+                },
+            ])
+
+        .tabs__body
+            .tabs__content.tabs__content--active 
+                .requests
+                    ul.requests__list
+                        each item in myOffersAuction
+                            li.requests__item
+                                +offer-auction(item)
+
+            .tabs__content завершенные аукционы
+                

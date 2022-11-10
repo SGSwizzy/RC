@@ -1,0 +1,84 @@
+
+.recent-offers {
+    margin-bottom: 40px;
+    @media(max-width: 767px) {
+        margin-right: -20px;
+    }
+}
+.table {
+    @media(max-width: 767px) {
+        display: flex;
+        overflow: scroll;
+        position: relative;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
+.table-row {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr 0.8fr 0.8fr 1fr;
+    padding: 16px 0;
+    grid-gap: 0 20px;
+    font-weight: 400;
+    color: $color;
+    border-bottom: 1px dashed #D7DFE6;
+    &:first-of-type {
+        border-top: 1px dashed #D7DFE6;
+    }
+    &.table-row-head {
+        color: $color-grey;
+        font-weight: 600;
+    }
+    @media(max-width: 767px) {
+        display: flex;
+        flex-direction: column;
+        grid-gap: initial;
+        padding: 0;
+        border-bottom: none;
+        &:first-of-type {
+            border-top: none;
+        }
+
+        &.table-row-head {
+            position: sticky;
+            left: 0;
+            background-color: #fff;
+            white-space: nowrap;
+            box-shadow: 9px 0px 10px -10px rgb(0 0 0 / 25%);
+            .table-cell {
+                padding-left: 0;
+            }
+        }
+    }
+  }
+
+  .table-cell {
+    &__num {
+        color: $color-secondary;
+    }
+    &__status {
+        padding-left: 24px;
+        &._accept {
+            background: url('../../images/svg/accept.svg') left center / 15px no-repeat;
+        }
+        &._decline {
+            background: url('../../images/svg/decline.svg') left center / 15px no-repeat;
+        }
+        &._considerate {
+            background: url('../../images/svg/considerate.svg') left center / 15px no-repeat;
+        }
+    }
+    @media(max-width: 767px) {
+        padding: 16px;
+        border-bottom: 1px dashed #D7DFE6;
+        &:first-of-type {
+            border-top: 1px dashed #D7DFE6;
+        }
+        &__status {
+            padding-left: 40px;
+            white-space: nowrap;
+            background-position: 16px center !important;
+        }
+    }
+  }

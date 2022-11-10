@@ -1,0 +1,30 @@
+.add-to-favorite {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: $color-secondary;
+    cursor: pointer;
+
+    @media(max-width: 767px) {
+        display: none;
+    }
+
+    &:hover {
+        .btn-favorite {
+            background-color: $background-btn-secondary-hover;
+            background-image: url("../../images/svg/favorite-white.svg");
+        }
+    }
+
+    &:active {
+        .btn-favorite {
+            background-image: url("../../images/svg/favorite-active.svg");
+        }
+    }
+
+    .btn-favorite {
+        margin-left: 16px;
+    }
+}

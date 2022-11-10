@@ -1,0 +1,124 @@
+header.header
+    .header__top
+        .container
+            if page !== 'main'
+                a.header__back
+                    +svgSprite('back')
+            a.header__logo.mobile-show Ферм Сервис
+            include _header-location
+            include _nav-panel
+            include _header-search
+            a.header__phone(href='tel:88003330704')
+                span.header__phone-ico
+                    +svgSprite('phone')
+                | 8 800 333-07-04
+            .header__hamburger
+                +svgSprite('hamburger')
+    .header__bottom
+        .container
+            a.header__logo.mobile-hide Ферм Сервис
+            .header__links
+                include _header-catalog
+                case page
+                    when 'main'
+                        +headerCatalog({title: 'Каталог'})
+                    when 'islam'
+                        +headerCatalog({title: 'Исламский банкинг ', ico: 'islam'})
+                    default
+                        +headerCatalog({title: 'Каталог'})
+                a.header__links-item.tablet-hide
+                    span.header__links-item-ico
+                        +svgSprite('email')
+                    |Подписаться на рассылку
+                a.header__links-item.tablet-hide
+                    span.header__links-item-ico
+                        +svgSprite('message')
+                    |Написать менеджеру
+                a.header__links-item
+                    span.header__links-item-ico
+                        .header__links-item-badge 3
+                        +svgSprite('cart')
+                    |Корзина
+                a.header__links-item
+                    span.header__links-item-ico
+                        .header__links-item-badge 12
+                        +svgSprite('favorite')
+                    |Избранное
+                a.header__links-item
+                    span.header__links-item-ico
+                        +svgSprite('person')
+                    span.mobile-hide Личный кабинет
+                    span.mobile-show Кабинет
+    .header-searchbar
+            .container
+                form.header-searchbar-form 
+                    input.header-searchbar__input(type="text")
+                    button.header-searchbar__btn 
+                        +svgSprite('search')
+                .header-searchbar__close
+                .header-searchbar-result._show
+                    .header-searchbar-result__list
+                        .header-searchbar-result__section 
+                            .header-searchbar-result__more Смотреть все
+                            .header-searchbar-result__title Товары
+                                span.header-searchbar-result__count 24
+                            .header-searchbar-result__item Анализ племенной базы
+                            .header-searchbar-result__item Рекомендации по улучшению племенных качеств 
+                            .header-searchbar-result__item Создание и ведение племенного ядра стада
+                        .header-searchbar-result__section 
+                            .header-searchbar-result__more Смотреть все
+                            .header-searchbar-result__title Услуги
+                                span.header-searchbar-result__count 12
+                            .header-searchbar-result__item Анализ племенной базы
+                            .header-searchbar-result__item Рекомендации по улучшению племенных качеств 
+                            .header-searchbar-result__item Создание и ведение племенного ядра стада
+                        .header-searchbar-result__section 
+                            .header-searchbar-result__more Смотреть все
+                            .header-searchbar-result__title Новости
+                                span.header-searchbar-result__count 5
+                            .header-searchbar-result__item Анализ племенной базы
+                            .header-searchbar-result__item Рекомендации по улучшению племенных качеств 
+                            .header-searchbar-result__item Создание и ведение племенного ядра стада
+                        .header-searchbar-result__section 
+                            .header-searchbar-result__more Смотреть все
+                            .header-searchbar-result__title Товары
+                                span.header-searchbar-result__count 24
+                            .header-searchbar-result__item Анализ племенной базы
+                            .header-searchbar-result__item Рекомендации по улучшению племенных качеств 
+                            .header-searchbar-result__item Создание и ведение племенного ядра стада
+                        .header-searchbar-result__section 
+                            .header-searchbar-result__more Смотреть все
+                            .header-searchbar-result__title Услуги
+                                span.header-searchbar-result__count 12
+                            .header-searchbar-result__item Анализ племенной базы
+                            .header-searchbar-result__item Рекомендации по улучшению племенных качеств 
+                            .header-searchbar-result__item Создание и ведение племенного ядра стада
+                        .header-searchbar-result__section 
+                            .header-searchbar-result__more Смотреть все
+                            .header-searchbar-result__title Новости
+                                span.header-searchbar-result__count 5
+                            .header-searchbar-result__item Анализ племенной базы
+                            .header-searchbar-result__item Рекомендации по улучшению племенных качеств 
+                            .header-searchbar-result__item Создание и ведение племенного ядра стада
+                        .header-searchbar-result__section 
+                            .header-searchbar-result__more Смотреть все
+                            .header-searchbar-result__title Товары
+                                span.header-searchbar-result__count 24
+                            .header-searchbar-result__item Анализ племенной базы
+                            .header-searchbar-result__item Рекомендации по улучшению племенных качеств 
+                            .header-searchbar-result__item Создание и ведение племенного ядра стада
+                        .header-searchbar-result__section 
+                            .header-searchbar-result__more Смотреть все
+                            .header-searchbar-result__title Услуги
+                                span.header-searchbar-result__count 12
+                            .header-searchbar-result__item Анализ племенной базы
+                            .header-searchbar-result__item Рекомендации по улучшению племенных качеств 
+                            .header-searchbar-result__item Создание и ведение племенного ядра стада
+                        .header-searchbar-result__section 
+                            .header-searchbar-result__more Смотреть все
+                            .header-searchbar-result__title Новости
+                                span.header-searchbar-result__count 5
+                            .header-searchbar-result__item Анализ племенной базы
+                            .header-searchbar-result__item Рекомендации по улучшению племенных качеств 
+                            .header-searchbar-result__item Создание и ведение племенного ядра стада
+

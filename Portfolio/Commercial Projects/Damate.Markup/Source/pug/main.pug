@@ -1,0 +1,55 @@
+extends ../pug/layouts/layout
+include ../pug/include/_products-carousel
+include ../pug/include/_offers-carousel
+include ../pug/include/_product-item
+include ../pug/include/_offer-item
+include ../pug/include/_news-carousel
+block meta
+    title Фермер Сервис
+    meta(name='description', content='')
+
+block vars
+    - let page = 'main'
+
+block Content
+    include ../pug/include/_promo
+    include ../pug/include/_catalog
+    section.section 
+        .container 
+            include ../pug/include/_banner-carousel
+    section.section
+        .container
+            h2 Новые товары
+            .tabs
+                .tabs__controls
+                    .tabs__controls-item.tabs__controls-item--active Животные
+                    .tabs__controls-item Ветеринарные препараты
+                    .tabs__controls-item Системы кормления
+                .tabs__body
+                    .tabs__content.tabs__content--active
+                        +productsCarousel(products)
+                    .tabs__content
+                        +productsCarousel(products)
+                    .tabs__content
+                        +productsCarousel(products)
+            a.section__more.btn.btn--secondary(href='/catalog') Перейти в каталог
+    section.section
+        .container
+            h2 Последние закупки на мясной бирже
+            +offersCarousel(productsOffer)
+            //- .tabs
+            //-     .tabs__controls
+            //-         .tabs__controls-item.tabs__controls-item--active Покупка живого скота
+            //-         .tabs__controls-item Продажа живого скота
+            //-     .tabs__body
+            //-         .tabs__content.tabs__content--active
+            //-             +offersCarousel(productsOffer)
+            //-         .tabs__content
+            //-             +offersCarousel(productsOffer)
+            a.section__more.btn.btn--secondary(href='/offers') Перейти в биржу
+    section.section
+        .container
+            h2 Последние новости АПК
+            +newsCarousel(news)
+            a.section__more.btn.btn--secondary(href='/news') Перейти в раздел
+

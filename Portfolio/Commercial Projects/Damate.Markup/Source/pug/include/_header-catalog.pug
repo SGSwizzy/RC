@@ -1,0 +1,13 @@
+mixin headerCatalog(options)
+    .header-catalog
+        .header-catalog__btn
+            if options.ico
+                .header-catalog__btn-ico
+                    +svgSprite(options.ico)
+            .header-catalog__btn-ico-mobile
+                +svgSprite('catalog')
+            .header-catalog__title= options.title
+            .header-catalog__more
+                +svgSprite('more-vertical')
+        .header-catalog__panel
+            include _catalog

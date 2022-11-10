@@ -1,0 +1,938 @@
+include ../include/_mixin
+-
+    let productsOffer = [
+        {
+            title: "Жирохвостик",
+            img: "offer1.png",
+            buyer: "ООО «КавказМясо» ",
+            responded: "34",
+            feature: {
+                gender: "любой",
+                weigh: "35-40 кг",
+                date: "до 18.01.22",
+                location: "Черкесск",
+                minPrice: "160 ₽",
+                fertility: "10"
+            }
+        },
+        {
+            title: "Меринос",
+            img: "offer2.png",
+            buyer: "ООО «КавказМясо» ",
+            responded: "12",
+            feature: {
+                gender: "овца",
+                weigh: "40-45 кг",
+                date: "до 18.01.22",
+                location: "Черкесск",
+                minPrice: "155 ₽",
+                fertility: "10"
+            }
+        },
+        {
+            title: "Курдючные",
+            img: "offer3.png",
+            buyer: "ООО «КавказМясо» ",
+            responded: "3",
+            feature: {
+                gender: "баран",
+                weigh: "свыше 45 кг",
+                date: "до 18.01.22",
+                location: "Черкесск",
+                minPrice: "120 ₽",
+                fertility: "10"
+            }
+        },
+        {
+            title: "Карачаевские",
+            img: "offer4.png",
+            buyer: "ООО «КавказМясо» ",
+            responded: "3",
+            feature: {
+                gender: "овца",
+                weigh: "менее 30 кг",
+                date: "до 18.01.22",
+                location: "Черкесск",
+                minPrice: "380 ₽",
+                fertility: "10"
+            }
+        },
+        {
+            title: "Кроссы",
+            img: "offer5.png",
+            buyer: "ООО «КавказМясо» ",
+            responded: "12",
+            feature: {
+                gender: "любой",
+                weigh: "35-40 кг",
+                date: "до 18.01.22",
+                location: "Черкесск",
+                minPrice: "155 ₽",
+                fertility: "10"
+            }
+        },
+        {
+            title: "Жирохвостик",
+            img: "offer6.png",
+            buyer: "ООО «КавказМясо» ",
+            responded: "3",
+            feature: {
+                gender: "баран",
+                weigh: "35-40 кг",
+                date: "до 18.01.22",
+                location: "Черкесск",
+                minPrice: "160 ₽",
+                fertility: "10"
+            }
+        },
+        {
+            title: "Жирохвостик",
+            img: "offer1.png",
+            buyer: "ООО «КавказМясо» ",
+            responded: "34",
+            feature: {
+                gender: "любой",
+                weigh: "35-40 кг",
+                date: "до 18.01.22",
+                location: "Черкесск",
+                minPrice: "160 ₽",
+                fertility: "10"
+            }
+        },
+        {
+            title: "Меринос",
+            img: "offer2.png",
+            buyer: "ООО «КавказМясо» ",
+            responded: "12",
+            feature: {
+                gender: "овца",
+                weigh: "40-45 кг",
+                date: "до 18.01.22",
+                location: "Черкесск",
+                minPrice: "155 ₽",
+                fertility: "10"
+            }
+        },
+        {
+            title: "Курдючные",
+            img: "offer3.png",
+            buyer: "ООО «КавказМясо» ",
+            responded: "3",
+            feature: {
+                gender: "баран",
+                weigh: "свыше 45 кг",
+                date: "до 18.01.22",
+                location: "Черкесск",
+                minPrice: "120 ₽",
+                fertility: "10"
+            }
+        },
+    ]
+-
+    let myOffersPurchase = [
+        {
+            decline: true,
+            title: "Жирохвостик",
+            img: "offer1.png",
+            buyer: "ООО «КавказМясо»",
+            responded: "34",
+            feature: {
+                gender: "баран",
+                weigh: "35-40 кг",
+                date: "до 18.01.22",
+                quantity: "10",
+                location: "Пятигорск",
+                currentPrice: "13 000 ₽",
+                myPrice: "12 000 ₽",
+            }
+        },
+        {
+            accept: true,
+            title: "Кроссы",
+            img: "offer2.png",
+            buyer: "ООО «КавказМясо»",
+            responded: "34",
+            feature: {
+                gender: "овца",
+                weigh: "35-40 кг",
+                date: "до 18.01.22",
+                quantity: "10",
+                location: "Пятигорск",
+                currentPrice: "13 000 ₽",
+                myPrice: "13 000 ₽",
+            }
+        },
+        {
+            expired: true,
+            title: "Кроссы",
+            img: "offer2.png",
+            buyer: "ООО «КавказМясо»",
+            responded: "34",
+            feature: {
+                gender: "овца",
+                weigh: "35-40 кг",
+                date: "до 18.01.22",
+                quantity: "10",
+                location: "Пятигорск",
+                currentPrice: "13 000 ₽",
+                myPrice: "13 000 ₽",
+            }
+        },
+    ]
+-
+    let myOffersDelivery = [
+        {
+            decline: true,
+            title: "Жирохвостик",
+            img: "offer1.png",
+            buyer: "ООО «КавказМясо»",
+            responded: "34",
+            feature: {
+                gender: "любой",
+                weigh: "35-40 кг",
+                date: "до 18.01.22",
+                location: "Черкесск",
+                minPrice: "160 ₽",
+            },
+            offer: {
+                date: "24.02.22",
+                quantity: "10",
+                myPrice: "160 ₽",
+            },
+        },
+        {
+            accept: true,
+            title: "Курдючные",
+            img: "offer3.png",
+            buyer: "ООО «КавказМясо»",
+            responded: "34",
+            feature: {
+                gender: "любой",
+                weigh: "35-40 кг",
+                date: "до 18.01.22",
+                location: "Черкесск",
+                minPrice: "160 ₽",
+            },
+            offer: {
+                date: "24.02.22",
+                quantity: "10",
+                myPrice: "160 ₽",
+            },
+        },
+        {
+            considerate: true,
+            title: "Курдючные",
+            img: "offer3.png",
+            buyer: "ООО «КавказМясо»",
+            responded: "34",
+            feature: {
+                gender: "любой",
+                weigh: "35-40 кг",
+                date: "до 18.01.22",
+                location: "Черкесск",
+                minPrice: "160 ₽",
+            },
+            offer: {
+                date: "24.02.22",
+                quantity: "10",
+                myPrice: "160 ₽",
+            },
+        },
+    ]
+
+-
+    let myOffersAuction = [
+        {
+            title: "Жирохвостик",
+            img: "offer1.png",
+            buyer: "ООО «КавказМясо»",
+            responded: "34",
+            feature: {
+                gender: "баран",
+                weigh: "35-40 кг",
+                quantity: "10",
+                date: "до 18.01.22",
+                location: "Пятигорск",
+                currentPrice: "13 000 ₽",
+            }
+        },
+        {
+            title: "Жирохвостик",
+            img: "offer1.png",
+            buyer: "ООО «КавказМясо»",
+            responded: "34",
+            feature: {
+                gender: "баран",
+                weigh: "35-40 кг",
+                quantity: "10",
+                date: "до 18.01.22",
+                location: "Пятигорск",
+                currentPrice: "13 000 ₽",
+            }
+        },
+        {
+            title: "Жирохвостик",
+            img: "offer1.png",
+            buyer: "ООО «КавказМясо»",
+            responded: "34",
+            feature: {
+                gender: "баран",
+                weigh: "35-40 кг",
+                quantity: "10",
+                date: "до 18.01.22",
+                location: "Пятигорск",
+                currentPrice: "13 000 ₽",
+            }
+        },
+    ]
+
+-
+    let products = [
+        {
+            title: "Санта-Инес",
+            img: "product1.png",
+            price: "145 000",
+            feature: {
+                gender: "баран",
+                weigh: "80-160 кг",
+                fertility: ""
+            }
+        },
+        {
+            title: "Романовская",
+            img: "product2.png",
+            price: "132 000",
+            feature: {
+                gender: "овца",
+                weigh: "50-105 кг",
+                fertility: "130%"
+            }
+        },
+        {
+            title: "Цвартблес",
+            img: "product3.png",
+            price: "141 000",
+            feature: {
+                gender: "овца",
+                weigh: "65-110 кг",
+                fertility: "140%"
+            }
+        },
+        {
+            title: "Дорпер",
+            img: "product4.png",
+            price: "132 000",
+            feature: {
+                gender: "баран",
+                weigh: "90-140 кг",
+                fertility: ""
+            }
+        },
+        {
+            title: "Шароле",
+            img: "product5.png",
+            price: "145 000",
+            feature: {
+                gender: "овца",
+                weigh: "70-135 кг",
+                fertility: "130%"
+            }
+        },
+        {
+            title: "Тексель",
+            img: "product6.png",
+            price: "135 000",
+            feature: {
+                gender: "овца",
+                weigh: "60-110 кг",
+                fertility: "140%"
+            }
+        },
+        {
+            title: "Дорсет",
+            img: "product7.png",
+            price: "124 000",
+            feature: {
+                gender: "баран",
+                weigh: "90-160 кг",
+                fertility: ""
+            }
+        },
+        {
+            title: "Карачаевская",
+            img: "product8.png",
+            price: "143 000",
+            feature: {
+                gender: "овца",
+                weigh: "40-60 кг",
+                fertility: "140%"
+            }
+        },
+
+        {
+            title: "Иль де Франс",
+            img: "product9.png",
+            price: "132 000",
+            feature: {
+                gender: "овца",
+                weigh: "70-110 кг",
+                fertility: ""
+            },
+            outOfStock: true,
+        }
+    ]
+-
+    let orderProducts = [
+        {
+            title: "Санта-Инес",
+            img: "product1.png",
+            price: "145 000",
+            feature: {
+                gender: "баран",
+                weigh: "80-160 кг",
+                fertility: "130%",
+                price: "140 000 ₽",
+                num: "2 шт",
+                sum: "140 000 ₽"
+            }
+        },
+        {
+            title: "Романовская",
+            img: "product2.png",
+            price: "132 000",
+            feature: {
+                gender: "овца",
+                weigh: "50-105 кг",
+                fertility: "130%",
+                price: "140 000 ₽",
+                num: "1 шт",
+                sum: "140 000 ₽"
+            }
+        },
+        {
+            title: "Цвартблес",
+            img: "product3.png",
+            price: "141 000",
+            feature: {
+                gender: "овца",
+                weigh: "65-110 кг",
+                fertility: "140%",
+                price: "140 000 ₽",
+                num: "2 шт",
+                sum: "140 000 ₽"
+            }
+        },
+    ]
+-
+    let news = [
+        {
+            title: 'ЦЕННЫЙ ПОДАРОК',
+            text: 'По пессимистичному прогнозу уровень инфляции по итогам года составит 8,2-8,25%, по базовому - 8,05- 8,1%, по оптимистичному - 7,64%, поделился начальник аналитического отдела департамента по работе на рынках капитала Россельхозбанка Александр Фетисов... ',
+            source: 'Известия',
+            date: '24 ноября 2021'
+        },
+        {
+            title: 'РОССЕЛЬХОЗНАДЗОР ВОЗОБНОВЛЯЕТ ПОСТАВКИ ГОВЯДИНЫ И СВИНИНЫ С 12 ПРЕДПРИЯТИЙ БРАЗИЛИИ',
+            text: 'Россельхознадзор с 25 ноября 2021 года возобновляет поставки говядины и свинины с 12 предприятий Бразилии... "Федеральная служба по ветеринарному и фитосанитарному надзору с 25 ноября 2021 года возобновляет поставки говядины и свинины с 12 бразильских предприятий, три из которых производят ...',
+            source: 'ТАСС',
+            date: '23 ноября 2021'
+        },
+        {
+            title: 'РОССИЯ И ВЬЕТНАМ УКРЕПЛЯЮТ ОТНОШЕНИЯ В СФЕРЕ АПК - МИНСЕЛЬХОЗ',
+            text: 'С приветственным словом к участникам обратился заместитель министра сельского хозяйства Сергей Левин, сообщили The DairyNews в пресс-службе Минсельхоза РФ...',
+            source: 'Парламентская газета',
+            date: '22 ноября 2021'
+        },
+        {
+            title: 'РОССЕЛЬХОЗНАДЗОР ВОЗОБНОВЛЯЕТ ПОСТАВКИ ГОВЯДИНЫ И СВИНИНЫ С 12 ПРЕДПРИЯТИЙ БРАЗИЛИИ',
+            text: 'Россельхознадзор с 25 ноября 2021 года возобновляет поставки говядины и свинины с 12 предприятий Бразилии... "Федеральная служба по ветеринарному и фитосанитарному надзору с 25 ноября 2021 года возобновляет поставки говядины и свинины с 12 бразильских предприятий, три из которых производят ...',
+            source: 'ТАСС',
+            date: '23 ноября 2021'
+        },
+    ]
+-
+    let nav = [
+        {
+            title: 'О компании',
+            href: '/about'
+        },
+        {
+            title: 'База знаний ',
+            href: '/wiki'
+        },
+        {
+            title: 'Новости',
+            href: '/news'
+        },
+        {
+            title: 'Справочник по породам',
+            href: '/guide'
+        },
+        {
+            title: 'Партнерам',
+            href: '/partners'
+        },
+        {
+            title: 'Оплата',
+            href: '/payment'
+        },
+        {
+            title: 'Контакты',
+            href: '/contacts'
+        },
+    ]
+-
+    let catalog = [
+        {
+            title: 'Товары',
+            ico: 'catalog'
+        },
+        {
+            title: 'Услуги',
+            ico: 'settings',
+            nav: [
+                {
+                    title: 'Селекция/генетика',
+                    nav: [
+                      'Анализ племенной базы',
+                      'Рекомендации по улучшению племенных качеств ',
+                      'Отбор и подбор животных',
+                      'Создание и ведение племенного ядра стада',
+                      'Предоставление референтной базы овец и баранов для улучшения племенного ядра стада',
+                      'Бонитировка',
+                      'Генотипирование',
+                    ]
+                },
+                {
+                    title: 'Аудит рациона и кормовой базы',
+                    nav: [
+                        'Анализ состояния и хранения кормов',
+                        'Анализ рациона',
+                        'Составление рациона кормления',
+                    ]
+                },
+                {
+                    title: 'Улучшение пастбищ',
+                    nav: [
+                        'Анализ состояния пастбищ (выезд специалиста/онлайн)',
+                        'Аренда техники для сева',
+                        'Подбор оптимальных злако-бобовых травосмесей',
+                    ]
+                },
+                {
+                    title: 'Искусственное осеменение',
+                    nav: [
+                        'Цервикальный',
+                        'Лапароскопический',
+                        'Эмбриональный ',
+                        'Гормональная стимуляция и синхронизация (вывод в охоту) ',
+                    ]
+                },
+                {
+                    title: 'Ветеринарные мероприятия',
+                    nav: [
+                        'Составление ветеринарно-санитарного плана',
+                        'Диагностика заболеваний',
+                        'УЗИ обследование ',
+                        'Анализы (крови, кала) ',
+                        'Вакцинация сезонная ',
+                        'Стрижка ',
+                        'Дезинфекция, дератизация кошары ',
+                    ]
+                },
+            ]
+        },
+        {
+            title: 'Мясная биржа',
+            ico: 'exchange'
+        },
+        {
+            title: 'Аудит КФХ',
+            ico: 'audit'
+        },
+        {
+            title: 'Аудит стада',
+            ico: 'bubbles'
+        },
+        {
+            title: 'Новости АПК',
+            ico: 'news'
+        },
+        {
+            title: 'База знаний ',
+            ico: 'library'
+        },
+    ]
+-
+    let navPersonal = [
+        {
+            ico: 'person',
+            title: 'Личная информация',
+            href: '#',
+        },
+        {
+            title: 'Мои покупки живого скота',
+            href: '#',
+            badge:'4'
+        },
+        {
+            title: 'Мои продажи живого скота',
+            href: '#',
+            badge:'23'
+        },
+        {
+            title: 'Мои закупки',
+            href: '#',
+            badge:'5'
+        },
+        {
+            title: 'Мои заказы',
+            href: '#',
+            badge:'3'
+        },
+                {
+            title: 'Личная информация',
+            href: '#',
+            badge:'45'
+        },
+    ]
+-
+    let navWiki = [
+        {
+            title: 'Ветеринария',
+            href: '#',
+            badge:'45'
+        },
+        {
+            title: 'Воспроизводство и генетика',
+            href: '#',
+            badge:'16'
+        },
+        {
+            title: 'Породы',
+            href: '#',
+            badge:'31'
+        },
+        {
+            title: 'Кормление',
+            href: '#',
+            badge:'20'
+        },
+        {
+            title: 'Статьи',
+            href: '#',
+            badge:'53'
+        },
+    ]
+-
+    let navService = [
+        {
+            title: 'Воспроизводство',
+            href: '#',
+        },
+        {
+            title: 'Ветеринария',
+            href: '#',
+        },
+        {
+            title: 'Комплексное сопровождение',
+            href: '#',
+        },
+        {
+            title: 'Улучшение пастбищ',
+            href: '#',
+        },
+    ]
+-
+    let navCatalog = [
+        {
+            title: 'Племенные бараны',
+            href: '#',
+        },
+        {
+            title: 'Семена кормовых трав ',
+            href: '#',
+        },
+        {
+            title: 'Бирки',
+            href: '#',
+        },
+        {
+            title: 'Ветеринарные препараты',
+            href: '#',
+        },
+        {
+            title: 'Кормовые смеси',
+            href: '#',
+        },
+        {
+            title: 'Программное обеспечение',
+            href: '#',
+        },
+    ]
+
+-
+    let orderDetails = {
+        'Детали заказа': 'ООО “Кавказмясо”',
+        'Фактический адрес' : '347900, Ростовская обл. пос. Веселый, ул. Ленина, 32',
+        'Адрес доставки' : '347900, Ростовская обл. пос. Веселый, ул. Ленина, 32',
+        'Стоимость доставки' : '10 000 ₽',
+        'Контактное лицо' : 'Иван Иванов',
+        'Телефон для курьера' : '+7-909-437-15-40',
+        'ИНН' : '1234567890',
+        'ОГРН' : '1234567890',
+        'КПП' : '1234567890',
+        'Юридический адрес компании' : '347900, г. Ростов-на-Дону, пр. Стачки, 34',
+        'Название банка' : 'ПАО СБЕРБАНК',
+        'БИК' : '12345',
+        'Корреспондентский счет' : '1234567890',
+        'Расчетный счет' : '1234567890',
+    }
+
+- 
+    let tabsSearchResults = [
+        {   
+            id: 0,
+            title: 'Товары',
+            active: true,
+            number: 4,
+        },
+        {   
+            id: 1,
+            title: 'Услуги',
+            number: 4,
+        },
+        {
+            id: 2,
+            title: 'аукционы на поставку',
+            number: 5,
+        },
+        {
+            id: 3,
+            title: 'Новости',
+            number: 3,
+        },
+        {
+            id: 4,
+            title: 'база знаний',
+            number: 3,
+        },
+    ]
+-
+    let tabsFavouriteData = [
+        {
+            id: 0,
+            title: 'Товары',
+            active: true,
+            number: 4,
+        },
+        {
+            id: 1,
+            title: 'аукционы на поставку',
+            number: 5,
+        },
+        {
+            id: 2,
+            title: 'аукционы на покупку',
+            number: 3,
+        },
+        {
+            id: 3,
+            title: 'услуги',
+            number: 3,
+        },
+        {
+            id: 4,
+            title: 'база знаний',
+            number: 3,
+        },
+    ]
+- 
+    let tabsServicesData = [
+        {   
+            id: 0,
+            title: 'Все услуги',
+            active: true,
+        },
+        {   
+            id: 1,
+            title: 'Аудит хозяйства',
+        },
+        {
+            id: 2,
+            title: 'Еще подраздел на будущее',
+        },
+    ]
+
+- 
+    let breadcrumbsCatalogData = [
+        {
+            link: '#',
+            title: 'Главная', 
+        },
+        {
+            link: '#',
+            title: 'Товары',
+        },
+        {
+            link: '#',
+            title: 'Племенные бараны',
+        },
+    ]
+
+        let breadcrumbsAuctionData = [
+        {
+            link: '#',
+            title: 'Главная', 
+        },
+        {
+            link: '#',
+            title: 'Мясная биржа',
+        },
+        {
+            link: '#',
+            title: 'Покупка живого скота',
+        },
+        {
+            link: '#',
+            title: 'Меринос',
+        },
+    ]
+
+- 
+    let serviceSectionData = [
+        {
+            imgSrc: "service-item-1.png",
+            title: 'Ветеринарный аудит', 
+            desc: 'Бараны и матки достигают половой зрелости в возрасте 7–8 месяцев. Овцы шароле имеют круглогодичный цикл размножения. У маток отмечаются легкие окоты. Бараны-производителя отличаются «трудолибием», активностью и неутомимостью',
+            price: '4 000',
+        },
+        {
+            imgSrc: "product/product4.png",
+            title: 'Ветеринарный аудит', 
+            desc: 'Бараны и матки достигают половой зрелости в возрасте 7–8 месяцев. Овцы шароле имеют круглогодичный цикл размножения. У маток отмечаются легкие окоты. Бараны-производителя отличаются «трудолибием», активностью и неутомимостью',
+            price: '4 000',
+        },
+        {
+            imgSrc: "product/product9.png",
+            title: 'Ветеринарный аудит', 
+            desc: 'Бараны и матки достигают половой зрелости в возрасте 7–8 месяцев. Овцы шароле имеют круглогодичный цикл размножения. У маток отмечаются легкие окоты. Бараны-производителя отличаются «трудолибием», активностью и неутомимостью',
+            price: '4 000',
+        },
+    ]
+
+- 
+    let wikiDetailedData = [
+        {
+            imgSrc: 'wiki-detailed-news-1.jpg',
+            imgWidth: 324,
+            imgHeight: 220,
+            imgAlt: 'фото к статье',
+            imgLabel: 'Популярное',
+            title: 'Способы выявления фальсифицированных кормов', 
+            cardUrl: '#',
+            text: 'Изменение качественного состава кормовых средств ведет к снижению и/или потере продуктивности животных, в худшем случае - к нанесению вреда здоровью и гибели.',
+            category: 'Ветеринария',
+            categoryUrl: '#',
+            dataTime: '24-11-2022',
+            time: '24.11.2022',
+        },
+        {
+            imgSrc: 'wiki-detailed-news-2.jpg',
+            imgWidth: 324,
+            imgHeight: 220,
+            imgAlt: 'фото к статье',
+            imgLabel: 'Популярное',
+            title: 'Технология заготовки и хранения пивной дробины', 
+            cardUrl: '#',
+            text: 'Выбирая травы для овец и коз помните, что их ротовой аппарат нежнее, чем у коров, именно поэтому в сене/сенаже должны преобладать хорошо облиственные, мягкие и нежные травы, преимущественно без стеблей.',
+            category: 'Ветеринария',
+            categoryUrl: '#',
+            dataTime: '24-11-2022',
+            time: '24.11.2022',
+        },       
+    ]
+- 
+    let wikiSmCardsData = [
+        {
+            imgSrc: 'veterinary-global.png',
+            imgWidth: 200,
+            imgHeight: 156,
+            imgAlt: 'фото к статье',
+            favorite: true,
+            title: 'Способы подготовки соломы к скармливанию коровам', 
+            cardUrl: '#',
+            category: 'Ветеринария',
+            categoryUrl: '#',
+            dataTime: '24-11-2022',
+            time: '24.11.2022',
+        },
+        {
+            imgSrc: 'veterinary-global.png',
+            imgWidth: 200,
+            imgHeight: 156,
+            imgAlt: 'фото к статье',
+            favorite: true,
+            title: 'Технология заготовки и хранения пивной дробины', 
+            cardUrl: '#',
+            category: 'Воспроизводство и генетика',
+            categoryUrl: '#',
+            dataTime: '24-11-2022',
+            time: '24.11.2022',
+        },
+        {
+            imgSrc: 'veterinary-global.png',
+            imgWidth: 200,
+            imgHeight: 156,
+            imgAlt: 'фото к статье',
+            favorite: true,
+            title: 'Технология заготовки и хранения пивной дробины', 
+            cardUrl: '#',
+            category: 'Кормление',
+            categoryUrl: '#',
+            dataTime: '24-11-2022',
+            time: '24.11.2022',
+        },
+        {
+            imgSrc: 'veterinary-global.png',
+            imgWidth: 200,
+            imgHeight: 156,
+            imgAlt: 'фото к статье',
+            favorite: true,
+            title: 'Технология заготовки и хранения пивной дробины', 
+            cardUrl: '#',
+            category: 'Статьи',
+            categoryUrl: '#',
+            dataTime: '24-11-2022',
+            time: '24.11.2022',
+        },
+    ]
+
+    
+block vars
+    - let page = '';
+
+doctype html
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+
+        meta(name='format-detection', content='telephone=no')
+        meta(name='format-detection', content='date=no')
+        meta(name='format-detection', content='address=no')
+        meta(name='format-detection', content='email=no')
+
+        link(rel="shortcut icon" href="favicon.ico")
+        link(rel="icon" href="favicon.ico")
+
+        meta(content='notranslate', name='google')
+        block meta
+            title Title
+
+    body
+        include ../include/_header
+        .wrapper
+            block Content
+        include ../include/_footer
+        include ../include/_modal

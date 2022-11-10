@@ -1,0 +1,47 @@
+.carousel {
+  overflow: hidden;
+  padding: 30px;
+  margin: -30px;
+  @media #{$mobile-widths} {
+    padding: 10px;
+    margin: -10px;
+  }
+}
+
+.carousel__nav {
+  margin-left: -24px;
+  margin-top: 40px;
+  display: flex;
+  @media #{$mobile-widths} {
+    margin-top: 24px;
+  }
+}
+
+.carousel__nav-item {
+  padding: 0;
+  margin-left: 24px;
+  @include size(24px);
+  border: none;
+  background: transparent;
+
+  &--prev{
+    transform: scale(-1);
+  }
+
+  svg{
+    @include size(100%);
+    fill: #1A1E1F;
+  }
+
+  &:hover{
+    svg{
+      fill: #00A5BD;
+    }
+  }
+
+  &[disabled]{
+    svg{
+      fill: #A9B4BF;
+    }
+  }
+}

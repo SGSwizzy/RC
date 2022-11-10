@@ -1,0 +1,65 @@
+mixin orderHeader(options)
+    .orders__item-header
+        .order-feature
+            .order-feature__item.order-feature__item--date
+                .order-feature__item-title Дата заказа
+                .order-feature__item-value= options.date
+            .order-feature__item.order-feature__item--num
+                .order-feature__item-title Номер заказа
+                .order-feature__item-value= options.num
+            .order-feature__item.order-feature__item--sum
+                .order-feature__item-title Сумма заказа
+                .order-feature__item-value= options.sum
+        if(options.status === 'выполнен')
+            .orders__item-status выполнен
+        else
+            .orders__item-status.orders__item-status--active В обработке
+
+mixin orderFooter(isOpen)
+    .orders__item-footer
+        button(class='orders__item-footer-btn btn btn--third' + (isOpen? ' _opened' : '') type='button')
+            if isOpen
+                | Свернуть заказ
+            else
+                | Развернуть заказ
+            span.btn__ico
+                +svgSprite('arrow-ios-top')
+        .orders__item-footer-right
+            a.link.link--bg.link--secondary(href='#') #[span.tablet-hide Скачать закрывающие документы] #[span.tablet-show Закрывающие документы]
+                span.link__ico
+                    +svgSprite('doc')
+            a.link.link--bg(href='#') Скачать счет
+                span.link__ico
+                    +svgSprite('doc')
+
+mixin orderDetails
+    .order-details
+        .order-details__title Детали заказа
+        .order-details__list
+            each val, key in orderDetails
+                .order-details__item
+                    .order-details__item-title= key
+                    .order-details__item-value= val
+
+mixin orderProductItem(item)
+    div(class='product-item')&attributes(attributes)
+        .product-item__img
+            img(src=require('../images/product/' + item.img) alt=item.title)
+        a.product-item__title= item.title
+        .characteristics.characteristics--small
+            .characteristics__item.characteristics__item--gender
+                .characteristics__item-title Пол особи
+                .characteristics__item-value= item.feature.gender
+            .characteristics__item.characteristics__item--weigh
+                .characteristics__item-title Диапазон ЖВ
+                .characteristics__item-value= item.feature.weigh
+            .characteristics__item.characteristics__item--price
+                .characteristics__item-title Цена за ед.
+                .characteristics__item-value= item.feature.price
+            .characteristics__item.characteristics__item--num
+                .characteristics__item-title Кол-во
+                .characteristics__item-value= item.feature.num
+            .characteristics__item.characteristics__item--sum
+                .characteristics__item-title Итого
+                .characteristics__item-value= item.feature.sum
+

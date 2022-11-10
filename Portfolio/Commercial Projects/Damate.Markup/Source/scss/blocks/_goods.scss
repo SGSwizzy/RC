@@ -1,0 +1,348 @@
+// .goods {}
+.goods__number {
+    color: #737b82;
+}
+
+.goods-head {
+    margin-bottom: 32px;
+    position: relative;
+    @media #{$mobile-widths} {
+        margin-bottom: 20px;
+    }
+}
+.goods-item {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-bottom: 60px;
+}
+.goods-img {
+    margin-bottom: 40px;
+}
+.goods-slider {
+    margin-bottom: 40px;
+}
+
+.goods-price {
+    padding: 28px 24px;
+    background: #ffffff;
+    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.08);
+    border-radius: 6px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    &__num {
+        display: flex;
+        align-items: center;
+        span {
+            display: block;
+            margin-left: 8px;
+            font-size: 20px;
+            line-height: 32px;
+            font-weight: 700;
+            color: $color-third;
+        }
+    }
+    @media #{$mobile-widths} {
+        flex-direction: column;
+        align-items: center;
+        padding: 24px;
+        &__num {
+            margin-bottom: 16px;
+            flex-direction: column;
+            span {
+                margin-top: 10px;
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+.goods-section {
+    &:not(:first-of-type) {
+        margin-top: 40px;
+    }
+    &__title {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 700;
+        margin-bottom: 24px;
+        @media #{$mobile-widths} {
+            margin-bottom: 24px;
+        }
+    }
+}
+.goods-row {
+    display: grid;
+    grid-template-columns: 0.8fr 1fr;
+    gap: 30px;
+    grid-gap: 30px;
+    padding: 16px 0;
+    border-top: 1px dashed #d7dfe6;
+    &:last-of-type {
+        border-bottom: 1px dashed #d7dfe6;
+    }
+    @media #{$mobile-widths} {
+        grid-template-columns: 1fr;
+        grid-gap: 4px;
+        gap: 4px;
+    }
+}
+.goods__cell--value {
+    font-weight: 600;
+}
+
+.goods__cell--green {
+    font-size: 20px;
+    font-weight: 700;
+    color: #00b16f;
+    @media #{$mobile-widths} {
+            flex-direction: column;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+    }
+}
+
+.goods__cell--bid {
+    padding-left: 40px;
+    background: url("../../images/svg/min-price.svg") no-repeat left center / 20px;
+    @media #{$mobile-widths} {
+        padding-left: 40px;
+        background-position: left top;
+    }
+}
+
+.goods-row {
+    .goods__cell:first-child {
+        color: #737b82;
+    }
+}
+
+.goods__cell {
+    &--seller {
+        padding-left: 40px;
+        background: url("../../images/svg/seller.svg") no-repeat left center / 24px;
+        @media #{$mobile-widths}  {
+            padding-left: 0;
+            background-position: right top;
+        }
+    }
+    &--adress {
+        padding-left: 40px;
+        background: url("../../images/svg/location.svg") no-repeat left center / 24px;
+        @media #{$mobile-widths}  {
+            padding-left: 0;
+            background-position: right top;
+        }
+    }
+    &--gender {
+        padding-left: 40px;
+        background: url("../../images/svg/male.svg") no-repeat left center / 28px;
+        @media #{$mobile-widths}  {
+            padding-left: 0;
+            background-position: right top;
+        }
+    }
+    &--fertility {
+        padding-left: 40px;
+        background: url("../../images/svg/bubble.svg") no-repeat left center / 24px;
+        @media #{$mobile-widths}  {
+            padding-left: 0;
+            background-position: right top;
+        }
+    }
+    &--weight {
+        padding-left: 40px;
+        background: url("../../images/svg/scale.svg") no-repeat left center / 24px;
+        @media #{$mobile-widths}  {
+            padding-left: 0;
+            background-position: right top;
+        }
+    }
+    &--period {
+        padding-left: 40px;
+        background: url("../../images/svg/period.svg") no-repeat left center / 24px;
+        @media #{$mobile-widths}  {
+            padding-left: 0;
+            background-position: right top;
+        }
+    }
+    &--average {
+        padding-left: 40px;
+        background: url("../../images/svg/average-price.svg") no-repeat left center / 24px;
+        @media #{$mobile-widths}  {
+            padding-left: 0;
+            background-position: right top;
+        }
+    }
+    &--min {
+        padding-left: 40px;
+        background: url("../../images/svg/min-price.svg") no-repeat left center / 24px;
+        @media #{$mobile-widths}  {
+            padding-left: 0;
+            background-position: right top;
+        }
+    }
+    &--number {
+        padding-left: 40px;
+        background: url("../../images/svg/lightning.svg") no-repeat left center / 24px;
+        @media #{$mobile-widths}  {
+            padding-left: 0;
+            background-position: right top;
+        }
+    }
+    &--tag {
+        padding-left: 40px;
+        background: url("../../images/svg/individual-tag.svg") no-repeat left center / 20px;
+        @media #{$mobile-widths} {
+            padding-left: 0;
+            background-position: right top;
+        }
+    }
+    &--age {
+        padding-left: 40px;
+        background: url("../../images/svg/age.svg") no-repeat left center / 20px;
+        @media #{$mobile-widths}  {
+            padding-left: 0;
+            background-position: right top;
+        }
+    }
+}
+
+.goods-desc {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    &__title {
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 24px;
+        font-weight: 700;
+    }
+    &__text {
+        margin-bottom: 24px;
+        line-height: 24px;
+    }
+    &-documents {
+        @media #{$mobile-widths} {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+    &__document {
+        display: inline-block;
+        padding: 8px 16px 8px 20px;
+        border: 1px solid #00a5bd;
+        border-radius: 100px;
+        margin-right: 24px;
+        color: #1a1e1f;
+        text-decoration: none;
+        font-size: 14px;
+        display: inline-flex;
+        align-items: center;
+        svg {
+            margin-right: 12px;
+        }
+        &:hover {
+            background-color: #00a5bd;
+            color: #fff;
+            svg path {
+                fill: #fff;
+            }
+        }
+        @media (max-width: 767px) {
+            display: inline-flex;
+            margin-right: 0;
+            &:first-of-type {
+                margin-bottom: 16px;
+            }
+        }
+    }
+}
+
+.goods-panel {
+    padding: 24px;
+    background: #ffffff;
+    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.08);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .goods-purchase__btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: calc(33.3% - 8px);
+    }
+    @media #{$mobile-widths} {
+        flex-direction: column;
+        .goods-purchase__btn {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &:not(:last-of-type) {
+                margin-bottom: 16px;
+            }
+            .btn__ico {
+                height: 28px;
+            }
+        }
+    }
+    .good-auction__btn {
+        width: 360px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    @media #{$mobile-widths} {
+        flex-direction: column;
+        .good-auction__btn {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &:not(:last-of-type) {
+                margin-bottom: 16px;
+            }
+        }
+    }
+}
+
+.goods-recommend__button {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -33px;
+}
+
+.goods-recommend {
+    padding-top: 64px;
+    border-top: 1px solid #d7dfe6;
+}
+
+.goods-recommend__title {
+    display: block;
+    margin-bottom: 32px;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 40px;
+}
+
+// .goods__like {
+//     display: flex;
+//     align-items: center;
+//     color: $color-secondary;
+//     position: absolute;
+//     top: 5px;
+//     right: 0;
+//     cursor: pointer;
+//     @media(max-width: 767px) {
+//         display: none;
+//     }
+//     .btn-favorite {
+//         margin-left: 16px;
+//     }
+// }

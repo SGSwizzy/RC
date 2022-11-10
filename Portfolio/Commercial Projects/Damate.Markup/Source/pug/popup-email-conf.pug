@@ -1,0 +1,17 @@
+extends ../pug/layouts/layout
+block meta
+    title Подтверждение email
+    meta(name='description', content='')
+
+
+block Content
+    .modal
+        .modal-overlay
+        form.modal-content
+            .modal__close
+            .modal__title Подтверждение email
+            .modal__line.modal__line--cell
+            .sign__cell
+                .sign__cell--info-clear Спасибо, ваш email подтвержден!
+            .modal__footer
+                button.btn.btn--primary(type='button') Понятно

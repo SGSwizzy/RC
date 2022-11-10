@@ -1,0 +1,40 @@
+mixin footerNav(data)
+    nav.footer__nav
+        each item in data
+            a.footer__nav-item(href=item.href)= item.title
+footer.footer
+    .container
+        a.footer__logo(href='#') Ферм Сервис
+        +footerNav(nav)
+        a.footer__search(href='#')
+            +svgSprite('search')
+        hr.footer__hr
+        .footer__links
+            a.footer__links-item
+                span.footer__links-item-ico
+                    +svgSprite('email')
+                | Подписаться на рассылку
+            a.footer__links-item
+                span.footer__links-item-ico
+                    +svgSprite('message')
+                | Написать менеджеру
+            a.footer__links-item
+                span.footer__links-item-ico
+                    include ../../images/svg/school.svg
+                | Посмотреть обучение
+        a.footer__phone(href='tel:88003330704')
+            span.footer__phone-ico
+                +svgSprite('phone')
+            | 8 800 333-07-04
+        .footer__copyright
+            .footer__copyright-logo Damate
+            | © 2021 ГК «Дамате»
+            .footer__copyright-note Любое использование материалов допускается только с согласия редакции.
+        .footer__cookies Мы используем файлы cookie для того, чтобы предоставить пользователям больше возможностей при посещении сайта.#[br.tablet-show.mobile-hide] #[a(href='#') Подробнее] об условиях использования
+        .footer__bottom
+           a(href='#') Политика в области качества
+           a(href='#') Политика в области безопасности пищевой продукции
+           a(href='#') Пользовательское соглашение
+           .footer__development
+               a(href='"https://www.ddplanet.ru/' target='_blank') Создание:
+               span.footer__development-link DD Planet

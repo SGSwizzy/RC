@@ -1,0 +1,229 @@
+.characteristics {
+    &--offers {
+        margin-bottom: 22px;
+    }
+    .product-list--table &{
+        @media #{$mobile-widths-mf}  {
+            margin-bottom: 16px;
+            display: flex;
+            grid-area: characteristics;
+        }
+        @media #{$tablet-widths-mf}  {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.characteristics__item + .characteristics__item {
+    margin-top: 16px;
+
+    .product-list--table &{
+        @media #{$mobile-widths-mf}  {
+            margin-top: 0;
+        }
+    }
+}
+
+.characteristics__item {
+    padding-top: 16px;
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    border-top: 1px dashed #D7DFE5;
+
+    .characteristics--small &{
+        padding-top: 0;
+        border-top: none;
+        font-size: 14px;
+    }
+
+    .product-list--table &{
+        @media #{$mobile-widths-mf}  {
+            display: block;
+            flex: 1 0 auto;
+        }
+    }
+}
+
+.characteristics__item-title {
+    display: flex;
+    flex-grow: 1;
+    color: $color-grey;
+
+    &:before {
+        content: '';
+        margin-right: 8px;
+        flex-shrink: 0;
+        align-self: center;
+        @include size(24px);
+
+        .characteristics--small &{
+            @include size(16px);
+        }
+
+        .characteristics__item--breed & {
+            background: url("../../images/svg/bookmarks.svg") no-repeat center / 100%;
+        }
+
+        .characteristics__item--gender & {
+            background: url("../../images/svg/male.svg") no-repeat center / 100%;
+        }
+
+        .characteristics__item--weigh & {
+            background: url("../../images/svg/scale.svg") no-repeat center / 100%;
+        }
+
+        .characteristics__item--fertility & {
+            background: url("../../images/svg/bubble.svg") no-repeat center / 100%;
+        }
+
+        .characteristics__item--location & {
+            background: url("../../images/svg/location.svg") no-repeat center / 100%;
+        }
+
+        .characteristics__item--price & {
+            background: url("../../images/svg/min-price.svg") no-repeat center / 10px;
+        }
+
+        .characteristics__item--current-price & {
+            background: url("../../images/svg/current-price.svg") no-repeat center / 100%;
+        }
+
+        .characteristics__item--price-burse & {
+            background: url("../../images/svg/signal.svg") no-repeat center / 100%;
+        }
+
+        .characteristics__item--date & {
+            background: url("../../images/svg/calendar.svg") no-repeat center / 100%;
+        }
+
+        .characteristics__item--num & {
+            background: url("../../images/svg/num.svg") no-repeat center / 100%;
+        }
+
+        .characteristics__item--sum & {
+            background: url("../../images/svg/sum.svg") no-repeat center / 100%;
+        }
+
+        .characteristics__item--age & {
+            background: url("../../images/svg/local_offer.svg") no-repeat center / 100%;
+        }
+
+        .characteristics__item--responded & {
+            background: url("../../images/svg/responded.svg") no-repeat center / 100%;
+        }
+
+        .characteristics__item--bid & {
+            background: url("../../images/svg/responded.svg") no-repeat center / 100%;
+        }
+
+        .product-list--table &{
+            @media #{$mobile-widths-mf}  {
+                display: none;
+            }
+        }
+    }
+
+    .characteristics--small &:after {
+        margin-left: 16px;
+        content: '';
+        align-self: center;
+        flex-grow: 1;
+        height: 0;
+        border-bottom: 1px dashed #D7DFE5;
+
+
+        .product-list--table &{
+            @media #{$mobile-widths-mf}  {
+                display: none;
+            }
+        }
+    }
+}
+
+.characteristics__item-value {
+    margin-left: 16px;
+    font-weight: 600;
+    white-space: nowrap;
+
+    &--bg {
+        padding: 0 8px;
+        color: $color-invert;
+        background: $color-third;
+        border-radius: 100px;
+    }
+
+    &:empty {
+        margin-left: 0;
+    }
+
+    .form__field{
+        width: 204px;
+    }
+
+    .select-choices{
+        width: 204px;
+        font-weight: 400;
+    }
+    .form__select .choices__list--dropdown, .form__select .choices__list[aria-expanded]{
+        min-width: auto;
+        width: 204px;
+    }
+}
+
+.product-list--table .characteristics__item-value {
+
+    @media #{$mobile-widths-mf}  {
+        margin-left: 0;
+        display: flex;
+
+        &:before {
+            content: '';
+            margin-right: 8px;
+            flex-shrink: 0;
+            align-self: center;
+            @include size(16px);
+        }
+    }
+}
+
+
+@media #{$mobile-widths-mf}  {
+    .characteristics__item--gender .characteristics__item-value:before {
+        background: url("../../images/svg/male.svg") no-repeat center / 100%;
+    }
+
+    .characteristics__item--weigh .characteristics__item-value:before {
+        background: url("../../images/svg/scale.svg") no-repeat center / 100%;
+    }
+
+    .characteristics__item--fertility .characteristics__item-value:before {
+        background: url("../../images/svg/bubble.svg") no-repeat center / 100%;
+    }
+
+    .characteristics__item--location .characteristics__item-value:before {
+        background: url("../../images/svg/location.svg") no-repeat center / 100%;
+    }
+
+    .characteristics__item--price .characteristics__item-value:before {
+        background: url("../../images/svg/price.svg") no-repeat center / 100%;
+    }
+
+    // .characteristics__item--current-price .characteristics__item-value:before {
+    //     background: url("../../images/svg/current-price.svg") no-repeat center / 100%;
+    // }
+
+    .characteristics__item--date .characteristics__item-value:before {
+        background: url("../../images/svg/calendar.svg") no-repeat center / 100%;
+    }
+
+    .characteristics__item--num .characteristics__item-value:before {
+        background: url("../../images/svg/list_numbered.svg") no-repeat center / 100%;
+    }
+
+    .characteristics__item--sum .characteristics__item-value:before {
+        background: url("../../images/svg/sum.svg") no-repeat center / 100%;
+    }
+}

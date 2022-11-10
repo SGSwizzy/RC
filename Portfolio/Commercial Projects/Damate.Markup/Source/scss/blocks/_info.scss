@@ -1,0 +1,18 @@
+.info {
+  display: inline;
+  // display: inline-flex;
+  // align-items: center;
+
+  svg {
+    vertical-align: middle;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: $color-grey;
+    margin-left: 12px;
+    margin-right: 10px;
+  }
+}

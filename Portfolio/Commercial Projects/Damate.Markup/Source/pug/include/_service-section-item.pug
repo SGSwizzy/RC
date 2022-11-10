@@ -1,0 +1,13 @@
+mixin service-section-item(data)
+    .service-section-item 
+        .service-section__img 
+            img(src=require("../images/service-item-1.png"), alt="")
+        .service-section__info
+            .service-section__favorite.btn-favorite
+            .service-section__title!=data.title
+            .service-section__desc!=data.desc
+            .service-section-bottom 
+                .service-section__price!="от" + " " + data.price + " " + "₽"
+                button.goods-price__btn.btn.btn--primary.btn--cart(type='button') В корзину
+                    .btn__ico
+                        +svgSprite('cart')

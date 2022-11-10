@@ -1,0 +1,21 @@
+
+.banner-carousel.js-banner-carousel 
+    .swiper-wrapper 
+        .banner-slide.swiper-slide 
+            .banner-slide__img
+                picture
+                    source(srcset=require("../../images/banner-mob.png") media="(max-width: 768px)")
+                    img(src=require("../../images/banner.png"), alt="Баннер")
+            .banner-slide__btn.btn.btn--light Подробнее о проекте
+        .banner-slide.swiper-slide 
+            .banner-slide__img
+                picture
+                    source(srcset=require("../../images/banner-mob.png") media="(max-width: 768px)")
+                    img(src=require("../../images/banner.png"), alt="Баннер")
+            .banner-slide__btn.btn.btn--light Подробнее о проекте
+    .swiper-pagination.carousel__pagination.js-carousel-pagination
+    .carousel__nav
+            button.carousel__nav-item.carousel__nav-item--prev.js-carousel-button-prev
+                include ../../images/svg/arrow.svg
+            button.carousel__nav-item.carousel__nav-item--next.js-carousel-button-next
+                include ../../images/svg/arrow.svg

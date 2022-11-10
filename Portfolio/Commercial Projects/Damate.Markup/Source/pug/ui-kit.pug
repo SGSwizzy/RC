@@ -1,0 +1,219 @@
+extends ../pug/layouts/layout
+
+block meta
+    title Фермер Сервис
+    meta(name='description', content='')
+
+block Content
+    .container
+        h1 Заголовок 1 уровня
+        h2 Заголовок 2 уровня
+        h3 Заголовок 3 уровня
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque elit ullamcorper dignissim cras tincidunt lobortis. Ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Vitae congue eu consequat ac felis donec et odio pellentesque. Massa sed elementum tempus egestas sed sed risus. Laoreet id donec ultrices tincidunt. Elit pellentesque habitant morbi tristique senectus. Et malesuada fames ac turpis egestas. Eget egestas purus viverra accumsan in nisl nisi. Consectetur adipiscing elit ut aliquam purus sit. In mollis nunc sed id semper risus. At augue eget arcu dictum varius duis at. Vitae tempus quam pellentesque nec nam aliquam sem et. Suspendisse interdum consectetur libero id. Nunc eget lorem dolor sed viverra ipsum. At varius vel pharetra vel turpis nunc eget lorem. Nulla aliquet porttitor lacus luctus accumsan tortor posuere ac ut.
+        p Elementum eu facilisis sed odio morbi quis commodo odio. Pellentesque nec nam aliquam sem. Semper eget duis at tellus at urna condimentum mattis pellentesque. Arcu dui vivamus arcu felis bibendum ut tristique et. Odio tempor orci dapibus ultrices in iaculis nunc. Pellentesque pulvinar pellentesque habitant morbi tristique senectus. Amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus et. Scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam. Aliquam eleifend mi in nulla posuere. Tellus in metus vulputate eu scelerisque felis. Tortor vitae purus faucibus ornare. Vestibulum sed arcu non odio euismod lacinia at. Libero nunc consequat interdum varius sit. Purus viverra accumsan in nisl nisi. Quisque non tellus orci ac auctor augue mauris augue. Egestas erat imperdiet sed euismod.
+
+        h3 Аккордеон
+        .accordion.mb-2
+            .accordion__item.-opened
+                .accordion__item-header Цена
+                .accordion__item-body 89 991 руб.
+            .accordion__item
+                .accordion__item-header Категория
+                .accordion__item-body Категория
+            .accordion__item
+                .accordion__item-header Внутренний код, артикул, бренд, теги
+                .accordion__item-body Внутренний код, артикул, бренд, теги
+            .accordion__item
+                .accordion__item-header Регионы поиска
+                .accordion__item-body Регионы поиска
+            .accordion__item
+                .accordion__item-header Настройка рекомендованной цены
+                .accordion__item-body Настройка рекомендованной цены
+
+        h3 Кнопки
+        .row
+            .col.col-auto
+                button.btn.btn--primary(type='button') Primary
+            .col.col-auto
+                button.btn.btn--secondary(type='button') Secondary
+            .col.col-auto
+                button.btn.btn--light(type='button') Light
+            .col.col-auto
+                button.btn.btn--dark(type='button') Dark
+            .col.col-auto
+                button.btn.btn--link(type='button') Link
+        h3 Кнопки disabled
+        .row
+            .col.col-auto
+                button.btn.btn--primary(type='button' disabled='disabled') Primary
+            .col.col-auto
+                button.btn.btn--secondary(type='button' disabled='disabled') Secondary
+            .col.col-auto
+                button.btn.btn--light(type='button' disabled='disabled') Light
+            .col.col-auto
+                button.btn.btn--dark(type='button' disabled='disabled') Dark
+            .col.col-auto
+                button.btn.btn--link(type='button' disabled='disabled') Link
+        h3 Текстовое поле
+        .row
+            .col.col-4
+                .form__field
+                    input.form__field-input(type='text' value='' placeholder='https://example.com/product/001' name="" )
+                    .form__note Можно указать несколько ссылок или одно название товара
+            .col.col-4
+                .form__field
+                    input.form__field-input(type='text' value='https://www.wildberries.ru/catalog/16865233/detail.aspx?targetUrl=XS' placeholder='https://example.com/product/001' name="")
+                    .form__field-clear
+                    .form__note Можно указать несколько ссылок или одно название товара
+            .col.col-4
+                .form__field.form__field--error
+                    input.form__field-input(type='text' value='' placeholder='https://example.com/product/001' name="")
+                    .form__note Можно указать несколько ссылок или одно название товара
+                    .form__error Обязательное поле для заполнения
+        h3 Текстовое поле disabled
+        .row
+            .col.col-4
+                .form__field
+                    input.form__field-input(type='text' value='' placeholder='placeholder' name="" disabled='disabled')
+            .col.col-4
+                .form__field
+                    input.form__field-input(type='text' value='https://www.wildberries.ru/catalog/16865233/detail.aspx?targetUrl=XS' placeholder='https://example.com/product/001' name="" disabled='disabled')
+
+        h3 Текстовое поле с заголовком
+        .row
+            .col.col-4
+                .form__field.form__field--floating
+                    input.form__field-input(type='text' value='' placeholder='Цена' name="" )
+                    label.form__label #[span Цена]
+        h3 Текстовое поле с заголовком disabled
+            .row
+                .col.col-4
+                    .form__field.form__field--floating
+                        input.form__field-input(type='text' value='' placeholder='Цена' name="" disabled='disabled')
+                        label.form__label #[span Цена]
+                .col.col-4
+                    .form__field.form__field--floating
+                        input.form__field-input(type='text' value='https://www.wildberries.ru/catalog/16865233/detail.aspx?targetUrl=XS' placeholder='Цена' name="" disabled='disabled')
+                        label.form__label #[span Цена]
+        h3 Добавление тега
+        .row
+            .col.col-3
+                a.link.link--add-tag(href='#') Добавить тег
+            .col.col-3
+                .add-tag
+                    .add-tag__field
+                        .form__field.form__field--tag.form__field--floating
+                            input.form__field-input(type="text" value="" placeholder="Название тега" name="")
+                            label.form__label #[span Название тега]
+                        .add-tag__field-btn
+                            a.link(href='#') Сохранить
+                    +tags(['Ноутбук', 'Планшет', 'Кефир', 'Судоку', 'Унитазы', 'Apple', 'Консоль Sony Play Station', 'Wacom',
+                        'Батоны', 'Молоко', 'Клюшка',], true, true)
+            .col.col-3
+                .add-tag
+                    .add-tag__field
+                        .form__field.form__field--tag.form__field--floating
+                            input.form__field-input(type="text" value="Н" placeholder="Название тега" name="")
+                            .form__field-clear
+                            label.form__label #[span Название тега]
+                        .add-tag__field-btn
+                            a.link(href='#') Сохранить
+                    +tags(['Наушники', 'Ноутбук', 'Nintendo'], true, true)
+            .col.col-3
+                .add-tag
+                    .add-tag__field
+                        .form__field.form__field--tag.form__field--floating
+                            +tags(['Наушники'], true, true)
+                            input.form__field-input(type="text" value="" placeholder="Название тега" name="")
+                            label.form__label #[span Название тега]
+                        .add-tag__field-btn
+                            a.link(href='#') Изменить
+
+        h3 Селекты
+        .row.mb-1
+            .col.col-4
+                +select([
+                  {value: 'disabled', minValue: 'disabled', selected: true, all: true},
+                  {value: 'Понедельник', minValue: 'пн', selected: true},
+                  {value: 'Вторник', minValue: 'вт', selected: true},
+                  {value: 'Среда', minValue: 'ср', selected: true},
+                  {value: 'Четверг', minValue: 'чт', selected: true},
+                  {value: 'Пятница', minValue: 'пт', selected: true},
+                  {value: 'Суббота', minValue: 'сб', selected: true},
+                  {value: 'Воскресенье', minValue: 'Вс', selected: true},
+                ]).select--multiselect.select--disabled
+
+        .row(style='margin-bottom: 420px')
+            .col.col-4
+                +select([
+                    {value: 'Каждый день', minValue: 'Ежедневно', selected: true, all: true},
+                    {value: 'Понедельник', minValue: 'пн', selected: true},
+                    {value: 'Вторник', minValue: 'вт', selected: true},
+                    {value: 'Среда', minValue: 'ср', selected: true},
+                    {value: 'Четверг', minValue: 'чт', selected: true},
+                    {value: 'Пятница', minValue: 'пт', selected: true},
+                    {value: 'Суббота', minValue: 'сб', selected: true},
+                    {value: 'Воскресенье', minValue: 'Вс', selected: true},
+                ]).select--multiselect
+            .col.col-4
+                +select([
+                    {value: 'Каждый день', minValue: 'Ежедневно', selected: true, all: true},
+                    {value: 'Понедельник', minValue: 'пн', selected: true},
+                    {value: 'Вторник', minValue: 'вт', selected: true},
+                    {value: 'Среда', minValue: 'ср', selected: true},
+                    {value: 'Четверг', minValue: 'чт', selected: true},
+                    {value: 'Пятница', minValue: 'пт', selected: true},
+                    {value: 'Суббота', minValue: 'сб', selected: true},
+                    {value: 'Воскресенье', minValue: 'Вс', selected: true},
+                ]).select--multiselect.-opened
+            .col.col-4
+                +select([
+                    {value: 'Каждый день', minValue: 'Ежедневно', all: true},
+                    {value: 'Понедельник', minValue: 'пн', selected: true},
+                    {value: 'Вторник', minValue: 'вт'},
+                    {value: 'Среда', minValue: 'ср'},
+                    {value: 'Четверг', minValue: 'чт', selected: true},
+                    {value: 'Пятница', minValue: 'пт'},
+                    {value: 'Суббота', minValue: 'сб'},
+                    {value: 'Воскресенье', minValue: 'Вс', selected: true},
+                ]).select--multiselect.-opened
+        h3 Тэги
+        .row
+            .col.col-12
+                +tags(['Macbook', 'Mac', 'iMac'])
+
+        .row
+            .col.col-auto
+                h3 Чекбокс
+                +checkbox(true)
+            .col.col-auto
+                h3 Радиобатон
+                +radio(true)
+            .col.col-auto
+                h3 Переключатель
+                +toggle(true)
+        .row
+            .col.col-auto
+                h3 Чекбокс
+                +checkbox(true)(disabled='disabled')
+                +checkbox(false)(disabled='disabled')
+            .col.col-auto
+                h3 Радиобатон
+                +radio(true)(disabled='disabled')
+                +radio(false)(disabled='disabled')
+            .col.col-auto
+                h3 Переключатель
+                +toggle(true)(disabled='disabled')
+                +toggle(false)(disabled='disabled')
+        h3 Контекстное меню
+        .row
+            .col.col-3
+                +contextmenu('добавить позицию', [{title: 'Добавить вручную', ico: 'hand'}, {title: 'Загрузить из Excel', ico: 'xls'}, {title: 'Фид синхронизации (YML)', ico: 'link'}])(class='-opened')
+            .col.col-3
+                +contextmenu('добавить позицию', [{title: 'Добавить вручную', ico: 'hand'}, {
+                    title: 'Загрузить из Excel',
+                    ico: 'xls'
+                }, {title: 'Фид синхронизации (YML)', ico: 'link'}])(class='contextmenu--secondary')
+            .col.col-3
+                +contextmenu('', [{title: 'Открыть', ico: 'open'}, {title: 'Скачать', ico: 'download'}, {title: 'Переименовать', ico: 'rename'}, {title: 'Деактевировать', ico: 'deactivate'}, {title: 'Удалить', ico: 'delete'}])(class='contextmenu--ico contextmenu--right -opened')
+

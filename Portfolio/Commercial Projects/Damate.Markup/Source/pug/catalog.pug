@@ -1,0 +1,107 @@
+extends ../pug/layouts/layout
+include ../pug/include/_products-carousel
+include ../pug/include/_offers-carousel
+include ../pug/include/_product-item
+include ../pug/include/_offer-item
+include ../pug/include/_news-carousel
+include ../pug/include/_product-list
+include ../pug/include/_nav-on-page
+
+block meta
+    title Листинг товаров
+    meta(name='description', content='')
+
+block vars
+    - let page = 'catalog';
+
+block Content
+    +breadcrumbs(breadcrumbsCatalogData)
+
+    section.listing 
+
+        .container 
+            +nav-on-page(navCatalog, 'Племенные бараны')
+
+            +page-title("Племенные бараны")
+
+            .filter-panel__mob
+                .listing-panel__btn-wrapper
+                    .listing-panel__btn 
+                        +svgSprite('filter', 18, 12)
+                    span Настроить фильтр
+
+        .listing-filter
+            .container
+                .listing-filter-head 
+                    .listing-filter-head__title Фильтр
+                    .listing-filter-head__close
+
+                .listing-panel-row
+                    .listing-filter__list
+                        .listing-filter__item.listing-filter__item--sort.listing-filter__item--mob
+                            .listing-filter__title Сортировать
+                            select.form__select.js-select.listing-filter__select
+                                option(value="Все") По возрастанию цены
+                                option(value="Бараны") По убыванию цены
+                                option(value="Овцы") По возрастанию цены
+                                option(value="Овцы") По возрастанию цены
+                                option(value="Овцы") По возрастанию цены
+                                option(value="Овцы") По возрастанию цены
+                        .listing-filter__item.listing-filter__item--breed
+                            .listing-filter__title Порода
+                            select.form__select.js-select.listing-filter__select
+                                option(value="Все") Любая
+                                option(value="Бараны") Курдючные
+                                option(value="Овцы") Меринос
+                                option(value="Овцы") Жирохвостик
+                                option(value="Овцы") Карачевские
+                                option(value="Овцы") Кроссы
+                        .listing-filter__item.listing-filter__item--gender
+                            .listing-filter__title Пол
+                            select.form__select.js-select.listing-filter__select
+                                option(value="Все") Все
+                                option(value="Бараны") Бараны
+                                option(value="Овцы") Овцы
+                        .listing-filter__item.listing-filter__item--weigh
+                            .listing-filter__title ЖВ в кг
+                            select.form__select.js-select.listing-filter__select
+                                option(value="65-110") 65-110
+                                option(value="65-110") 110-155
+                                option(value="65-110") 155-200
+                        .listing-filter__item.listing-filter__item--fertile
+
+                            .listing-filter__title Плодовитость
+                            select.form__select.js-select.listing-filter__select
+                                option(value="от 130%") от 130%
+                                option(value="от 130%") от 140%
+                                option(value="от 130%") от 150%
+                        .listing-filter__item.listing-filter__item--price
+                            .listing-filter__title Стоимость ₽
+                            .listing-filter__panel 3500 - 4200
+                                +svgSprite('arrow-ios-bottom')
+                            .listing-filter__range
+                                .listing-filter__range-title Диапазон цены
+                                .listing-filter__range-slider
+                                    .range-slider.js-range-slider(data-min-value="50000" data-max-value="200000")
+                                    #range-value-min
+                                    #range-value-max
+
+                    .listing-filter-bottom
+                        .listing-filter__clear
+                            span Сбросить настройки
+                        .listing-filter__close.btn.btn--primary Закрыть
+
+        .product-listing
+            .container
+                .listing-sort-panel
+                    .listing-sort__item
+                        .listing-sort__title Сортировка
+                        .listing-sort__select.select
+                            select.form__select.js-select.listing-filter__select
+                                option(value="Все") По возрастанию цены
+                                option(value="Бараны") По убыванию цены
+                                option(value="Овцы") По возрастанию цены
+                                option(value="Овцы") По убыванию цены
+                    .listing-sort__btn
+                +productsList(products)
+                include ../pug/include/_pagination

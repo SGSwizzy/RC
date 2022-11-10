@@ -1,0 +1,78 @@
+html, body, div, span, applet, object, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, thead {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	background: transparent;
+	box-sizing: border-box;
+}
+
+table, td, tr, th {
+	outline: 0;
+	font-size: 100%;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+:focus {
+	outline: none !important;
+}
+
+::-moz-focus-inner {
+	border: 0 !important;
+}
+
+ins {
+	text-decoration: none;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+button {
+	cursor: pointer;
+}
+
+a {
+	color: blue;
+	outline: none;
+	text-decoration: underline;
+	cursor: pointer;
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+}
+
+a.no-wrap {
+	color: #1875c9;
+	text-decoration: none;
+	white-space: nowrap;
+	&:hover {
+		color: #778990;
+	}
+}
+
+a:focus {
+	text-decoration: underline!important;
+}
+
+img {
+	border: none;
+}
+
+* {
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+	-webkit-tap-highlight-color: transparent;
+	-webkit-appearance: none;
+}

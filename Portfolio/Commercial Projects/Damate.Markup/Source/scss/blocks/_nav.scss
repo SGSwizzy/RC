@@ -1,0 +1,47 @@
+.nav {
+    margin: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media #{$tablet-widths} {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.nav__item {
+    margin:0;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 24px;
+    @include link($color, $color-secondary, none);
+    white-space: nowrap;
+
+    @media #{$desktop-widths} {
+        margin: 0 8px;
+        font-size: 12px;
+    }
+
+    @media #{$tablet-widths} {
+        margin-left: 0;
+        padding: 16px 20px 16px 54px;
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 16px;
+        position: relative;
+        border-bottom: 1px solid #D7DFE6;
+    }
+
+    &:before {
+        @media #{$tablet-widths} {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            @include size(24px);
+            background: url("../../images/svg/arrow-ios-right.svg") no-repeat center / 100%;
+        }
+    }
+}

@@ -1,0 +1,7 @@
+mixin productsList(data)
+    .product-list&attributes(attributes)
+        each item, index in products
+          if index === 1
+              +productItem(item, true, false)
+          else
+              +productItem(item, false, false)

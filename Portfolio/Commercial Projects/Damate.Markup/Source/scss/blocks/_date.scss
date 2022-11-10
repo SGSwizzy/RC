@@ -1,0 +1,12 @@
+.date {
+  time {    
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: $color-grey;
+  }
+
+  &--news {
+    margin: 20px 0 22px;
+  }
+}

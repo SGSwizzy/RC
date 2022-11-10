@@ -1,0 +1,198 @@
+.contextmenu {
+  position: relative;
+  display: flex;
+  display: inline-block;
+}
+
+.contextmenu__btn {
+  padding: 0 64px 0 24px;
+  font-weight: bold;
+  font-family: $font-family;
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: $height-btn;
+  height: $height-btn;
+  color: $color-btn;
+  background: $background-btn;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease-in;
+
+  .contextmenu--secondary &{
+    background: $background-btn-secondary;
+
+    &:hover {
+      background: $background-btn-secondary;
+    }
+  }
+
+  &:hover {
+    background: $background-btn-hover;
+  }
+
+  &:before {
+    content: '';
+    margin-top: -2px;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    border-style: solid;
+    border-width: 4px 4px 0 4px;
+    border-color: #FFFFFF transparent transparent transparent;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    right: 39px;
+    top: 8px;
+    width: 1px;
+    height: calc(100% - 16px);
+    background: #FFFFFF;
+    opacity: 0.7;
+  }
+}
+
+.contextmenu--ico .contextmenu__btn {
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  background: url("../../images/svg/contextmenu.svg") no-repeat center / 100%;
+
+  &:before {
+    display: none;
+  }
+
+  &:after {
+    display: none;
+  }
+
+  &:hover{
+    background-color: rgba($bg-secondary, 0.5);
+  }
+}
+
+.contextmenu__dropdown {
+  display: none;
+  margin-left: -52px;
+  padding: 16px 0 16px 0;
+  margin-top: 11px;
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  width: auto;
+  max-width: 260px;
+  background: #FFFFFF;
+  border-radius: 4px;
+  filter: drop-shadow(0px 10px 38px rgba(0, 0, 0, 0.14)) drop-shadow(0px 9px 46px rgba(0, 0, 0, 0.02)) drop-shadow(0px 11px 15px rgba(0, 0, 0, 0.1));
+  z-index: $z-index-contextmenu;
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 23px;
+    border-style: solid;
+    border-width: 0 9px 9px 9px;
+    border-color: transparent transparent #FFFFFF transparent;
+  }
+
+  .-opened > & {
+    display: block;
+  }
+}
+
+.contextmenu--right .contextmenu__dropdown {
+  margin-left: 0;
+  left: auto;
+  right: -11px;
+
+  &:before {
+    left: auto;
+    right: 22px;
+  }
+}
+
+.contextmenu--ico.contextmenu--right .contextmenu__dropdown {
+  margin-left: 0;
+  left: auto;
+  right: -23px;
+
+  &:before {
+    left: auto;
+    right: 26px;
+  }
+}
+
+.contextmenu--ico .contextmenu__dropdown{
+  margin-top: 0;
+}
+
+.contextmenu__dropdown-item {
+  padding: 8px 20px 8px 24px;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  line-height: 24px;
+  color: $color-dark;
+  cursor: pointer;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:hover{
+    background:  rgba($bg-secondary, 0.5);
+  }
+}
+
+.contextmenu__dropdown-ico {
+  flex: 0 0 24px;
+  width: 24px;
+  margin-right: 16px;
+  line-height: 0;
+}
+
+.contextmenu__dropdown-item-help-info {
+  position: absolute;
+  padding: 20px 24px;
+  margin-right: 10px;
+  right: 100%;
+  top: 50%;
+  width: 392px;
+  height: 184px;
+  white-space: pre-wrap;
+  transform: translateY(-50%);
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 22px;
+  color: #FFFFFF;
+  background: #3773E3;
+  border-radius: 4px;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 100%;
+    bottom: 62px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 9px 0 9px 9px;
+    border-color: transparent transparent transparent #3773E3;
+  }
+}
+
+.contextmenu__dropdown-item-help-footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+
+  .btn {
+    min-width: auto;
+    color: #0961B6;
+  }
+}

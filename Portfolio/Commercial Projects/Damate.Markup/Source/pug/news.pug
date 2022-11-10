@@ -1,0 +1,18 @@
+extends ../pug/layouts/layout
+block meta
+    title Каталог услуг
+    meta(name='description', content='')
+
+block vars
+    - let page = 'service'
+
+block Content
+
+    +breadcrumbs(breadcrumbsCatalogData)
+    
+    section.news 
+        .container
+            +page-title("Новости").page-title--news
+            .news-content 
+                include ../pug/include/_news-list
+                include ../pug/include/_pagination

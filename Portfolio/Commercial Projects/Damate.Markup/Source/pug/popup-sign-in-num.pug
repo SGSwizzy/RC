@@ -1,0 +1,28 @@
+extends ../pug/layouts/layout
+block meta
+    title Авторизация пользователя
+    meta(name='description', content='')
+
+
+block Content
+    .modal
+        .modal-overlay
+        form.modal-content
+            .modal__close
+            .modal__title Авторизация пользователя
+            .modal__line
+                .tabs
+                    .tabs__controls
+                        .tabs__controls-item Стандартный вход
+                        .tabs__controls-item.tabs__controls-item--active По номеру телефона
+            .sign__cell
+                .sign__cell--info-num Введен неверный пароль. Попробуйте еще раз или войдите с помощью номера телефона и sms.
+                .modal__line.modal__line--cell
+                .mt-1
+                    .col.col-12
+                        .form__field.form__field--floating
+                            label.form__label Введите ваш контактный номер телефона
+                            input.form__field-input(type='text' value='' placeholder='Введите ваш контактный номер телефона' name=""  )
+                
+                .modal__footer
+                    button.btn.btn--third(type='button') Отправить sms

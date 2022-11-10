@@ -1,0 +1,37 @@
+extends ../pug/layouts/layout
+include ../pug/include/_product-item
+include ../pug/include/_product-list
+include ../pug/include/_tabs-controls
+
+block meta
+    title Избранное
+    meta(name='description', content='')
+
+block vars
+    - let page = 'favourites';
+
+block Content
+
+    +breadcrumbs(breadcrumbsCatalogData)
+
+
+    .container 
+        +page-title("Избранное")
+
+        .info
+            +svgSprite('info', 20, 20)
+            span.info__text Что бы удалить какую-либо позицию из «избранного»  — нажмите на
+            +svgSprite('favorite-active', 24, 20)
+            
+        .tabs.tabs--favourites
+            +tabs-controls(tabsFavouriteData)
+
+            .tabs__body
+                .tabs__content.tabs__content--active 
+                    +productsList(products)
+                .tabs__content Услуги
+                .tabs__content аукционы на поставку
+                .tabs__content
+                    .news-content
+                        include ../pug/include/_news-list
+                .tabs__content база знаний

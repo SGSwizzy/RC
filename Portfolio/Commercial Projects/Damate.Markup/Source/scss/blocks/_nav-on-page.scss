@@ -1,0 +1,99 @@
+.nav-on-page {
+    margin-bottom: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+
+    @media #{$mobile-widths} {
+        margin-bottom: 29px;
+        flex-direction: column;
+        gap: 1px;
+        border-radius: 6px;
+        overflow: hidden;
+        box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    &__item {
+        padding: 16px 24px;
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        color: $color;
+        text-decoration: none;
+        background: $color-invert;
+        box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.08);
+        border-radius: 6px;
+
+        &:focus {
+            text-decoration: none !important;
+            
+            .nav-on-page__item-title {
+                text-decoration: underline;
+            }
+        }
+
+        &._active, &:hover {
+            background: $color-third;
+            color: $color-invert;
+        }
+
+        @media #{$mobile-widths} {
+            border-radius: 0;
+            box-shadow: none;
+
+            &:not(:last-child) {
+                border-bottom: 1px solid #E5E5E5;
+            }
+
+            &._active {
+                margin-top: -1px;
+                margin-bottom: -1px;
+            }
+        }
+    }
+
+    &__item-ico {
+        margin: -4px -8px;
+        @include size(32px);
+
+        svg {
+            @include size(100%);
+            fill: $color;
+
+            ._active &, .nav-on-page__item:hover & {
+                fill: $color-invert;
+            }
+        }
+
+        @media #{$mobile-widths} {
+            display: none;
+        }
+
+        & + .nav-on-page__item-title {
+            display: none;
+
+            @media #{$mobile-widths} {
+                display: block;
+            }
+        }
+    }
+
+    &__item-title{
+        flex-grow: 1;
+    }
+
+    &__item-badge {
+        @include badge-size(0 4px, 24px, 12px, 4px);
+        @include badge-style($color-third);
+        margin-left: 14px;
+        align-self: baseline;
+        font-weight: 600;
+
+        ._active &, .nav-on-page__item:hover & {
+            background: $color-invert;
+            color: $color-third;
+        }
+    }
+}

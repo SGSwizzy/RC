@@ -1,0 +1,96 @@
+extends ../pug/layouts/layout
+include ../pug/include/_products-carousel
+include ../pug/include/_offers-carousel
+include ../pug/include/_product-item
+include ../pug/include/_offer-item
+include ../pug/include/_news-carousel
+include ../pug/include/_product-list
+
+block meta
+    title Листинг товаров
+    meta(name='description', content='')
+
+block vars
+    - let page = 'goods'
+
+block Content
+    
+    +breadcrumbs(breadcrumbsCatalogData)
+
+    .goods
+        .container 
+                .goods-head
+                    .title-favorite
+                        +page-title("Санта-Инес")
+                        +add-to-favorite
+                    .goods__number №123-456
+
+                .goods-item 
+                    .goods-slider 
+                        .goods-slider__item
+                            img(src=require("../images/product/product-big-1.png"), alt="Слайд")
+                    .goods-price 
+                        .goods-price__num Стоимость единицы особи
+                            span 145 000 ₽
+                        button.goods-price__btn.btn.btn--primary.btn--cart(type='button') Добавить в корзину
+                            .btn__ico
+                                include ../images/svg-sprite/cart.svg
+                    .goods-section.goods-info 
+                        .goods-section__title Информация
+                        .goods-row
+                            .goods__cell.goods__cell--seller Продавец
+                            .goods__cell.goods__cell--value ООО «КавказМясо» 
+                        .goods-row 
+                            .goods__cell.goods__cell--adress Адрес продавца
+                            .goods__cell.goods__cell--value г. Черкесск, ул. Пятигорское шоссе, д. 20. 
+                        .goods-row
+                            .goods__cell.goods__cell--gender Пол особи 
+                            .goods__cell.goods__cell--value баран
+                        .goods-row 
+                            .goods__cell.goods__cell--weight Диапазон веса
+                            .goods__cell.goods__cell--value 80-160 кг
+                        .goods-row
+                            .goods__cell.goods__cell--fertility Плодовитость
+                            .goods__cell.goods__cell--value —
+                    .goods-section.goods-parameter
+                        .goods-section__title Характеристика породы
+                        .goods-row
+                            .goods__cell Страна происхождения
+                            .goods__cell.goods-info__value Франция
+                        .goods-row
+                            .goods__cell Cреднесуточный привес
+                            .goods__cell.goods-info__value Луга, леса, горы
+                        .goods-row
+                            .goods__cell Продуктивность
+                            .goods__cell.goods-info__value Мясошерстная
+                        .goods-row
+                            .goods__cell Группа
+                            .goods__cell.goods-info__value Длиннотощехвостая
+                        .goods-row
+                            .goods__cell Убойный выход
+                            .goods__cell.goods-info__value 50-59%
+                        .goods-row
+                            .goods__cell Средний настриг
+                            .goods__cell.goods-info__value 3,2 кг
+                        .goods-row
+                            .goods__cell Масть
+                            .goods__cell.goods-info__value Светлых оттенков, чаще белого цвета, на голове и на конечностях могут быть черные и коричневые пятна
+                    .goods-desc     
+                        .goods-desc__title Описание
+                        .goods-desc__text Бараны и матки достигают половой зрелости в возрасте 7–8 месяцев. Овцы шароле имеют круглогодичный цикл размножения. Средний показатель окота в декабре 180–190%, в феврале -около 200–215%, чаще рождаются двойни, иногда тройни. У маток отмечаются легкие окоты. Бараны-производителя отличаются «трудолибием», активностью и неутомимостью, могут оплодотворять самок в течение года на протяжении 6–7 сезонов. Иссследования показали, что бараны шароле дают больше ягнят, чем бараны производители других пород.Среднесуточные привесы ягнят до 56 дня составляют 380–650 г. в зависимости от пола и количества рожденных особей в одном помете.
+                        .goods-desc-documents 
+                            a(href="#").goods-desc__document 
+                                include ../images/svg/document.svg
+                                | Сертификат прививок.pdf
+                            a(href="#").goods-desc__document 
+                                include ../images/svg/document.svg
+                                | Родословная.pdf
+                    a.btn.btn--back-to-catalog
+                        include ../images/svg/arrow-back-button.svg
+                        | Назад в каталог
+        .goods-recommend
+            .container 
+                span.goods-recommend__title Рекомендуемые товары
+                +productsCarousel(products)
+                a.section__more.btn.btn--secondary(href='/catalog') Перейти в каталог
+

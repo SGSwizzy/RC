@@ -1,0 +1,33 @@
+extends ../pug/layouts/layout
+block meta
+    title Авторизация пользователя
+    meta(name='description', content='')
+
+
+block Content
+    .modal
+        .modal-overlay
+        form.modal-content
+            .modal__close
+            .modal__title Авторизация пользователя
+            a.sign__link.sign__link--cell(href='#') Зарегистрироваться
+            .modal__line
+            .sign__info
+                .tabs
+                    .tabs__controls
+                        .tabs__controls-item.tabs__controls-item--active Стандартный вход
+                        .tabs__controls-item По номеру телефона
+                .mt-1
+                    .row-field
+                        .col.col-12
+                            .form__field.form__field--floating
+                                label.form__label Email указанный при регистрации
+                                input.form__field-input(type='email' value='' placeholder='Email указанный при регистрации' name=""  )
+                        .col.col-12
+                            .form__field.form__field--floating
+                                label.form__label Пароль
+                                input.form__field-input(type='password' value='' placeholder='Пароль' name=""  )
+                
+                .modal__footer
+                    button.btn.btn--auto.btn--third(type='button') Войти на сайт
+                    a.sign__link--pass(href='#') Забыли пароль?

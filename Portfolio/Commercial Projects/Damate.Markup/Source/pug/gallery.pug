@@ -1,0 +1,85 @@
+extends ../pug/layouts/layout
+include ../pug/include/_products-carousel
+include ../pug/include/_offers-carousel
+include ../pug/include/_product-item
+include ../pug/include/_offer-item
+include ../pug/include/_news-carousel
+include ../pug/include/_product-list
+block meta
+    title Листинг товаров
+    meta(name='description', content='')
+
+block vars
+    - let page = 'goods'
+
+block Content
+    +breadcrumbs(
+        [
+        {
+            link: '#',
+            title: 'Главная', 
+        },
+        {
+            link: '#',
+            title: 'Справочник по породам',
+        },
+        {
+            link: '#',
+            title: 'Фотогалерея',
+        },
+    ]
+    )
+    
+    .gallery 
+        .container 
+            +page-title("Фотогалерея").page-title--gallery
+            .gallery-wrapper 
+                .gallery-section 
+                    .gallery-section__title Романовская
+                    p Бараны и матки достигают половой зрелости в возрасте 7–8 месяцев. Овцы шароле имеют круглогодичный цикл размножения. Средний показатель окота в декабре 180–190%, в феврале -около 200–215%, чаще рождаются двойни, иногда тройни. У маток отмечаются легкие окоты. Бараны-производителя отличаются «трудолибием», активностью и неутомимостью, могут оплодотворять самок в течение года на протяжении 6–7 сезонов. 
+                    .gallery-section__photos
+                        .gallery__photo
+                            img(src=require("../images/gallery/gallery-4.png"), alt="")
+                            .gallery__photo-icon
+                        .gallery__photo
+                            img(src=require("../images/gallery/gallery-1.png"), alt="")
+                            .gallery__photo-icon
+                        .gallery__photo
+                            img(src=require("../images/gallery/gallery-2.png"), alt="")
+                            .gallery__photo-icon
+                        .gallery__photo
+                            img(src=require("../images/gallery/gallery-3.png"), alt="")
+                            .gallery__photo-icon
+                .gallery-section 
+                    .gallery-section__title Жирохвостик
+                    p Бараны и матки достигают половой зрелости в возрасте 7–8 месяцев. Овцы шароле имеют круглогодичный цикл размножения. Средний показатель окота в декабре 180–190%, в феврале -около 200–215%, чаще рождаются двойни, иногда тройни. У маток отмечаются легкие окоты. Бараны-производителя отличаются «трудолибием», активностью и неутомимостью, могут оплодотворять самок в течение года на протяжении 6–7 сезонов. 
+                    .gallery-section__photos
+                        .gallery__photo
+                            img(src=require("../images/gallery/gallery-5.png"), alt="")
+                            .gallery__photo-icon
+                        .gallery__photo
+                            img(src=require("../images/gallery/gallery-6.png"), alt="")
+                            .gallery__photo-icon
+                        .gallery__photo
+                            img(src=require("../images/gallery/gallery-7.png"), alt="")
+                            .gallery__photo-icon
+                        .gallery__photo
+                            img(src=require("../images/gallery/gallery-8.png"), alt="")
+                            .gallery__photo-icon
+                .gallery-section 
+                    .gallery-section__title Меринос
+                    p Бараны и матки достигают половой зрелости в возрасте 7–8 месяцев. Овцы шароле имеют круглогодичный цикл размножения. Средний показатель окота в декабре 180–190%, в феврале -около 200–215%, чаще рождаются двойни, иногда тройни. У маток отмечаются легкие окоты. Бараны-производителя отличаются «трудолибием», активностью и неутомимостью, могут оплодотворять самок в течение года на протяжении 6–7 сезонов. 
+                    .gallery-section__photos
+                        .gallery__photo
+                            img(src=require("../images/gallery/gallery-9.png"), alt="")
+                            .gallery__photo-icon
+                        .gallery__photo
+                            img(src=require("../images/gallery/gallery-10.png"), alt="")
+                            .gallery__photo-icon
+                        .gallery__photo
+                            img(src=require("../images/gallery/gallery-11.png"), alt="")
+                            .gallery__photo-icon
+                        .gallery__photo
+                            img(src=require("../images/gallery/gallery-12.png"), alt="")
+                            .gallery__photo-icon
+                include ../pug/include/_pagination

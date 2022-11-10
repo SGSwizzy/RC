@@ -1,0 +1,229 @@
+.wiki {
+    margin-top: 48px;
+
+    @media #{$tablet-widths} {
+        margin-top: 30px;
+    }
+
+    @media #{$mobile-widths} {
+        margin-top: 0px;
+    }
+
+    &--listing {
+        margin-top: 18px;
+
+        @media #{$tablet-widths} {
+            margin-top: 18px;
+        }
+    }
+
+    .listing-filter__categories {
+        max-width: 100%;
+    }
+
+    &__section {
+        &:not(:last-child) {
+           margin-bottom: 64px; 
+        }
+
+        &--bg-1 {
+            .wiki-card--lg,
+            .wiki-card--sm {
+                background-color: $color-floral-white;
+            }
+        }
+        &--bg-2 {
+            .wiki-card--lg,
+            .wiki-card--sm {
+                background-color: $color-alice-blue;
+            }
+        }
+        &--bg-3 {
+            .wiki-card--lg,
+            .wiki-card--sm {
+                background-color: $color-twilight-blue;
+            }
+        }
+        &--bg-4 {
+            .wiki-card--lg,
+            .wiki-card--sm {
+                background-color: $color-magnolia;
+            }
+        }
+        &--bg-5 {
+            .wiki-card--lg,
+            .wiki-card--sm {
+                background-color: $color-azure;
+            }
+        }
+    }
+    
+    &__header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 32px;
+
+        @media #{$mobile-widths} {
+            flex-wrap: wrap;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 40px;
+        color: #1A1E1F;
+        word-break: break-word;
+
+        @media #{$mobile-widths} {
+            font-size: 24px;
+        }
+    }
+
+    &__num {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        color: $color-third;
+        min-width: 45px;
+        height: 40px;
+        background: $color-light;
+        border-radius: 4px;
+        margin-left: 16px;
+
+        @media #{$mobile-widths} {
+            width: fix-content;
+            margin-left: 0;
+        }
+    }
+
+    .wiki-card--lg {
+        margin-bottom: 32px;
+
+        @media #{$tablet-widths} {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__back-button {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: -32px;
+    }
+
+    // &__listing {}
+
+    &__listing-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+        margin-bottom: 32px;
+
+        @media #{$tablet-widths} {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        @media #{$mobile-widths} {
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+    }
+}
+
+
+.wiki-category {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 24px 0 12px;
+
+    &__item {
+        display: block;
+        background-color: $bg;
+        border: 1px solid $background-btn;
+        color: $color;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;
+        border-radius: 100px;
+        text-decoration: none;
+        padding: 8px 16px;
+        margin-right: 16px;
+        margin-bottom: 12px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__item--more {
+        position: relative;
+    }
+
+    &__hidden  {
+        // display: flex;
+        display: none;
+        position: absolute;
+        bottom: 50px;
+        flex-direction: column;
+        min-width: 184px;
+        background-color: $bg;
+        box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.08);
+        border-radius: 6px;
+        padding: 24px;
+    }
+
+    &__hidden-item {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;
+        color: $color;
+        text-decoration: none;
+        width: fit-content;
+
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.wiki-carousel {
+    &--bg-1 .wiki-card {
+        background-color: $color-floral-white;
+    }
+    
+    &--bg-2 .wiki-card {
+        background-color: $color-alice-blue;
+    }
+
+    &--bg-3 .wiki-card {
+        background-color: $color-twilight-blue;
+    }
+
+    &--bg-4 .wiki-card {
+        background-color: $color-magnolia;
+    }
+
+    &--bg-5 .wiki-card {
+        background-color: $color-azure;
+    }
+
+    .swiper-slide {
+        height: 100%;
+    }
+
+    .wiki-card {
+        height: 100%;
+    }
+}

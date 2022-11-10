@@ -1,0 +1,27 @@
+extends ../pug/layouts/layout
+block meta
+    title Изменение пароля
+    meta(name='description', content='')
+
+
+block Content
+    .modal
+        .modal-overlay
+        form.modal-content
+            .modal__close
+            .modal__title Изменение пароля
+            .modal__line
+            .sign__cell
+                .sign__cell--info-clear Задайте пароль не меньше 6 символов латинского алфавита.
+                .modal__line.modal__line--cell
+                .row
+                    .col.col-12
+                        .form__field.form__field--floating
+                            label.form__label Пароль
+                            input.form__field-input(type='password' value='' placeholder='Пароль' name="")
+                    .col.col-12
+                        .form__field.form__field--floating
+                            label.form__label Повторите пароль
+                            input.form__field-input(type='password' value='' placeholder='Повторите пароль' name="")
+            .modal__footer
+                button.btn.btn--third(type='button') Отправить

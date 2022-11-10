@@ -1,0 +1,31 @@
+.widget-socials {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 76px;
+    border-radius: 10px;
+    overflow: hidden;
+    .socials__item {
+        width: 76px;
+        height: 76px;
+        background-color:#F9F9F9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        svg path {
+            fill: $color-secondary;
+        }
+        &:hover {
+            background-color: $color-secondary;
+            svg path {
+                fill: #fff;  
+            }
+        }
+    }
+    @media(max-width: 767px) {
+        flex-direction: row;
+        max-width: 500px;
+    }
+}

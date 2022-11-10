@@ -1,0 +1,27 @@
+extends ../pug/layouts/layout
+block meta
+    title Сделать новую ставку
+    meta(name='description', content='')
+
+
+block Content
+    .modal
+        .modal-overlay
+        form.modal-content 
+            .modal__close
+            .modal__title Сделать новую ставку
+            .modal__line
+            .sign__cell
+                .sign__cell--info-clear Ваша ставка должна быть больше цены на торгах. Минимальный шаг повышения цены 100 ₽
+                .modal__line.modal__line--cell
+            .characteristics.characteristics--small
+                .characteristics__item.characteristics__item--price-burse
+                    .characteristics__item-title Текущая цена на торгах
+                    .characteristics__item-value.characteristics__item-value--bg 13 000 ₽
+            .row.mt-2
+                .col.col-12
+                    +field({label: 'Ваша ставка',value: ''}).form__field--rub
+                .col.col-12
+                    button.sign__btn.btn.btn--primary(type='button') Сделать новую ставку
+                        .btn__ico
+                            +svgSprite('responded')

@@ -1,0 +1,103 @@
+.service-nav {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+
+    &__item {
+        padding: 16px 24px;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.08);
+        border-radius: 6px;
+        margin-right: 24px;
+        margin-bottom: 24px;
+        color: $color;
+        text-decoration: none;
+        font-weight: 600;
+        &:hover {
+            background-color: $color-third;
+            color: #fff;
+            opacity: .7;
+        }
+
+        &.active {
+            background-color: $color-third;
+            color: #fff;
+        }
+    }
+}
+
+.service-section-item {
+    position: relative;
+    display: flex;
+    padding: 32px;
+    margin-bottom: 32px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.08);
+    border-radius: 6px;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        padding: 16px;
+    }
+}
+.service-section__img {
+    width: 190px;
+    margin-right: 30px;
+    flex-shrink: 0;
+    img {
+        width: 100%;
+        display: block;
+    }
+    @media (max-width: 768px) {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 24px;
+    }
+}
+.service-section__title {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+.service-section__desc {
+    padding-bottom: 16px;
+    border-bottom: 1px dashed #D7DFE5;
+}
+.service-section__info {
+    width: 100%;
+}
+.service-section-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 16px;
+    border-top: 1px dashed #D7DFE5;
+}
+.service-section__price {
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 600;
+    color: $color-third;
+    @media (max-width: 991px) {
+        width: 100%;
+    }
+}
+
+.service-tabs {
+    margin: 32px 0 64px;
+    .tabs__controls-item{
+        &:first-child {
+            margin-left: 0;
+        }
+     }
+}
+.service-section__favorite {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    @media(max-width: 768px) {
+        display: none;
+    }
+}

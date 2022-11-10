@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Admin Dashboard Using</title>
+</head>
+
+<body>
+    <div class="container">
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <img src="public/img/logo.png" alt="logo">
+                    <h2>Drone<span class="danger">Company</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">close</span>
+                </div>
+            </div>
+            <div class="sidebar">
+                <a href="#">
+                    <span class="material-icons-sharp">grid_view</span>
+                    <h3>Панель</h3>
+                </a>
+                <a href="#" class="active">
+                    <span class="material-icons-sharp">person_outline</span>
+                    <h3>Клиенты</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">receipt_long</span>
+                    <h3>Заказы</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">insights</span>
+                    <h3>Аналитика</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">mail_outline</span>
+                    <h3>Мессенджер</h3>
+                    <span class="message-count">26</span>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">inventory</span>
+                    <h3>Продукты</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">report_gmailerrorred</span>
+                    <h3>Отчеты</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">settings</span>
+                    <h3>Настройки</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">add</span>
+                    <h3>Добавить продукты</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">logout</span>
+                    <h3>Выход</h3>
+                </a>
+            </div>
+        </aside>
+
+        <main>
+            <h1>Административная панель</h1>
+            <div class="date">
+                <input type="date" name="#" id="#">
+            </div>
+            <div class="insights">
+                <div class="sales">
+                    <span class="material-icons-sharp">analytics</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Общий объем продаж</h3>
+                            <h1>₽125.024</h1>
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle cx='38' cy='38' r='36'></circle>
+                            </svg>
+                            <div class="number">
+                                <p>81%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Последние 24 часа</small>
+                </div>
+
+                <div class="expenses">
+                    <span class="material-icons-sharp">bar_chart</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Общие расходы</h3>
+                            <h1>₽64.160</h1>
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle cx='38' cy='38' r='36'></circle>
+                            </svg>
+                            <div class="number">
+                                <p>62%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Последние 24 часа</small>
+                </div>
+
+                <div class="income">
+                    <span class="material-icons-sharp">stacked_line_chart</span>
+                    <div class="middle">
+                        <div class="left">
+                            <h3>Общий доход</h3>
+                            <h1>₽23.864</h1>
+                        </div>
+                        <div class="progress">
+                            <svg>
+                                <circle cx='38' cy='38' r='36'></circle>
+                            </svg>
+                            <div class="number">
+                                <p>44%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted">Последние 24 часа</small>
+                </div>
+            </div>
+
+            <div class="recent-orders">
+                <h2>Последние заказы</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Наименование товара</th>
+                            <th>Номер продукта</th>
+                            <th>Платеж</th>
+                            <th>Статус</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr>
+                            <td>Foldable Mini Drone</td>
+                            <td>85631</td>
+                            <td>Due</td>
+                            <td class="warning">Pending</td>
+                            <td class="primary">Details</td>
+                        </tr> -->
+                    </tbody>
+                </table>
+                <a href="#">Показать все</a>
+            </div>
+        </main>
+
+        <div class="right">
+            <div class="top">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+                <div class="theme-toggler">
+                    <span class="material-icons-sharp active">light_mode</span>
+                    <span class="material-icons-sharp">dark_mode</span>
+                </div>
+                <div class="profile">
+                    <div class="info">
+                        <p>Привет, <b>Данила</b></p>
+                        <small class="text-muted">Администратор</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="./public/img/profile-1.jpg" alt="profile-1">
+                    </div>
+                </div>
+            </div>
+
+            <div class="recent-updates">
+                <h2>Последние обновления</h2>
+                <div class="updates">
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="./public/img/profile-2.jpg" alt="profile-2">
+                        </div>
+                        <div class="message">
+                            <p><b>Игорь Янович</b> получил свой заказ
+                                на GPS-беспилотник Night lion tech.</p>
+                            <small class="text-muted">2 Минуты назад</small>
+                        </div>
+                    </div>
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="./public/img/profile-3.jpg" alt="profile-2">
+                        </div>
+                        <div class="message">
+                            <p><b>Маргарита Овцова</b> получил свой заказ
+                                на GPS-беспилотник Night lion tech.</p>
+                            <small class="text-muted">2 Минуты назад</small>
+                        </div>
+                    </div>
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img src="./public/img/profile-4.jpg" alt="profile-2">
+                        </div>
+                        <div class="message">
+                            <p><b>Анна Степанова</b> получил свой заказ
+                                на GPS-беспилотник Night lion tech.</p>
+                            <small class="text-muted">2 Минуты назад</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sales-analytics">
+                <h2>Аналитика продаж</h2>
+                <div class="item online">
+                    <div class="icon">
+                        <span class="material-icons-sharp">shopping_cart</span>
+                    </div>
+                    <div class="right">
+                        <div class="info">
+                            <h3>Онлайн-заказы</h3>
+                            <small class="text-muted">Последние 24 часа</small>
+                        </div>
+                        <h5 class="success">+39%</h5>
+                        <h3>3849</h3>
+                    </div>
+                </div>
+                <div class="item offline">
+                    <div class="icon">
+                        <span class="material-icons-sharp">local_mall</span>
+                    </div>
+                    <div class="right">
+                        <div class="info">
+                            <h3>Офлайн-заказы</h3>
+                            <small class="text-muted">Последние 24 часа</small>
+                        </div>
+                        <h5 class="danger">-17%</h5>
+                        <h3>1100</h3>
+                    </div>
+                </div>
+                <div class="item customers">
+                    <div class="icon">
+                        <span class="material-icons-sharp">person</span>
+                    </div>
+                    <div class="right">
+                        <div class="info">
+                            <h3>Новые клиенты</h3>
+                            <small class="text-muted">Последние 24 часа</small>
+                        </div>
+                        <h5 class="success">+25%</h5>
+                        <h3>849</h3>
+                    </div>
+                </div>
+                <div class="item add-product">
+                    <div>
+                        <span class="material-icons-sharp">add</span>
+                        <h3>Добавить продукт</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/orders.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

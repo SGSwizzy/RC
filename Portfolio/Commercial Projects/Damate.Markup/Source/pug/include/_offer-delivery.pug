@@ -1,0 +1,57 @@
+mixin offer-delivery(item)
+        if item.decline
+            .offer-item__status._decline Отклонена
+        if item.considerate
+            .offer-item__status._considerate На рассмотрении
+        if item.accept
+            .offer-item__status._accept Принята
+
+
+        .offer-item__header
+        
+            .offer-item__img
+                img(src=require('../images/offers/' + item.img) alt=item.title)
+            .offer-item__header-body
+                .offer-item__buyer= item.buyer
+                a.offer-item__title(href="/offer-detail")= item.title
+            .offer-item__responded= item.responded
+        .characteristics.characteristics--small.characteristics--offers
+            .characteristics__item.characteristics__item--gender
+                .characteristics__item-title Пол особи
+                .characteristics__item-value= item.feature.gender
+            .characteristics__item.characteristics__item--weigh
+                .characteristics__item-title Диапазон ЖВ
+                .characteristics__item-value= item.feature.weigh
+            .characteristics__item.characteristics__item--date
+                .characteristics__item-title Срок закупки
+                .characteristics__item-value= item.feature.date
+            .characteristics__item.characteristics__item--location
+                .characteristics__item-title Расположение
+                .characteristics__item-value= item.feature.location
+            .characteristics__item.characteristics__item--price-burse
+                .characteristics__item-title Минимальная цена за кг ЖВ
+                .characteristics__item-value= item.feature.minPrice 
+
+            span.offer-item__my-offer Моя  заявка на поставку
+
+            .characteristics__item.characteristics__item--date
+                .characteristics__item-title Срок поставки
+                .characteristics__item-value= item.offer.date
+            .characteristics__item.characteristics__item--quantity.characteristics__item--fertility
+                .characteristics__item-title Количество голов
+                .characteristics__item-value= item.offer.quantity
+            .characteristics__item.characteristics__item--price
+                .characteristics__item-title Моя цена
+                .characteristics__item-value= item.offer.myPrice
+
+        .offer-item__footer.offer-item__footer--offers
+
+            if item.accept || item.considerate
+                button.btn.btn--primary.btn--offer(type='button' disabled) Добавить заявку
+                    .btn__ico
+                        include ../../images/svg-sprite/responded.svg
+
+            if item.decline
+                button.btn.btn--primary.btn--offer(type='button') Добавить заявку
+                    .btn__ico
+                        include ../../images/svg-sprite/responded.svg

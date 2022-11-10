@@ -1,0 +1,34 @@
+.quantity{
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 134px;
+  box-sizing: border-box;
+  border: 1px solid #D7DFE6;
+  border-radius: $border-radius;
+}
+
+.quantity__btn{
+  padding: 0;
+  @include size(24px);
+  background: none;
+  border: none;
+
+  &:hover{
+    svg{
+      fill: $color-secondary;
+    }
+  }
+}
+
+.quantity__value{
+  width: 43px;
+  height: 24px;
+  font-family: $font-family;
+  text-align: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  border: none;
+}

@@ -1,0 +1,63 @@
+extends ../pug/layouts/layout
+block meta
+    title Предложение на поставку
+    meta(name='description', content='')
+
+
+block Content
+    .modal
+        .modal-overlay
+        form.modal-content
+            .modal__close
+            .modal__title Предложение на поставку
+            .modal__line
+            .modal__body
+                h5 Выберите дату поставки
+                include ../pug/include/_calendar
+                h5 Детали поставки
+                .characteristics
+                    .characteristics__item.characteristics__item--breed
+                        .characteristics__item-title Порода
+                        .characteristics__item-value Меринос
+                    .characteristics__item.characteristics__item--gender
+                        .characteristics__item-title Пол особи
+                        .characteristics__item-value овца
+                    .characteristics__item.characteristics__item--weigh
+                        .characteristics__item-title Диапазон ЖВ
+                        .characteristics__item-value от 40 до 45 кг
+                    .characteristics__item.characteristics__item--fertility
+                        .characteristics__item-title Кол-во голов скота
+                        .characteristics__item-value
+                            +field({value: '10'})
+                    .characteristics__item.characteristics__item--age
+                        .characteristics__item-title Возраст особей
+                        .characteristics__item-value
+                            .form__select
+                                select.js-select
+                                    option(value="#") 1 год
+                                    option(value="#") 2 года
+                                    option(value="#") 3 года
+                                    option(value="#") 4 года
+                                    option(value="#") 5 лет
+                    .characteristics__item.characteristics__item--location
+                        .characteristics__item-title Город поставки
+                        .characteristics__item-value
+                            +field({value: 'Черкесск'})
+                    .characteristics__item.characteristics__item--date
+                        .characteristics__item-title Дата поставки
+                        .characteristics__item-value 27.01.22
+                    .characteristics__item.characteristics__item--price
+                        .characteristics__item-title Цена закупки за кг ЖВ
+                        .characteristics__item-value 160 ₽
+                    .characteristics__item.characteristics__item--responded
+                        .characteristics__item-title Ваша цена за кг ЖВ
+                        .characteristics__item-value
+                            +field({value: '0'}).form__field--rub
+            .modal__footer
+            .modal__btn
+                button.modal__btn--size.btn.btn--third(type='button') Мне нужна помощь
+                    .btn__ico
+                        +svgSprite('help')
+                button.modal__btn--size.btn.btn--primary(type='button') Откликнуться
+                    .btn__ico
+                        +svgSprite('responded')

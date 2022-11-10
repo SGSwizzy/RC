@@ -1,0 +1,11 @@
+mixin tabs-controls(data)
+    .tabs__controls
+      each item in data 
+          if item.active
+              .tabs__controls-item.tabs__controls-item--active!=item.title
+                  if item.number 
+                      .tabs__controls-item-badge!=item.number
+          else 
+              .tabs__controls-item!=item.title
+                  if item.number 
+                      .tabs__controls-item-badge!=item.number

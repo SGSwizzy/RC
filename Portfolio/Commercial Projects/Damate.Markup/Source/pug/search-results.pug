@@ -1,0 +1,38 @@
+extends ../pug/layouts/layout
+include ../pug/include/_products-carousel
+include ../pug/include/_offers-carousel
+include ../pug/include/_product-item
+include ../pug/include/_offer-item
+include ../pug/include/_news-carousel
+include ../pug/include/_product-list
+include ../pug/include/_tabs-controls
+
+block meta
+    title Результаты поиска
+    meta(name='description', content='')
+
+block vars
+
+block Content
+    +breadcrumbs(breadcrumbsCatalogData)
+
+    section
+        .container 
+            +page-title("Результаты поиска").page-title--search
+            .toast
+                .toast__ico
+                    +svgSprite('info')
+                .toast__body По вашему запросу «Дорсет»  — найдено #[strong 16 результатов]
+            .tabs.tabs--search
+                +tabs-controls(tabsSearchResults)
+                
+                .tabs__body
+                    .tabs__content.tabs__content--active
+                        +productsList(products).product-list--table
+                        include ../pug/include/_pagination
+                    .tabs__content Услуги
+                    .tabs__content аукционы на поставку
+                    .tabs__content
+                        .news-content
+                            include ../pug/include/_news-list
+                    .tabs__content база знаний

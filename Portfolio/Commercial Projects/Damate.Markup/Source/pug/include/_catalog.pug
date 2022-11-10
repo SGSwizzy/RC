@@ -1,0 +1,28 @@
+mixin catalog(options)
+    .catalog&attributes(attributes)
+        ul.catalog__level1
+            each item, index in options
+                li(class='catalog__level1-item' + (options.length === index+1 ? ' catalog__level1-item--wide': ''))
+                    a(href='#')
+                        +svgSprite(item.ico)
+                        | #{item.title}
+                        if item.nav
+                            +svgSprite('arrow-ios-right').catalog__level1-item-arrow
+                    if item.nav
+                        .catalog__level-wrapper
+                            ul.catalog__level2
+                                each level2 in item.nav
+                                    li.catalog__level2-item
+                                        a(href='#')= level2.title
+                                        if level2.nav
+                                            ul.catalog__level3
+                                                each level3 in item.nav
+                                                    li.catalog__level3-item
+                                                        a(href='#')
+                                                            +svgSprite('arrow-ios-right')
+                                                            | #{level3.title}
+
+section.section
+    .container
+        h2 Товары и услуги
+        +catalog(catalog)

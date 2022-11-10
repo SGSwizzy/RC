@@ -1,0 +1,116 @@
+extends ../pug/layouts/layout
+include ../pug/include/_basket
+block meta
+    title Результаты поиска
+    meta(name='description', content='')
+
+block vars
+
+block Content
+    +breadcrumbs([
+      {
+        link: '#',
+        title: 'Главная',
+      },
+      {
+        link: '#',
+        title: 'Корзина',
+      },
+    ])
+
+    section
+        .container
+            h1.h1 Корзина
+            .basket
+                h3.h3 Состав заказа
+                .basket__products.product-list.product-list--table
+                    each item in orderProducts
+                        +basketProductItem(item)
+                .basket__footer.basket__footer--products
+                    button.basket__footer-clear(type='button') Отчистить корзину
+                        +svgSprite('close')
+                    .basket__footer-right
+                        .basket__footer-total Итого
+                            span.basket__footer-total-price 424 000 ₽
+                        button.btn.btn--primary(type='button') Пейти к оформлению
+                .basket__info
+                    h3.h3  Информация о компании
+                    hr.hr
+                    .toast
+                        .toast__ico
+                            +svgSprite('info')
+                        .toast__body Поля, отмеченные «звездочкой», обязательны для заполнения
+                    .row
+                        .col.col-8.col-md-12
+                            +field({label: 'Название организации', value: 'ООО “Кавказмясо”', required: true})
+                    .form__title Фактический адрес
+                    .row
+                        .col.col-4.col-md-12
+                            +field({label: 'Регион', value: 'Ростовкая область', required: true})
+                        .col.col-4.col-md-12
+                            +field({label: 'Город', value: 'Ростов-на-Дону', required: true, autocomplete: ['Ростов-на-Дону', 'Ставрополь', 'Пятигорск','Ростов-на-Дону', 'Ставрополь', 'Пятигорск',]})
+                        .col.col-4.col-md-12
+                            +field({label: 'Адрес', value: 'ул. Ленина 34, 12', required: true})
+                .basket__info
+                    h3.h3  Информация о клиенте
+                    hr.hr
+                    .toast
+                        .toast__ico
+                            +svgSprite('info')
+                        .toast__body Поля, отмеченные «звездочкой», обязательны для заполнения
+                    .form__title Адрес доставки
+                    .row
+                        .col.col-4.col-md-12
+                            +field({label: 'Регион', value: 'Ростовкая область', required: true})
+                        .col.col-4.col-md-12
+                            +field({label: 'Город', value: 'Ростов-на-Дону', required: true})
+                        .col.col-4.col-md-12
+                            +field({label: 'Адрес', value: 'ул. Ленина 34, 12', required: true})
+                    .form__title Данные контактного лица
+                    .row
+                        .col.col-4.col-md-12
+                            +field({label: 'Фамилия контактного лица', value: 'Иванов', required: true})
+                        .col.col-4.col-md-12
+                            +field({label: 'Имя контактного лица', value: 'Петр', required: true})
+                        .col.col-4.col-md-12
+                            +field({label: 'Отчество контактного лица', value: 'Васильевич', required: true})
+                        .col.col-4.col-md-12
+                            +field({type: 'tel', label: 'Мобильный телефон контактного лица', value: '+7-909-437-15-40', readonly: true})
+                            .form__note Изменить телефон в #[a.link.link--secondary(href='') личном кабинете]
+                        .col.col-4.col-md-12
+                            +field({type: 'email', label: 'Email контактного лица', value: 'ivan@mail.ru', readonly: true})
+                            .form__note Изменить email в #[a.link.link--secondary(href='') личном кабинете]
+                        .col.col-4.col-md-12
+                            +field({type: 'tel', label: 'Телефон для курьера', value: '+7-909-437-15-40', required: true})
+                .basket__info
+                    h3.h3  Реквизиты для выставления счета
+                    hr.hr
+                    .row
+                        .col.col-4.col-md-12
+                            +field({label: 'ИНН', value: '781602259186'})
+                        .col.col-4.col-md-12
+                            +field({label: 'ОГРН', value: '615405079804'})
+                        .col.col-4.col-md-12
+                            +field({label: 'КПП', value: '772101001'})
+                        .col.col-12
+                            +field({label: 'Юридический адрес компании', value: '347900, г. Ростов-на-Дону, пр. Стачки, 34'})
+                    .form__title Банковские реквизиты
+                    .row
+                        .col.col-4.col-md-12
+                            +field({label: 'БИК', value: '044525225'})
+                        .col.col-4.col-md-12
+                            +field({label: 'Название банка', value: 'ПАО Сбербанк г. Москва'})
+                    .row
+                        .col.col-4.col-md-12
+                            +field({label: 'Корреспондентский счет', value: '30101810400000000225'})
+                        .col.col-4.col-md-12
+                            +field({label: 'Расчетный счет', value: '40702810338000080595'})
+                .basket__footer
+                    .basket__footer-delivery Стоимость доставки
+                        .basket__footer-delivery-price
+                            +svgSprite('delivery')
+                            | 4 000 ₽
+                    .basket__footer-right
+                        .basket__footer-total Итого
+                            span.basket__footer-total-price 424 000 ₽
+                        button.btn.btn--primary(type='button') Оформить

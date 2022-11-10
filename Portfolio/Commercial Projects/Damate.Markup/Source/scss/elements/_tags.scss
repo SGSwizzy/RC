@@ -1,0 +1,49 @@
+.tags{
+  margin: 0 0 -8px -10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tags__item{
+  margin-left: 10px;
+  margin-bottom: 8px;
+  padding: 0 8px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 24px;
+  white-space: nowrap;
+  color: $color-dark;
+  background: #F1F5F6;
+  border-radius: 2px;
+
+  &--edited{
+    color: #0364BB;
+    background: #D7F4FC;
+  }
+
+  &--secondary{
+    background: #D7F4FC;
+    color: #0364BB;
+  }
+}
+
+.tags__item-delete{
+  margin-left: 7px;
+  display: inline-block;
+  vertical-align: middle;
+  @include size(8px);
+  background: url("../../images/svg/tags-delete.svg") no-repeat center / 100%;
+  cursor: pointer;
+
+  &:hover{
+    opacity: 0.8;
+  }
+}
+
+.tags__item-ico{
+  margin-right: 2px;
+  display: inline-block;
+  vertical-align: middle;
+  @include size(16px);
+}

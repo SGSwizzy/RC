@@ -1,0 +1,44 @@
+.order-feature {
+    margin-right: 30px;
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    gap: 16px 63px;
+    font-size: 16px;
+    line-height: 24px;
+
+    @media #{$mobile-widths} {
+        flex-direction: column;
+    }
+
+    &__item {
+        display: flex;
+
+        &:before{
+            content: '';
+            margin-right: 8px;
+            @include size(24px);
+        }
+
+        &--date:before {
+            background: url("../../images/svg/calendar.svg") no-repeat center / 100%;
+        }
+
+        &--num:before {
+            background: url("../../images/svg/num.svg") no-repeat center / 100%;
+        }
+
+        &--sum:before {
+            background: url("../../images/svg/sum.svg") no-repeat center / 100%;
+        }
+    }
+
+    &__item-title{
+        margin-right: 8px;
+        color: $color-grey;
+    }
+
+    &__item-value{
+        font-weight: 600;
+    }
+}

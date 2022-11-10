@@ -1,0 +1,29 @@
+.toast {
+    margin: 24px 0;
+    display: flex;
+    align-items: center;
+    color: $color-grey;
+    font-size: 14px;
+    line-height: 20px;
+
+    &:first-child{
+        margin-top: 0;
+    }
+
+    &:last-child{
+        margin-bottom: 0;
+    }
+
+    &__ico {
+        margin-right: 10px;
+        line-height: 0;
+
+        svg {
+            @include size(20px)
+        }
+    }
+
+    strong{
+        color: $color;
+    }
+}

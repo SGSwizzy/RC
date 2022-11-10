@@ -1,0 +1,80 @@
+.toggle {
+  padding-left: $width-toggle + 8px;
+  position: relative;
+  min-height: 22px;
+}
+
+.toggle + .toggle {
+  margin-top: 16px;
+}
+
+.toggle__check {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: $width-toggle;
+  height: $height-toggle;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.toggle__check[disabled] {
+  cursor: default;
+}
+
+.toggle__bar {
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: $width-toggle;
+  height: $height-toggle;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: $bg-toggle;
+  border-radius: $height-toggle;
+  outline: none;
+  transition: all 0.2s ease-in;
+  cursor: pointer;
+}
+
+.toggle__check:checked ~ .toggle__bar {
+  background: $bg-toggle-checked;
+}
+
+.toggle__check[disabled] ~ .toggle__bar {
+  cursor: default;
+  background: $bg-toggle;
+}
+
+.toggle__bar:after {
+  content: '';
+  position: absolute;
+  @include size($size-toggle-slider);
+  border-radius: 50%;
+  top: 50%;
+  left: 0;
+  background: $bg-toggle-slider;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.14), 0 2px 1px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.2);
+  transform: translateY(-50%);
+  transition: all 0.2s ease-in;
+}
+
+.toggle__check:checked ~ .toggle__bar:after {
+  left: $width-toggle - $size-toggle-slider;
+  background: $bg-toggle-slider-checked;
+}
+
+.toggle__check[disabled] ~ .toggle__bar:after {
+  cursor: default;
+  background: $bg-toggle-slider;
+}
+
+.toggle__label {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}

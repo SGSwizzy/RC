@@ -1,0 +1,264 @@
+//ICO
+@mixin ico($color: $color-secondary, $size: 24px, $margin: 0 8px 0 0) {
+  margin: $margin;
+  @include size($size);
+
+  svg {
+    @include size(100%);
+    fill: $color;
+  }
+}
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+// BUTTON
+@mixin btn-size(
+  $font-size: $font-size-btn,
+  $height: $height-btn,
+  $padding: $padding-btn,
+  $border-radius: $border-radius-btn
+) {
+  padding: $padding;
+  height: $height;
+  box-sizing: border-box;
+  text-decoration: none;
+  line-height: $height;
+  font-weight: 600;
+  font-family: $font-family;
+  font-size: $font-size;
+  border-radius: $border-radius;
+  white-space: nowrap;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+@mixin btn-style(
+  $bg: $background-btn,
+  $color: $color-btn,
+  $bg-hover: $background-btn-hover,
+  $color-hover: $color-btn-hover,
+  $bg-disabled: $background-btn-disabled,
+  $color-ico-hover:#fff
+) {
+  color: $color;
+  background: $bg;
+  border: none;
+  transition: background 0.2s ease-in, color 0.2s ease-in;
+
+  &:not([disabled]):hover {
+    background: $bg-hover;
+    color: $color-hover;
+
+    svg path {
+      fill: $color-ico-hover;
+    }
+  }
+  &[disabled] {
+    cursor: default;
+    background: $bg-disabled;
+  }
+
+  svg {
+    fill: $color;
+    transition: fill 0.2s ease-in;
+  }
+}
+
+// FIELD
+@mixin field-size(
+  $height: $height-field,
+  $font-size: $font-size-field,
+  $line-height: $height-field,
+  $padding: 0 50px 0 16px,
+  $border-radius: 4px
+) {
+  padding: $padding;
+  height: $height;
+  width: 100%;
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: $line-height;
+  box-sizing: border-box;
+  border-radius: $border-radius;
+  text-overflow: ellipsis;
+
+  &::-ms-clear {
+    display: none;
+  }
+}
+
+@mixin field-style(
+  $color: $color-field,
+  $bg: $bg-field,
+  $border-color: $border-color-field,
+  $color-placeholder: $color-placeholder-field,
+  $border-color-hover: $border-color-field-hover,
+  $border-color-focus: $border-color-field-focus
+) {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: $color;
+  background: $bg;
+  border: 1px solid $border-color;
+
+  &::placeholder {
+    color: $color-placeholder;
+  }
+
+  &:not([disabled]):hover,
+  &:not([readonly]):hover{
+    border-color: $border-color-hover;
+  }
+
+  &[disabled] {
+    color: rgba($color, 0.3);
+    border-color: rgba($border-color, 0.15);
+  }
+
+  &:not([disabled]):focus,
+  &:not([readonly]):focus,
+  &--focus:not([disabled]) {
+    border: 1px solid $border-color-focus !important;
+
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+
+  &[readonly]{
+      background: #F9F9F9 !important;
+      border: 1px solid #D7DFE5 !important;
+      &:focus{
+
+          border: 1px solid #D7DFE5 !important;
+      }
+  }
+}
+
+//CHECKBOX
+@mixin checkbox-size($size: $size-checkbox) {
+  width: $size;
+  height: $size;
+  min-height: $size;
+  flex: 0 0 $size;
+  border-radius: $border-radius-checkbox;
+  box-sizing: border-box;
+
+  .checkbox__input:checked + & {
+    border: 1px solid transparent;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: $border-radius-checkbox;
+    opacity: 0;
+
+    .checkbox__input:checked + & {
+      opacity: 1;
+    }
+  }
+}
+
+//RADIO
+@mixin radio-size($size: $size-radio) {
+  width: $size;
+  height: $size;
+  min-height: $size;
+  flex: 0 0 $size;
+  border-radius: 50%;
+  box-sizing: border-box;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    opacity: 0;
+
+    .radio__input:checked + & {
+      opacity: 1;
+    }
+  }
+}
+
+//SCROLL
+@mixin scrollbars(
+  $size,
+  $foreground-color,
+  $background-color: mix($foreground-color, white, 50%),
+  $border-color: transparent
+) {
+  // For Google Chrome
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+    border-radius: $size;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+    border: 1px solid $border-color;
+    border-radius: $size;
+  }
+
+  // For Internet Explorer
+  & {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
+//BADGE
+@mixin badge-size($padding: 0 6px, $height: 20px, $font-size: 10px, $border-radius: $height) {
+  padding: $padding;
+  min-width: $height;
+  height: $height;
+  line-height: $height;
+  font-size: $font-size;
+  font-weight: 500;
+  border-radius: $border-radius;
+  white-space: nowrap;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+@mixin badge-style($bg: $color-error, $color: $color-invert) {
+  background-color: $bg;
+  color: $color;
+  text-decoration: none;
+  text-align: center;
+}
+
+//Convert px in rem
+@function rem($size) {
+  @return $size / $font-size * 1rem;
+}
+
+//convert px in em
+@function em($size, $size-current) {
+  @return $size / $size-current * 1em;
+}
+
+.inner {
+  margin: 0 auto;
+}

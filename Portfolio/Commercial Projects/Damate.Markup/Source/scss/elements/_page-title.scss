@@ -1,0 +1,83 @@
+.page-title {
+  display: block;
+  font-size: 46px;
+  line-height: 54px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-weight: 600;
+
+  @media #{$mobile-widths} {
+      font-size: 32px;
+      line-height: 40px;
+  }
+
+  &--service-card {
+      margin-bottom: 0;
+
+      @media(max-width: 767px) {
+          margin-bottom: 0;
+      }
+  }
+
+  &--news {
+      margin-bottom: 32px;
+
+      @media(max-width: 767px) {
+          margin-bottom: 24px;
+      }
+  }
+
+  &--gallery {
+    margin-bottom: 60px;
+
+    @media #{$mobile-widths} {
+        margin-bottom: 32px;
+    }
+  }
+
+  &--search {
+    margin-bottom: 24px;
+
+    @media #{$mobile-widths} {
+        margin-bottom: 20px;
+    }
+  }
+
+  &--recommended {
+    margin-bottom: 32px;
+
+    @media #{$mobile-widths} {
+        margin-bottom: 24px;
+    }
+  }
+
+  &--wiki {
+    margin-bottom: 32px;
+
+    @media #{$mobile-widths} {
+        margin-bottom: 24px;
+    }
+  }
+}
+
+.title-favorite {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .page-title {
+    max-width: 60%;
+
+    @media #{$mobile-widths} {
+      max-width: 100%;
+    }
+  }
+  
+  &--service-card {
+    margin-bottom: 60px;
+
+    @media #{$mobile-widths} {
+        margin-bottom: 4px;
+    }
+  }
+}

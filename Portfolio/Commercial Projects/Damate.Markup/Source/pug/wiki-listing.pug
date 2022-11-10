@@ -1,0 +1,93 @@
+extends layouts/layout
+include include/_products-carousel
+include include/_offers-carousel
+include include/_product-item
+include include/_offer-item
+include include/_product-list
+include include/_wiki-card
+include include/_nav-on-page
+include include/_wiki-carousel
+
+block meta
+    title База знаний
+    meta(name='description' content='')
+
+block vars
+    - let page = 'wiki-listing';
+
+block Content
+    +breadcrumbs(breadcrumbsCatalogData)
+
+    .container
+        +nav-on-page([
+            {
+                title: 'Ветеринария',
+                href: '#',
+                badge:'45'
+            },
+            {
+                title: 'Воспроизводство и генетика',
+                href: '#',
+                badge:'16'
+            },
+            {
+                title: 'Породы',
+                href: '#',
+                badge:'31'
+            },
+            {
+                title: 'Кормление',
+                href: '#',
+                badge:'20'
+            },
+            {
+                title: 'Статьи',
+                href: '#',
+                badge:'53'
+            },
+        ], '')
+
+        +page-title("Породы").page-title--wiki
+        .header
+            form.header-searchbar-form 
+                input.header-searchbar__input(type="text" placeholder='Поиск по разделу')
+                button.header-searchbar__btn 
+                    +svgSprite('search')
+
+        .wiki-category
+            a(href="#").wiki-category__item Корма
+            a(href="#").wiki-category__item Cелекция
+            a(href="#").wiki-category__item Кормление
+            a(href="#").wiki-category__item Прививки
+            a(href="#").wiki-category__item Стрижка            
+            .wiki-category__item.wiki-category__item--more Еще...
+                .wiki-category__hidden 
+                    a(href="#").wiki-category__hidden-item Кормление
+                    a(href="#").wiki-category__hidden-item Селекция
+                    a(href="#").wiki-category__hidden-item Корма
+        .wiki.wiki--listing
+            +wiki-card(
+                    {
+                        imgSrc: 'veterinary-global.png',
+                        imgWidth: 560,
+                        imgHeight: 368,
+                        imgAlt: 'фото к статье',
+                        imgLabel: 'Популярное',
+                        favorite: true,
+                        title: 'Технология заготовки и хранения пивной дробины', 
+                        cardUrl: '#',
+                        text: 'Выбирая травы для овец и коз помните, что их ротовой аппарат нежнее, чем у коров, именно поэтому в сене/сенаже должны преобладать хорошо облиственные, мягкие и нежные травы, преимущественно без стеблей.',
+                        category: 'Ветеринария',
+                        categoryUrl: '#',
+                        dataTime: '24-11-2022',
+                        time: '24.11.2022',
+                    }
+                ).wiki-card--lg.wiki-card--lg-right.wiki-card--bg-2
+
+            .wiki__listing
+                ul.wiki__listing-list 
+                    each item in wikiSmCardsData
+                        +wiki-card(item).wiki-card--sm.wiki-card--bg-2
+
+
+            include include/_pagination

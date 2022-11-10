@@ -1,0 +1,49 @@
+.header-location {
+  margin-right: 2.5%;
+
+  @media #{$desktop-widths} {
+    margin-right: 8px;
+  }
+
+  @media #{$tablet-widths} {
+    margin-right: auto;
+  }
+
+  @media #{$mobile-widths} {
+    margin-right: 0;
+    margin-left: 16px;
+    order: 2;
+  }
+}
+
+.header-location__btn {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 24px;
+  white-space: nowrap;
+  cursor: pointer;
+
+  @media #{$mobile-widths} {
+    font-size: 0;
+  }
+
+  &:hover {
+    color: $color-secondary;
+  }
+}
+
+.header-location--btn-ico {
+  @include ico();
+
+  @media #{$mobile-widths} {
+    margin-right: 0;
+  }
+
+  svg {
+    @media #{$mobile-widths} {
+      fill: $color-invert
+    }
+  }
+}

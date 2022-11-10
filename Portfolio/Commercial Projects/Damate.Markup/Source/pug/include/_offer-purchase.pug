@@ -1,0 +1,65 @@
+mixin offer-purchase(item)
+        if item.decline
+            .offer-item__status._decline Ваша ставка перебита
+        if item.accept
+            .offer-item__status._accept Ваша ставка лидирует
+        if item.expired
+            .offer-item__status._expired Аукцион завершен
+
+        .offer-item__header
+        
+            .offer-item__img
+                img(src=require('../images/offers/' + item.img) alt=item.title)
+            .offer-item__header-body
+                .offer-item__buyer= item.buyer
+                a.offer-item__title(href="/offer-detail")= item.title
+            .offer-item__responded= item.responded
+        .characteristics.characteristics--small.characteristics--offers
+            .characteristics__item.characteristics__item--gender
+                .characteristics__item-title Пол особи
+                .characteristics__item-value= item.feature.gender
+            .characteristics__item.characteristics__item--weigh
+                .characteristics__item-title Диапазон ЖВ
+                .characteristics__item-value= item.feature.weigh
+            .characteristics__item.characteristics__item--fertility.characteristics__item--quantity
+                .characteristics__item-title Количество голов
+                .characteristics__item-value= item.feature.quantity
+            .characteristics__item.characteristics__item--date
+                .characteristics__item-title Срок завершения торгов
+                .characteristics__item-value= item.feature.date
+            .characteristics__item.characteristics__item--location
+                .characteristics__item-title Расположение
+                .characteristics__item-value= item.feature.location
+
+            if item.accept || item.expired
+                .characteristics__item.characteristics__item--current-price
+                    .characteristics__item-title Текущая цена на торгах
+                    .characteristics__item-value= item.feature.currentPrice
+                .characteristics__item.characteristics__item--price
+                    .characteristics__item-title Моя цена
+                    .characteristics__item-value.characteristics__item-value--bg= item.feature.myPrice
+
+            if item.decline
+
+                .characteristics__item.characteristics__item--current-price
+                    .characteristics__item-title Текущая цена на торгах
+                    .characteristics__item-value.characteristics__item-value--bg= item.feature.currentPrice
+                .characteristics__item.characteristics__item--price
+                    .characteristics__item-title Моя цена
+                    .characteristics__item-value= item.feature.myPrice
+                
+        .offer-item__footer.offer-item__footer--offers
+            if item.expired
+                button.btn.btn--primary.btn--offer(type='button' disabled) Аукцион завершен
+                    .btn__ico
+                        include ../../images/svg-sprite/responded.svg
+
+            if item.accept
+                button.btn.btn--primary.btn--offer(type='button' disabled) Сделать новую ставку
+                    .btn__ico
+                        include ../../images/svg-sprite/responded.svg
+
+            if item.decline
+                button.btn.btn--primary.btn--offer(type='button') Сделать новую ставку
+                    .btn__ico
+                        include ../../images/svg-sprite/responded.svg

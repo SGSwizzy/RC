@@ -1,0 +1,48 @@
+.notification {
+    position: fixed;
+    display: flex;
+    bottom: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 495px;
+    height: 50px;
+    background: #323232;
+    border-radius: 8px;
+    padding: 13px 16px;
+    z-index: 1000;
+    transition-duration: 1s;
+    transition-timing-function: ease-in;
+    transition-delay: .7s;
+    opacity: 0;
+
+    &.-show {
+        bottom: 3%;
+        opacity: 1;
+    }
+}
+
+.notification__content-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.notification__img {
+    width: 24px;
+    height: 24px;
+    margin-right: 6px;
+}
+
+.notification__title {
+    font-size: 14px;
+    line-height: 16px;
+    color: #ffffff;
+}
+
+.notification__cancel-btn {
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFFFFF;
+    margin-left: 10px;
+}

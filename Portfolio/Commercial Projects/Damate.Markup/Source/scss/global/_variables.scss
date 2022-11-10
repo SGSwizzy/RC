@@ -1,0 +1,146 @@
+// MEDIA
+$desktop-L-widths: "(max-width: 1400px)";
+$desktop-widths: "(max-width: 1200px)";
+$desktop-widths-mf: "(min-width: 1201px)";
+$tablet-widths: "(max-width: 1024px)";
+$tablet-widths-mf: "(min-width: 1025px)";
+$mobile-widths: "(max-width: 767px)";
+$mobile-widths-mf: "(min-width: 768px)";
+$mobile-S-widths: "(max-width: 414px)";
+
+// TYPOGRAPHY
+
+$font-size:                          16px;
+$line-height:                        1.6;
+$font-family:                        'Inter', Arial, sans-serif;
+$transition:                         all 0.2s ease-in;
+$margin-h1:                          32px 0;
+$font-size-h1:                       46px;
+$line-height-h1:                     54px;
+$font-weight-h1:                     600;
+$margin-h2:                          32px 0;
+$font-size-h2:                       32px;
+$line-height-h2:                     40px;
+$font-weight-h2:                     600;
+$margin-h3:                          24px 0;
+$font-size-h3:                       24px;
+$line-height-h3:                     32px;
+$font-weight-h3:                     600;
+$margin-h4:                          24px 0;
+$font-size-h4:                       24px;
+$line-height-h4:                     32px;
+$font-weight-h4:                     600;
+$margin-h5:                          16px 0;
+$font-size-h5:                       18px;
+$line-height-h5:                     32px;
+$font-weight-h5:                     600;
+$border-radius:                      4px;
+
+// COLORS
+
+$color:                              #1A1E1F;
+$color-grey:                         #737B82;
+$color-grey-lighten:                 #D7DFE6;
+$color-secondary:                    #00A5BD;
+$color-third:                        #00B16F;
+$color-invert:                       #FFFFFF;
+$color-invert-secondary:             #BFD730;
+$color-dark:                         #5D6475;
+$color-light:                        #F9F9F9;
+$color-error:                        #D14343;
+$color-out-of-stock:                 #A9B4BF;
+$color-floral-white:                 #FFFCED;
+$color-alice-blue:                   #EDF8FF;
+$color-twilight-blue:                #F9FFED;
+$color-magnolia:                     #F8F6FB;
+$color-azure:                        #F2FBF9;
+$color-pattens-blue:                 #D7DFE5;
+
+
+$bg:                                 #FFFFFF;
+$bg-secondary:                       #F0F3F6;
+
+// LINK
+
+$color-link:                         $color-third;
+$color-link-hover:                   $color-link;
+
+// BUTTON
+$font-size-btn:                      14px;
+$color-btn:                          $color-invert;
+$color-btn-secondary:                $color-secondary;
+$color-btn-third:                    #fff;
+$color-btn-light:                    $color-dark;
+$color-btn-dark:                     $color-dark;
+$color-btn-hover:                    $color-invert;
+$height-btn:                         40px;
+$padding-btn:                        0 16px;
+$background-btn:                     #00A5BD;
+$background-btn-secondary:           $color-light;
+$background-btn-third:               $color-third;
+$background-btn-light:               #FFFFFF;
+$background-btn-dark:                #EFF2F9;
+$background-btn-hover:               darken($background-btn, 5%);
+$background-btn-secondary-hover:     $background-btn;
+$background-btn-third-hover:         darken($background-btn-third, 5%);
+$background-btn-disabled:            #99E9FD;
+$border-radius-btn:                  $border-radius;
+
+// FIELD
+
+$font-size-field:                    14px;
+$height-field:                       40px;
+$color-field:                        $color-dark;
+$color-placeholder-field:            #BCC4CB;
+$bg-field:                           #FFFFFF;
+$border-color-field:                 rgba(93, 100, 117, 0.3);
+$border-color-field-hover:           darken($border-color-field, 10%);
+$border-color-field-focus:           #5D9EF8;
+
+// CHECKBOX
+$size-checkbox:                      16px;
+$border-color-checkbox:              #C0C1C9;
+$bg-checkbox:                        #FFFFFF;
+$bg-checkbox-checked:                #0085FF;
+$border-radius-checkbox:             3px;
+
+// RADIO
+$size-radio:                      24px;
+$border-color-radio:              #D7DFE6;
+$border-color-radio-checked:      #27AE60;
+
+// TOGGLE
+$width-toggle: 34px;
+$height-toggle: 14px;
+$size-toggle-slider: 20px;
+$bg-toggle: rgba(#BDBDBD, 0.38);
+$bg-toggle-slider: #BDBDBD;
+$bg-toggle-checked: rgba(#27AE60, 0.38);
+$bg-toggle-slider-checked: #27AE60;
+
+
+// GRID
+$grid-columns:                       12;
+$grid-gutter-width:                  24px;
+
+$grid-breakpoints: (
+        xs: 0,
+        xl: 1200px,
+        lg: 1024px,
+        md: 767px,
+        sm: 414px,
+) !default;
+
+//Z-INDEX
+
+$z-index-header:                     100;
+$z-index-contextmenu:                200;
+$z-index-panel:                      300;
+$z-index-modal:                      1000;
+
+$transition-time:                    0.2s;
+
+
+
+
+

@@ -1,0 +1,153 @@
+.uploader{
+  cursor: pointer;
+  width: 100%;
+  min-height: 234px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .popup--SKU & {
+    min-height: 80px;
+  }
+}
+.uploader__message {
+  width: 100%;
+  height: 234px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 21px;
+  color: #8FBAF0;
+  background: #F4F8FD;
+  border: 1px dashed #D7D7D7;
+  box-sizing: border-box;
+  border-radius: 7px;
+
+  &:before{
+    content: url("../../images/svg/uploader.svg");
+    margin-bottom: 20px;
+  }
+
+  .uploader--started &{
+    display: none;
+  }
+}
+
+.uploader__previews {
+  width: 100%;
+}
+
+.uploader__previews-link-item {
+  display: block;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  max-width: 454px;
+  margin-right: auto;
+  margin-top: 20px;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #5D6475;
+}
+
+.uploader__previews-template {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.uploader__previews-template + .uploader__previews-template {
+  margin-top: 20px;
+}
+
+.uploader__previews-ico{
+  margin-right: 16px;
+  flex: 0 0 50px;
+  height: 64px;
+
+  &_xls {
+    background: url("../../images/svg/uploader-ico-xls.svg") no-repeat;
+  }
+
+  &_yml {
+    background: url("../../images/svg/uploader-ico-yml.svg") no-repeat;
+  }
+}
+
+.uploader__previews-body{
+  flex-grow: 1;
+}
+
+.uploader__previews-remove {
+  margin-left: 24px;
+  position: relative;
+  @include size(28px);
+  flex-shrink: 0;
+  background: url("../../images/svg/uploader-remove.svg");
+  border-radius: 50px;
+
+  &:hover{
+    opacity: 0.7;
+  }
+}
+
+.uploader__previews-remove:hover {
+  opacity: .8;
+}
+
+.uploader__previews-name {
+  padding-right: 40px;
+  word-break: break-all;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.uploader__previews-size{
+  display: none;
+  margin-top: 4px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #CDD1DD;
+
+  .dz-complete &{
+    display: block;
+  }
+}
+
+.uploader__progress{
+  margin: 12px 0 20px;
+  position: relative;
+  width: 100%;
+  height: 6px;
+  background: #E5EAFA;
+  border-radius: 10px;
+
+  /*.dz-complete &{
+    display: none;
+  }*/
+}
+
+.uploader__progress-bar{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: #7F9FF8;
+  border-radius: 10px;
+}
+
+.uploader__progress-percent{
+  margin-bottom: 11px;
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  font-size: 16px;
+  line-height: 24px;
+}
+

@@ -1,0 +1,7 @@
+mixin auctionList(data)
+    .product-list&attributes(attributes)
+        each item, index in data
+          if index === 1
+              +auctionItem(item, true, false)
+          else
+              +auctionItem(item, false, false)

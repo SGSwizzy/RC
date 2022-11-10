@@ -1,0 +1,26 @@
+mixin basketProductItem(item)
+    div(class='product-item')&attributes(attributes)
+        button(class='product-item__favorite btn-favorite')
+        .product-item__img
+            img(src=require('../images/product/' + item.img) alt=item.title)
+        a.product-item__title= item.title
+        .characteristics.characteristics--small
+            .characteristics__item.characteristics__item--gender
+                .characteristics__item-title Пол особи
+                .characteristics__item-value= item.feature.gender
+            .characteristics__item.characteristics__item--weigh
+                .characteristics__item-title Диапазон ЖВ
+                .characteristics__item-value= item.feature.weigh
+            .characteristics__item.characteristics__item--fertility
+                .characteristics__item-title Плодовитость
+                .characteristics__item-value= item.feature.fertility
+        .product-item__footer
+            .quantity
+                button.quantity__btn.quantity__btn--minus(tabindex='-1')
+                    include ../../images/svg-sprite/minus.svg
+                input.quantity__value(type='text' value='1' inputmode='numeric')
+                button.quantity__btn.quantity__btn--plus(tabindex='-1')
+                    include ../../images/svg-sprite/plus.svg
+            .product-item__price #{item.price}₽
+        button.product-item__delete(type="button")
+            +svgSprite('delete')

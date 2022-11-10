@@ -1,0 +1,53 @@
+extends ../pug/layouts/layout
+block meta
+    title Регистрация пользователя
+    meta(name='description' content='')
+
+
+block Content
+    .modal
+        .modal-overlay
+        form.modal-content
+            .modal__close
+            .modal__title Регистрация пользователя
+            a.sign__link.sign__link--cell(href='#') Вход на сайт
+            .modal__line
+            form.sign__form(action='#' method='POST')
+                .modal__body
+                    .row
+                        .col.col-12
+                            .form__field.form__field--floating
+                                label.form__label Название организации
+                                input.form__field-input(type='text' value='' placeholder='Название организации' name="" )
+                        .col.col-12
+                            .form__field.form__field--floating
+                                label.form__label Имя контактного лица
+                                    span.sign__form.sign__form--kit *
+                                input.form__field-input(type='text' value='' placeholder='Имя контактного лица*' name="" required )
+                        .col.col-12
+                            .form__field.form__field--floating
+                                label.form__label Мобильный телефон контактного лица
+                                    span.sign__form.sign__form--kit *
+                                input.form__field-input(type='text' value='' placeholder='Мобильный телефон контактного лица' name="" required )
+                        .col.col-12
+                            .form__field.form__field--floating
+                                label.form__label Email контактного лица
+                                    span.sign__form.sign__form--kit *
+                                input.form__field-input(type='email' value='' placeholder='Email контактного лица' name="" required )
+                    .modal__line
+                    .sign__cell
+                        .sign__cell--info Задайте пароль не меньше 6 символов латинского алфавита
+                        .row
+                            .col.col-12
+                                .form__field.form__field--floating
+                                    label.form__label Пароль
+                                        span.sign__form.sign__form--kit *
+                                    input.form__field-input(type='password' value='' placeholder='Пароль' name="" required )
+                            .col.col-12
+                                .form__field.form__field--floating.form__field--error
+                                    label.form__label Повторите пароль
+                                        span.sign__form.sign__form--kit *
+                                    input.form__field-input(type='password' value='' placeholder='Повторите пароль' name="" required )
+                                .form__error Пароли не совпадают!
+                .modal__footer
+                    button.btn.btn--third(type='button') Зарегистрироваться

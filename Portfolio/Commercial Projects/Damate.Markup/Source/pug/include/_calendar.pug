@@ -1,0 +1,275 @@
+-
+    let calendar = [
+        {
+            title: 'Январь',
+            days: [
+                {
+                    title: '12'
+                },
+                {
+                    title: '13'
+                },
+                {
+                    title: '14'
+                },
+                {
+                    title: '15'
+                },
+                {
+                    title: '16'
+                },
+                {
+                    title: '17',
+                    price: 'high'
+                },
+                {
+                    title: '18',
+                    price: 'high'
+                },
+                {
+                    title: '19',
+                    price: 'high'
+                },
+                {
+                    title: '20',
+                    price: 'high'
+                },
+                {
+                    title: '21',
+                    price: 'high'
+                },
+                {
+                    title: '22'
+                },
+                {
+                    title: '23'
+                },
+                {
+                    title: '24',
+                    price: 'high'
+                },
+                {
+                    title: '25',
+                    price: 'high'
+                },
+                {
+                    title: '26',
+                    price: 'high'
+                },
+                {
+                    title: '27',
+                    price: 'high',
+                    selected: true
+                },
+                {
+                    title: '28',
+                    price: 'high'
+                },
+                {
+                    title: '29'
+                },
+                {
+                    title: '30',
+                    price: 'high'
+                },
+                {
+                    title: '31',
+                    price: 'high'
+                },
+            ]
+        },
+        {
+            title: 'Февраль',
+            days: [
+                {
+                    title: '1',
+                    price: 'high'
+                },
+                {
+                    title: '2',
+                    price: 'high'
+                },
+                {
+                    title: '3',
+                    price: 'high'
+                },
+                {
+                    title: '4',
+                    price: 'high'
+                },
+                {
+                    title: '5'
+                },
+                {
+                    title: '6'
+                },
+                {
+                    title: '7',
+                    price: 'middle'
+                },
+                {
+                    title: '8',
+                    price: 'middle'
+                },
+                {
+                    title: '9',
+                    price: 'middle'
+                },
+                {
+                    title: '10',
+                    price: 'middle'
+                },
+                {
+                    title: '11',
+                    price: 'middle'
+                },
+                {
+                    title: '12'
+                },
+                {
+                    title: '13'
+                },
+                {
+                    title: '14',
+                    price: 'middle'
+                },
+                {
+                    title: '15',
+                    price: 'middle'
+                },
+                {
+                    title: '16',
+                    price: 'middle'
+                },
+                {
+                    title: '17',
+                    price: 'middle'
+                },
+                {
+                    title: '18',
+                    price: 'middle'
+                },
+                {
+                    title: '19'
+                },
+                {
+                    title: '20'
+                },
+                {
+                    title: '21',
+                    price: 'middle'
+                },
+                {
+                    title: '22',
+                    price: 'middle'
+                },
+                {
+                    title: '23',
+                    price: 'middle'
+                },
+                {
+                    title: '24',
+                    price: 'middle'
+                },
+                {
+                    title: '25',
+                    price: 'middle'
+                },
+                {
+                    title: '26'
+                },
+                {
+                    title: '27'
+                },
+                {
+                    title: '28',
+                    price: 'middle'
+                },
+            ]
+        },
+        {
+            title: 'Март',
+            days: [
+                {
+                    title: '1',
+                    price: 'middle'
+                },
+                {
+                    title: '2',
+                    price: 'middle'
+                },
+                {
+                    title: '3',
+                    price: 'middle'
+                },
+                {
+                    title: '4',
+                    price: 'middle'
+                },
+                {
+                    title: '5'
+                },
+                {
+                    title: '6'
+                },
+                {
+                    title: '7',
+                    price: 'low'
+                },
+                {
+                    title: '8',
+                    price: 'low'
+                },
+                {
+                    title: '9',
+                    price: 'low'
+                },
+                {
+                    title: '10',
+                    price: 'low'
+                },
+                {
+                    title: '11',
+                    price: 'low'
+                },
+                {
+                    title: '12'
+                },
+                {
+                    title: '13'
+                },
+                {
+                    title: '14',
+                    price: 'low'
+                },
+                {
+                    title: '15',
+                    price: 'low'
+                },
+                {
+                    title: '16',
+                    price: 'low'
+                },
+                {
+                    title: '17',
+                    price: 'low'
+                },
+                {
+                    title: '18',
+                    price: 'low'
+                }
+            ]
+        },
+    ]
+.calendar
+    .calendar__legend
+        .calendar__legend-title Цена:
+        .calendar__legend-item._high Высокая
+        .calendar__legend-item._middle Средняя
+        .calendar__legend-item._low Низкая
+    each month in calendar
+        .calendar__month
+            .calendar__month-title= month.title
+            .calendar__day-list
+                each day in month.days
+                    div(class='calendar__day' + (day.price ? (' _' + day.price) : '') + (day.selected ? ' _active' : ''))= day.title

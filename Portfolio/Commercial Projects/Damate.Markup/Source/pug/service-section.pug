@@ -1,0 +1,35 @@
+extends ../pug/layouts/layout
+include ../pug/include/_tabs-controls
+include ../pug/include/_service-section-item
+include ../pug/include/_service-section-content
+include ../pug/include/_nav-on-page
+
+block meta
+    title Комплексное сопровождение
+    meta(name='description', content='')
+
+block vars
+    - let page = 'service';
+
+
+block Content
+
+    +breadcrumbs(breadcrumbsCatalogData)
+    
+    section.service 
+        .container
+
+            +nav-on-page(navService, 'Комплексное сопровождение')
+
+            +page-title("Комплексное сопровождение")
+
+            .tabs.tabs--service
+                +tabs-controls(tabsServicesData)
+
+                .tabs__body
+                    .tabs__content.tabs__content--active 
+                        +service-section-content(serviceSectionData)
+                    .tabs__content Аудит хозяйства
+                    .tabs__content Еще подраздел 
+
+            include ../pug/include/_pagination

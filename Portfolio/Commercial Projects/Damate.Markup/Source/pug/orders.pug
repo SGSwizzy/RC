@@ -1,0 +1,65 @@
+extends ../pug/layouts/layout
+include ../pug/include/_nav-on-page
+include ../pug/include/_orders
+block meta
+    title Результаты поиска
+    meta(name='description', content='')
+
+block vars
+
+block Content
+    +breadcrumbs([
+      {
+        link: '#',
+        title: 'Главная',
+      },
+      {
+        link: '#',
+        title: 'Мои предложения и закупки',
+      },
+    ])
+
+    section
+        .container
+            +nav-on-page(navPersonal, 'Мои заказы')
+            +page-title("Мои заказы")
+            .orders
+                .orders__item
+                    +orderHeader({
+                      date: '18.03.22',
+                      num: '1234-АБ-22',
+                      sum: '430 000 ₽',
+                      status: 'В обработке'
+                    })
+                    .orders__item-body._opened
+                        .orders__item-products.product-list.product-list--table
+                            each item in orderProducts
+                                +orderProductItem(item)
+                        +orderDetails
+                    +orderFooter(true)
+                .orders__item
+                    +orderHeader({
+                      date: '18.03.22',
+                      num: '1234-АБ-22',
+                      sum: '430 000 ₽',
+                      status: 'выполнен'
+                    })
+                    .orders__item-body
+                        .orders__item-products.product-list.product-list--table
+                          each item in orderProducts
+                              +orderProductItem(item)
+                        +orderDetails
+                    +orderFooter()
+                .orders__item
+                    +orderHeader({
+                      date: '18.03.22',
+                      num: '1234-АБ-22',
+                      sum: '430 000 ₽',
+                      status: 'выполнен'
+                    })
+                    .orders__item-body
+                        .orders__item-products.product-list.product-list--table
+                          each item in orderProducts
+                              +orderProductItem(item)
+                        +orderDetails
+                    +orderFooter()

@@ -1,0 +1,122 @@
+extends ../pug/layouts/layout
+include ../pug/include/_products-carousel
+include ../pug/include/_offers-carousel
+include ../pug/include/_product-item
+include ../pug/include/_offer-auction-item
+include ../pug/include/_news-carousel
+include ../pug/include/_product-list
+
+block meta
+    title Карточка аукциона продажа
+    meta(name='description', content='')
+
+block vars
+    - let page = 'goods'
+
+block Content
+
+    +breadcrumbs(breadcrumbsAuctionData)
+
+    .goods
+        .container 
+                .goods-head
+                    .title-favorite
+                        +page-title("Меринос")
+                        +add-to-favorite
+                    .goods__number №123-456
+
+
+                .goods-item 
+                    .goods-slider 
+                        .goods-slider__item
+                           img(src=require("../images/product/product-big-2.png"), alt="Слайд")
+                    .goods-panel
+                        .goods__cell--bid Текущая цена на торгах
+                        .goods__cell.goods__cell--green 14 000 ₽
+                        button.good-auction__btn.btn.btn--primary(type='button') Сделать ставку
+                            .btn__ico
+                                +svgSprite('responded')
+                    .goods-panel
+                        button.good-auction__btn.btn.btn--secondary(type='button') Условия закупки
+                            .btn__ico
+                                include ../images/svg/document.svg
+                        button.good-auction__btn.btn.btn--third(type='button') Мне нужна помощь
+                            .btn__ico
+                                include ../images/svg/help.svg
+                    .goods-section.goods-info 
+                        .goods-section__title Детали товара
+                        .goods-row
+                            .goods__cell.goods__cell--seller Продавец
+                            .goods__cell.goods__cell--value ООО «КавказМясо»  
+                        .goods-row
+                            .goods__cell.goods__cell--gender Пол особи 
+                            .goods__cell.goods__cell--value овца
+                        .goods-row 
+                            .goods__cell.goods__cell--weight Диапазон ЖВ
+                            .goods__cell.goods__cell--value от 40 до 45 кг   
+                        .goods-row
+                            .goods__cell.goods__cell--tag Возраст особи 
+                            .goods__cell.goods__cell--value 1 год
+                        .goods-row
+                            .goods__cell.goods__cell--fertility Количество голов
+                            .goods__cell.goods__cell--value 12                   
+                        .goods-row 
+                            .goods__cell.goods__cell--period Срок завершения торгов
+                            .goods__cell.goods__cell--value до 18.03.22                 
+                        .goods-row 
+                            .goods__cell.goods__cell--adress Расположение
+                            .goods__cell.goods__cell--value г. Черкесск, ул. Пятигорское шоссе, д. 20.
+                        .goods-row 
+                            .goods__cell.goods__cell--average Стартовая цена на торгах
+                            .goods__cell.goods__cell--value 10 000 ₽                  
+                        .goods-row 
+                            .goods__cell.goods__cell--min Текущая цена на торгах
+                            .goods__cell.goods__cell--value 14 000 ₽                  
+                        .goods-row 
+                            .goods__cell.goods__cell--number Количество участников
+                            .goods__cell.goods__cell--value 12                   
+                    .goods-desc     
+                        .goods-desc__title Комментарий к товару
+                        .goods-desc__text Бараны и матки достигают половой зрелости в возрасте 7–8 месяцев. Овцы шароле имеют круглогодичный цикл размножения. Средний показатель окота в декабре 180–190%, в феврале -около 200–215%, чаще рождаются двойни, иногда тройни. У маток отмечаются легкие окоты. Бараны-производителя отличаются «трудолибием», активностью и неутомимостью, могут оплодотворять самок в течение года на протяжении 6–7 сезонов. Иссследования показали, что бараны шароле дают больше ягнят, чем бараны производители других пород.Среднесуточные привесы ягнят до 56 дня составляют 380–650 г. в зависимости от пола и количества рожденных особей в одном помете.
+                    .goods-desc-documents 
+                            a(href="#").goods-desc__document 
+                                include ../images/svg/document.svg
+                                | Сертификат прививок.pdf
+                            a(href="#").goods-desc__document 
+                                include ../images/svg/document.svg
+                                | Родословная.pdf
+                    .goods-section.list-offers
+                        .list-offers-leaf.leaf 
+                            .sheet-row.sheet-row-head
+                                .sheet-cell Номер участника
+                                .sheet-cell Дата и время ставки
+                                .sheet-cell Ставки
+                            .sheet-row
+                                .sheet-cell.sheet-cell__num 1000122
+                                .sheet-cell 16.03.2022
+                                    .sheet-cell__time 15:30
+                                .sheet-cell 14 000 ₽
+                            .sheet-row
+                                .sheet-cell.sheet-cell__num 1000122
+                                .sheet-cell 16.03.2022
+                                    .sheet-cell__time 15:30
+                                .sheet-cell 13 000 ₽
+                            .sheet-row
+                                .sheet-cell.sheet-cell__num 1000122
+                                .sheet-cell 16.03.2022
+                                    .sheet-cell__time 15:30
+                                .sheet-cell 12 000 ₽
+                            .sheet-row
+                                .sheet-cell.sheet-cell__num 1000122
+                                .sheet-cell 16.03.2022
+                                    .sheet-cell__time 15:30
+                                .sheet-cell 11 000 ₽
+                    a.btn.btn--secondary.btn--back-to-catalog 
+                        include ../images/svg/arrow-blue.svg
+                        | Назад к списку лотов
+        .goods-recommend
+            .container 
+                +page-title("Рекомендуемые предложения")
+                +offersCarousel(productsOffer)
+                .wiki__back-button
+                    a.btn.btn--secondary.btn--back-to-catalog Перейти к закупкам

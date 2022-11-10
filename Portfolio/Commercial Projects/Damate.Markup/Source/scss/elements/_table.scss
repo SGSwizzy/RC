@@ -1,0 +1,78 @@
+table:not([class]), .table {
+  width: 100%;
+}
+
+table:not([class]) th, .table th {
+  padding: 8px 16px 18px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  white-space: nowrap;
+  border-bottom: 1px solid #E3E6EC;
+
+  @media #{$desktop-widths} {
+    padding: 8px 8px 18px;
+  }
+}
+
+table:not([class]) td, .table td {
+  padding: 11px 16px 12px;
+  text-align: left;
+  font-size: 14px;
+  line-height: 21px;
+  vertical-align: middle;
+
+  @media #{$desktop-widths} {
+    padding: 11px 8px 12px;
+  }
+}
+
+table:not([class]) th:last-child,
+table:not([class]) td:last-child,
+.table th:last-child,
+.table td:last-child {
+  padding-right: 31px;
+}
+
+.table__hidden-block {
+  @media #{$desktop-fhd-widths} {
+    display: none;
+  }
+}
+
+.table__scroll {
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.table__scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.table__sort {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.table__sort-ico-wrap {
+  width: 13px;
+}
+
+.table__sort-ico {
+  display: none;
+  margin-left: 4px;
+  vertical-align: top;
+  @include size(9px, 5px);
+  background: url("../../images/svg/table-sort-up.svg") no-repeat center / 100%;
+
+  &--active {
+    display: block;
+  }
+
+  &--down {
+    background: url("../../images/svg/table-sort-down.svg") no-repeat center / 100%;
+  }
+}

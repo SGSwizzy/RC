@@ -1,0 +1,136 @@
+extends ../pug/layouts/layout
+include ../pug/include/_offer-item
+include ../pug/include/_nav-on-page
+
+block meta
+    title Настройка личных данных
+    meta(name='description' content='')
+
+block vars
+    - let page = 'profile'
+
+block Content
+    .breadcrumbs 
+        .container 
+            ul.breadcrumbs-list
+                li.breadcrumbs-list__item
+                    a.breadcrumbs-list__link(href="#") Главная
+                li.breadcrumbs-list__item Мои предложения и закупки
+
+    section
+        .container
+            +nav-on-page(navPersonal, 'Личная информация')
+            h1 Мой личный кабинет
+            .tabs
+                .tabs__controls
+                    .tabs__controls-item.tabs__controls-item--active Настройка личных данных
+                    .tabs__controls-item Мои подписки
+            .profile__info
+                h3.h3  Информация о компании
+                hr.hr
+                .toast
+                    .toast__ico
+                        +svgSprite('info')
+                    .toast__body Поля, отмеченные «звездочкой», обязательны для заполнения
+                .row
+                    .col.col-8.col-md-12
+                        +field({label: 'Название организации', value: 'ООО “Кавказмясо”', required: true})
+                .form__title Адрес доставки
+                .row
+                    .col.col-4.col-md-12
+                        +field({label: 'Регион', value: 'Ростовкая область', required: true})
+                    .col.col-4.col-md-12
+                        +field({label: 'Город', value: 'Ростов-на-Дону', required: true })
+                    .col.col-4.col-md-12
+                        +field({label: 'Адрес', value: 'ул. Ленина 34, 12', required: true})
+                .form__title Фактический адрес
+                .row
+                    .col.col-4.col-md-12
+                        +field({label: 'Регион', value: 'Ростовкая область', required: true})
+                    .col.col-4.col-md-12
+                        +field({label: 'Город', value: 'Ростов-на-Дону', required: true })
+                    .col.col-4.col-md-12
+                        +field({label: 'Адрес', value: 'ул. Ленина 34, 12', required: true})
+            .profile__footer
+                button.btn.btn--primary(type='button') Сохранить изменения
+            .profile__info
+                h3.h3  Контактное лицо
+                hr.hr
+                .toast
+                    .toast__ico
+                        +svgSprite('info')
+                    .toast__body Поля, отмеченные «звездочкой», обязательны для заполнения
+                .form__title Данные контактного лица
+                .row
+                    .col.col-4.col-md-12
+                        +field({label: 'Фамилия контактного лица', value: 'Иванов', required: true})
+                    .col.col-4.col-md-12
+                        +field({label: 'Имя контактного лица', value: 'Петр', required: true})
+                    .col.col-4.col-md-12
+                        +field({label: 'Отчество контактного лица', value: 'Васильевич', required: true})
+                    .col.col-4.col-md-12
+                        +field({type: 'tel', label: 'Мобильный телефон контактного лица', value: '+7-909-437-15-40', required: true, readonly: true})
+                        .form__note Изменить телефон в #[a.link.link--secondary(href='') личном кабинете]
+                    .col.col-4.col-md-12
+                        +field({type: 'email', label: 'Email контактного лица', value: 'ivan@mail.ru', required: true, readonly: true })
+                        .form__note Изменить email в #[a.link.link--secondary(href='') личном кабинете]
+            .profile__footer
+                button.btn.btn--primary(type='button') Сохранить изменения
+            .profile__info
+                h3.h3  Реквизиты для выставления счета
+                hr.hr
+                .row
+                    .col.col-4.col-md-12
+                        +field({label: 'ИНН', value: '781602259186'})
+                    .col.col-4.col-md-12
+                        +field({label: 'ОГРН', value: '615405079804'})
+                    .col.col-4.col-md-12
+                        +field({label: 'КПП', value: '772101001'})
+                    .col.col-12
+                        +field({label: 'Юридический адрес компании', value: '347900, г. Ростов-на-Дону, пр. Стачки, 34'})
+                .form__title Банковские реквизиты
+                .row
+                    .col.col-4.col-md-12
+                        +field({label: 'БИК', value: '044525225'})
+                    .col.col-4.col-md-12
+                        +field({label: 'Название банка', value: 'ПАО Сбербанк г. Москва'})
+                .row
+                    .col.col-4.col-md-12
+                        +field({label: 'Корреспондентский счет', value: '30101810400000000225'})
+                    .col.col-4.col-md-12
+                        +field({label: 'Расчетный счет', value: '40702810338000080595'})
+            .profile__footer
+                button.btn.btn--primary(type='button') Сохранить изменения
+            .profile__info
+                h3.h3  Дополнительные данные 
+                hr.hr
+                .form__title Паспорт контактного лица
+                .row
+                    .col.col-2.col-md-12
+                        +field({label: 'Серия', value: '6003'})
+                    .col.col-2.col-md-12
+                        +field({label: 'Номер', value: '1231123'})
+                    .col.col-4.col-md-12
+                        +field({label: 'Кем выдан', value: 'ОМ №2 УДГ г. Ростова-на-Дону'})
+                    .col.col-3.col-md-12
+                        +field({label: 'Дата выдачи паспорта', value: '23.02.2012'})
+                .form__title Данные о поголовье
+                .row-field
+                    .col.col-10.col-md-12
+                        .form__field.form__field--floating
+                            label.form__label Введи список пород через запятую
+                            textarea.form__field-input(type='text' rows="5" )
+                    .col.col-3.col-md-12
+                        +field({label: 'Общее поголовье в хозяйстве', value: '32'})
+            .profile__footer
+                button.btn.btn--primary(type='button') Сохранить изменения
+            .profile__info
+                h3.h3  Реквизиты для выставления счета
+                hr.hr
+                .row
+                    .col.col-4.col-md-12
+                        +field({type:'password', label: 'Пароль', value: 'пароль', required: true})
+                    .col.col-4.col-md-12
+                        +field({type:'password', label: 'Повторите пароль', value: 'пароль', required: true})
+            .profile__footer
+                button.btn.btn--primary(type='button') Сохранить пароль

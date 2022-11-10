@@ -1,0 +1,33 @@
+.profile__info {
+    margin-top: 60px;
+
+    @media #{$mobile-widths}  {
+        margin-top: 40px;
+    }
+
+    .row {
+        max-width: 904px;
+    }
+}
+
+.profile__footer {
+    padding-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media #{$mobile-widths}  {
+        margin-top: 24px;
+        padding-top: 20px;
+        flex-direction: column;
+    }
+}
+.profile-radio {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    .radio {
+        margin-bottom: 0;
+        margin-right: 8px;
+    }
+}

@@ -1,0 +1,50 @@
+extends ../pug/layouts/layout
+include ../pug/include/_offer-item
+include ../pug/include/_nav-on-page
+
+block meta
+    title Настройка личных данных
+    meta(name='description' content='')
+
+block vars
+    - let page = 'profile'
+
+block Content
+    .breadcrumbs 
+        .container 
+            ul.breadcrumbs-list
+                li.breadcrumbs-list__item
+                    a.breadcrumbs-list__link(href="#") Главная
+                li.breadcrumbs-list__item Мои предложения и закупки
+
+    section
+        .container
+            +nav-on-page(navPersonal, 'Личная информация')
+            h1 Мой личный кабинет
+            .tabs
+                .tabs__controls
+                    .tabs__controls-item Настройка личных данных
+                    .tabs__controls-item.tabs__controls-item--active Мои подписки
+            .profile__info
+                h3.h3  Мой личный кабинет
+                .toast
+                    .toast__ico
+                        +svgSprite('info')
+                    .toast__body Отметьте те разделы новостей, которые вы хотели бы получать
+                hr.hr
+                .form__title Разделы новостей
+                .row
+                .profile-radio.col.col-4.col-md-12
+                    p Акции
+                    +radio(true)
+                .profile-radio.col.col-4.col-md-12
+                    p Новости
+                    +radio(false)
+                .profile-radio.col.col-4.col-md-12
+                    p Новые поступления
+                    +radio(false)
+                .profile-radio.col.col-4.col-md-12
+                    p Скидки
+                    +radio(true)
+            .profile__footer
+                button.btn.btn--primary(type='button') Сохранить изменения

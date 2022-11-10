@@ -1,0 +1,18 @@
+extends ../pug/layouts/layout
+block meta
+    title Ошибка
+    meta(name='description', content='')
+
+
+block Content
+    .modal
+        .modal-overlay
+        form.modal-content
+            .modal__close
+            .modal__title Ошибка
+            .modal__line.modal__line--cell
+            .sign__cell
+                .sign__cell--info-clear Введен неверный пароль. Попробуйте еще раз или войдите с помощью номера телефона и sms.
+            .modal__footer
+                button.btn.btn--primary(type='button') Понятно
+                button.btn.btn--third(type='button') Войти по номеру телефона

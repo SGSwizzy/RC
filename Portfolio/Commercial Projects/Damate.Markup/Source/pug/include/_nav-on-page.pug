@@ -1,0 +1,10 @@
+mixin nav-on-page(data, active)
+    .nav-on-page
+        each item in data
+            a(class='nav-on-page__item' + (item.title === active ? ' _active' : '')  href=item.href)
+                if item.ico
+                    span.nav-on-page__item-ico
+                        +svgSprite(item.ico)
+                span.nav-on-page__item-title= item.title
+                if item.badge
+                    span.nav-on-page__item-badge=item.badge

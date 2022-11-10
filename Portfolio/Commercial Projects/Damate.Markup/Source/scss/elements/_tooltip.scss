@@ -1,0 +1,82 @@
+.tooltip{
+  cursor: pointer;
+}
+
+.tooltip__ico {
+  margin-left: 11px;
+  display: inline-block;
+  vertical-align: middle;
+  @include size(14px);
+  background: url("../../images/svg/tooltip.svg") no-repeat center / 100%;
+}
+
+// style react-tooltip
+.__react_component_tooltip{
+  max-width: 344px;
+  z-index: 10;
+}
+.__react_component_tooltip:before, .__react_component_tooltip:after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.__react_component_tooltip.place-bottom:after {
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  top: -6px;
+  left: 50%;
+  margin-left: -6px;
+}
+
+.__react_component_tooltip.type-dark.place-bottom:after {
+  border-bottom-color: #323232;
+  border-bottom-style: solid;
+  border-bottom-width: 6px;
+}
+
+.__react_component_tooltip.place-top:after {
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  bottom: -6px;
+  left: 50%;
+  margin-left: -6px;
+  border-top-color: #323232;
+  border-top-style: solid;
+  border-top-width: 6px;
+}
+
+.__react_component_tooltip:before, .__react_component_tooltip:after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.__react_component_tooltip {
+  border-radius: 10px;
+  font-family: $font-family;
+  font-size: 14px;
+  line-height: 18px;
+  padding: 14px 25px;
+  pointer-events: none;
+}
+
+.tooltip__ico .__react_component_tooltip {
+  padding: 15px 25px;
+}
+
+.__react_component_tooltip.type-dark {
+  color: #fff;
+  background-color: #323232;
+}
+
+.__react_component_tooltip.type-info {
+  color: #fff;
+  background-color: #3773E3;
+}
+
+.__react_component_tooltip.place-bottom {
+  margin-top: 10px;
+}

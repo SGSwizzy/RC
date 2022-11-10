@@ -1,0 +1,136 @@
+//-svg
+//- mixin svgSprite(id)
+//-     svg&attributes(attributes)
+//-         use(xlink:href="../../images/sprite.svg#" + id)
+mixin svgSprite(id, width, height)
+    svg(width=width, height=height, aria-hidden="true")&attributes(attributes)
+        use(xlink:href="Content/images/sprite.svg#" + id)
+
+//-page-title
+mixin page-title(title)
+    span.page-title&attributes(attributes)!=title
+
+//-add-to-favorite
+mixin add-to-favorite
+    .add-to-favorite Добавить в избранное
+        .btn-favorite
+
+//-breadcrumbs
+mixin breadcrumbs(breadcrumbs)
+    .breadcrumbs
+        .container
+            ul.breadcrumbs-list&attributes(attributes)
+              each item, index in breadcrumbs
+                  if(breadcrumbs.length === index + 1)
+                      li.breadcrumbs-list__item!=item.title
+                  else
+                      li.breadcrumbs-list__item
+                          a.breadcrumbs-list__link(href=item.link)!=item.title
+
+//-checkbox
+mixin checkbox(isChecked, label)
+    label.checkbox
+        input(class="checkbox__input"  type="checkbox" checked=isChecked)&attributes(attributes)
+        span.checkbox__check
+        if(label)
+            span.checkbox__text= label
+
+//-radio
+mixin radio(isChecked, label)
+    label.radio
+        input(class="radio__input"  type="radio" checked=isChecked)&attributes(attributes)
+        span.radio__check
+        if(label)
+            span.radio__text= label
+
+//-toggle
+mixin toggle(isChecked, label)
+    .toggle
+        input.toggle__check(type="checkbox" checked=(isChecked ? true : false))&attributes(attributes)
+        .toggle__bar
+        if(label)
+            label.toggle__label= label
+
+//-contextmenu
+mixin contextmenu(btn, dropdown)
+    .contextmenu&attributes(attributes)
+        button.contextmenu__btn(type='button')= btn
+        .contextmenu__dropdown
+          each item in dropdown
+              .contextmenu__dropdown-item
+                  if item.ico
+                      div(class = 'contextmenu__dropdown-ico' + (item.ico === 'settings' ? ' products__title-help-wrap' : ''))
+                          img(src=require('../images/svg/' + item.ico + '.svg') alt='')
+                          if item.ico === 'settings'
+                              span.contextmenu__dropdown-item-help-info Чтобы добавить ссылки источников/конкурентов для сравнения цен, перейдите на страницу товара
+                                  span.contextmenu__dropdown-item-help-footer
+                                      a.btn.btn--light(href='#') я понял
+                  .contextmenu__dropdown-title= item.title
+
+//-tags
+mixin tags(tags, isEdited, isSecondary)
+    .tags
+      each item in tags
+          div(class='tags__item' + (isEdited === true ? ' tags__item--edited' : '') + (isSecondary === true ? ' tags__item--secondary' : ''))
+              if item.ico
+                  .tags__item-ico
+                      img(src=require('../images/svg/' + item.ico + '.svg') alt='')
+              if item.title
+                  | #{item.title}
+              else
+                  | #{item}
+              if isEdited === true
+                  .tags__item-delete
+
+//select
+-
+    const select = [
+        {value: 'Каждый день', minValue: 'Ежедневно', all: true},
+        {value: 'Понедельник', minValue: 'пн', selected: true},
+        {value: 'Вторник', minValue: 'вт'},
+        {value: 'Среда', minValue: 'ср'},
+        {value: 'Четверг', minValue: 'чт', selected: true},
+        {value: 'Пятница', minValue: 'пт'},
+        {value: 'Суббота', minValue: 'сб'},
+        {value: 'Воскресенье', minValue: 'Вс', selected: true},
+    ]
+mixin select(select)
+    .select&attributes(attributes)
+        .select__value
+          each option in select
+              if option.selected
+                  if option.all
+                      .select__value-item= option.minValue ? option.minValue : option.value
+                      - break
+                  else
+                      .select__value-item= option.minValue ? option.minValue : option.value
+        .select__dropdown
+            .select__dropdown-scroll
+              each option in select
+                  div(class='select__dropdown-item' + (option.selected ? ' -selected' : '') + (option.all ? ' select__dropdown-item--all' : ''))= option.value
+
+//field
+mixin field(options)
+    if options.label
+        label.form__label= options.label
+            if options.required
+                span.form__label-req *
+    .form__field&attributes(attributes)
+        input.form__field-input(type='' + (options.type ? options.type : 'text') name="" value=options.value required=(options.required ? true : false) readonly=(options.readonly ? true : false))
+        if(options.autocomplete)
+            .form__field-dropdown
+              each item in options.autocomplete
+                  .form__field-dropdown-item= item
+
+//fieldFloating
+mixin fieldFloating(options)
+    .form__field.form__field--floating
+        input.form__field-input(type='' + (options.type ? options.type : 'text') placeholder=options.label name="" value=options.value required=(options.required ? true : false))
+        label.form__label= options.label
+            if options.required
+                span.form__label-req *
+        if(options.autocomplete)
+            .form__field-dropdown
+              each item in options.autocomplete
+                  .form__field-dropdown-item= item
+

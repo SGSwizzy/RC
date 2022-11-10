@@ -1,0 +1,111 @@
+.banner-carousel {
+    overflow: hidden;
+    .swiper-pagination {
+        display: flex;
+        justify-content: flex-end;
+        width: auto;
+        right: 40px;
+        @media #{$mobile-widths} {
+            right: 20px;
+        }
+    }
+    .swiper-pagination-bullet {
+        display: block;
+        margin-right: 10px;
+        width: 8px;
+        height: 8px;
+        border: 1px solid #D7DFE6;
+        border-radius: 50%;
+        background-color: #fff;
+        opacity: 1;
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+    .swiper-pagination-bullet-active {
+        width: 8px;
+        height: 8px;
+        background-color: #00A567;
+        border: 1px solid #00A567;
+    }
+}
+.banner-slide {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+
+.banner-slide__title {
+    font-size: 45px;
+    line-height: 58px;
+    font-weight: 900;
+    margin-bottom: 51px;
+    text-transform: uppercase;
+    max-width: 522px;
+    color:#fff;
+    span {
+        display: block;
+        font-size: 104px;
+        line-height: 124px;
+        padding-top: 20px;
+    }
+    @media #{$tablet-widths} {
+        font-size: 32px;
+        line-height: 40px;
+        span {
+            font-size: 70px;
+            line-height: 82px;
+        }
+    }
+    @media #{$mobile-widths} {
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 32px;
+        span {
+            font-size: 56px;
+            line-height: 68px;
+            padding-top: 32px;
+        }
+    }
+}
+.banner-slide__img {
+    width: 100%;
+    img {
+        width: 100%;
+        display: block;
+    }
+    @media #{$mobile-widths} {
+        width: 100%;
+        position: static;
+    }
+    @media #{$mobile-S-widths} {
+
+    }
+}
+.banner-slide__btn {
+    position: absolute;
+    bottom: 60px;
+    left: 60px;
+    box-shadow: 0px 4px 20px rgba(35, 31, 32, 0.1);
+    &.btn {
+        display: inline-block;
+        width: auto;
+        padding: 12px 24px;
+        height: 60px;
+        font-size: 20px;
+        line-height: 36px;
+    }
+    @media #{$tablet-widths} {
+        left: 24px;
+        bottom: 24px;
+    }
+    @media #{$mobile-widths} {
+        
+        left: 32px;
+        bottom: 40px;
+        &.btn {
+            width: calc(100% - 64px);
+        }
+    }
+}

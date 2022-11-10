@@ -1,0 +1,4 @@
+.badge {
+  @include badge-size();
+  @include badge-style();
+}

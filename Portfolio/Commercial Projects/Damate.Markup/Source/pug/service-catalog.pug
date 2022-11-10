@@ -1,0 +1,47 @@
+extends ../pug/layouts/layout
+block meta
+    title Каталог услуг
+    meta(name='description', content='')
+
+block vars
+    - let page = 'service'
+
+block Content
+    +breadcrumbs(breadcrumbsCatalogData)
+    
+    section.service 
+        .container
+            +page-title("Каталог услуг")
+            .service__desc  Бараны и матки достигают половой зрелости в возрасте 7–8 месяцев. Овцы шароле имеют круглогодичный цикл размножения. Средний показатель окота в декабре 180–190%, в феврале -около 200–215%, чаще рождаются двойни, иногда тройни. У маток отмечаются легкие окоты. Бараны-производителя отличаются «трудолибием», активностью и неутомимостью, могут оплодотворять самок в течение года на протяжении 6–7 сезонов. Иссследования показали, что бараны шароле дают больше ягнят, чем бараны производители других пород.Среднесуточные привесы ягнят до 56 дня составляют 380–650 г. в зависимости от пола и количества рожденных особей в одном помете.
+            .service-catalog 
+                a(href="#").service-catalog__item 
+                    img(src=require("../images/svg/service-catalog-1.svg"), alt="Воспроизводство").service-catalog__img
+                    .service-catalog__info
+                        .service-catalog__title Воспроизводство
+                        .service-catalog__desc Бараны и матки достигают половой зрелости в возрасте 7–8 месяцев. Овцы шароле имеют круглогодичный цикл размножения. 
+                a(href="#").service-catalog__item 
+                    img(src=require("../images/svg/service-catalog-2.svg"), alt="Воспроизводство").service-catalog__img
+                    .service-catalog__info
+                        .service-catalog__title Ветеринария
+                        .service-catalog__desc Бараны и матки достигают половой зрелости в возрасте 7–8 месяцев. Овцы шароле имеют круглогодичный цикл размножения.  У маток отмечаются легкие окоты. Бараны-производителя отличаются «трудолибием», активностью и неутомимостью
+                a(href="#").service-catalog__item 
+                    img(src=require("../images/svg/service-catalog-3.svg"), alt="Воспроизводство").service-catalog__img
+                    .service-catalog__info
+                        .service-catalog__title Комплексное сопровождение
+                        .service-catalog__desc Бараны и матки достигают половой зрелости в возрасте 7–8 месяцев. Овцы шароле имеют круглогодичный цикл размножения.  У маток отмечаются легкие окоты. Бараны-производителя отличаются «трудолибием», активностью и неутомимостью
+                a(href="#").service-catalog__item 
+                    img(src=require("../images/svg/service-catalog-4.svg"), alt="Воспроизводство").service-catalog__img
+                    .service-catalog__info
+                        .service-catalog__title Кормление
+                        .service-catalog__desc Бараны и матки достигают половой зрелости в возрасте 7–8 месяцев. Овцы шароле имеют круглогодичный цикл размножения. 
+                a(href="#").service-catalog__item 
+                    img(src=require("../images/svg/service-catalog-5.svg"), alt="Воспроизводство").service-catalog__img
+                    .service-catalog__info
+                        .service-catalog__title Улучшение пастбищ
+                        .service-catalog__desc Бараны и матки достигают половой зрелости в возрасте 7–8 месяцев. Овцы шароле имеют круглогодичный цикл размножения. 
+                a(href="#").service-catalog__item 
+                
+                    img(src=require("../images/svg/service-catalog-6.svg"), alt="Воспроизводство").service-catalog__img
+                    .service-catalog__info
+                        .service-catalog__title Обучение фермеров
+                        .service-catalog__desc Бараны и матки достигают половой зрелости в возрасте 7–8 месяцев. Овцы шароле имеют круглогодичный цикл размножения.  

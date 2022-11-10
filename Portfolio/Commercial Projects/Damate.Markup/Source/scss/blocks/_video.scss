@@ -1,0 +1,8 @@
+.video {
+  iframe {
+      @media #{$mobile-widths} {
+      width: 100%;
+      height: 35vh;
+    }
+  }
+}

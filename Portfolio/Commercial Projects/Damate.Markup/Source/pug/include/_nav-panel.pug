@@ -1,0 +1,24 @@
+mixin nav(data)
+    nav.nav
+        each item in data
+            a.nav__item(href=item.href)= item.title
+
+.nav-panel
+    button.nav-panel__close(type='button') Закрыть
+        include ../../images/svg-sprite/close.svg
+    .nav-panel__title Меню
+    +nav(nav)
+    a.nav-panel__phone(href='tel:88003330704')
+        span.nav-panel__phone-ico
+            include ../../images/svg-sprite/phone.svg
+        | 8 800 333-07-04
+    a.nav-panel__link
+        span.nav-panel__link-ico
+            include ../../images/svg-sprite/email.svg
+        | Подписаться на рассылку
+    a.nav-panel__link
+        span.nav-panel__link-ico
+            include ../../images/svg-sprite/message.svg
+        | Написать менеджеру
+
+

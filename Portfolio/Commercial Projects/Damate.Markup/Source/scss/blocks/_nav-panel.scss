@@ -1,0 +1,110 @@
+.nav-panel {
+    margin: 0 auto;
+    flex: 1 0 auto;
+    @media #{$tablet-widths} {
+        display: flex;
+        margin: 0;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background: $color-invert;
+        z-index: $z-index-panel;
+        flex-direction: column;
+        transform: translateX(-100%);
+        transition: .25s ease-in;
+    }
+
+    &._open {
+        @media #{$tablet-widths} {
+            display: flex;
+            opacity: 1;
+            transform: translateX(0);
+            transition: .25s ease-in;
+        }
+    }
+}
+
+.nav-panel__close {
+    display: none;
+
+    @media #{$tablet-widths} {
+        padding: 0;
+        font-size: 0;
+        line-height: 0;
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        background: transparent;
+        border: none;
+    }
+
+    svg {
+        fill: $color;
+        @include size(24px);
+
+        &:hover {
+            fill: $color-secondary
+        }
+    }
+}
+
+.nav-panel__title {
+    display: none;
+
+    @media #{$tablet-widths} {
+        padding: 16px 50px 16px 20px;
+        display: block;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 32px;
+    }
+}
+
+.nav-panel__phone {
+    display: none;
+
+    @media #{$tablet-widths} {
+        margin: 16px 20px 24px;
+        padding: 8px 16px;
+        @include btn-size();
+        @include btn-style();
+        display: flex;
+        align-self: flex-start;
+    }
+}
+
+.nav-panel__phone-ico {
+    margin-right: 8px;
+    align-self: center;
+    @include size(24px);
+
+    svg {
+        @include size(100%);
+        fill: $color-invert
+    }
+}
+
+.nav-panel__link {
+    display: none;
+
+    @media #{$tablet-widths} {
+        margin: 0 20px 24px;
+        display: flex;
+        align-self: flex-start;
+        @include link($color, $color-secondary, none)
+    }
+}
+
+.nav-panel__link-ico {
+    margin-right: 8px;
+    align-self: center;
+    @include size(24px);
+
+    svg {
+        @include size(100%);
+        fill: #A9B4BF;
+    }
+}

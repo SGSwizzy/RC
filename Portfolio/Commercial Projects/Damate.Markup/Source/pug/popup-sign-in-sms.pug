@@ -1,0 +1,25 @@
+extends ../pug/layouts/layout
+block meta
+    title Авторизация пользователя
+    meta(name='description', content='')
+
+
+block Content
+    .modal
+        .modal-overlay
+        form.modal-content
+            .modal__close
+            .modal__title Авторизация пользователя
+            .modal__line
+            .sign__cell
+                .sign__cell--info-clear На ваш телефонный номер отправлено sms с кодом. Введите код в поле ниже:
+                .modal__line.modal__line--cell
+                .mt-1
+                    .col.col-12
+                        .form__field.form__field--floating
+                            label.form__label Введите код из SMS-сообщения
+                            input.form__field-input(type='text' value='' placeholder='Введите код из SMS-сообщения' name=""  )
+                
+                .modal__footer
+                    button.btn.btn--third(type='button') Отправить
+                    a.sign__link--pass(href='#') Выслать код повторно

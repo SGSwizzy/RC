@@ -1,0 +1,161 @@
+.btn {
+    @include btn-size();
+    cursor: pointer;
+
+    @media #{$mobile-widths} {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.btn--L {
+    @include btn-size(20px, 60px, 0 24px);
+}
+
+a.btn {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn--center {
+    margin: 0 auto;
+    display: block;
+}
+
+.btn--wide {
+    width: 100%;
+    text-align: left;
+}
+
+.btn--ico {
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+}
+
+.btn--primary {
+    @include btn-style();
+}
+
+.btn--secondary {
+    @include btn-style($background-btn-secondary, $color-btn-secondary, $background-btn-secondary-hover);
+    &:hover {
+        svg {
+            fill: #fff;
+        }
+    }
+}
+
+.btn--third {
+    @include btn-style($background-btn-third, $color-btn-third, $background-btn-third-hover)
+
+}
+.btn--auto {
+    width: auto;
+}
+
+.btn--light {
+    @include btn-style($color-invert, $color-secondary, darken($color-invert, 10%), $color-secondary);
+
+    &[disabled] {
+        color: #CDD1DD;
+    }
+}
+
+.btn--dark {
+    @include btn-style($background-btn-dark, $color-btn-dark, #F8F9FC, $color-btn-hover, #F8F9FC);
+
+    &[disabled] {
+        color: #CDD1DD;
+    }
+}
+
+.btn--out-of-stock {
+  &[disabled] {
+    color: bg;
+    background-color: $color-out-of-stock;
+  }
+}
+
+.btn--link {
+    @include btn-style(transparent, $color-link, transparent, $color-link, transparent);
+    text-decoration: underline;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &[disabled] {
+        color: #CDD1DD;
+        text-decoration: none;
+    }
+}
+
+.btn--notification {
+    @include btn-size(14px, 18px, 0, 0);
+    @include btn-style(transparent, $color-invert, transparent, transparent);
+    text-decoration: none;
+    font-weight: 400;
+    min-width: 70px;
+    text-transform: capitalize;
+    margin-left: 10px;
+
+    &:hover {
+        color: $color-invert;
+    }
+}
+
+.btn__ico {
+    margin-top: -2px;
+    margin-left: 8px;
+    display: inline-block;
+    vertical-align: middle;
+    @include size(24px);
+    transition: all 0.2s ease-in;
+
+    svg {
+        @include size(100%);
+    }
+}
+
+.btn--back-to-catalog {
+    @include btn-style($background-btn-secondary, $color-btn-secondary, $color-secondary);
+    width: auto;
+    display: inline-flex !important;
+    align-items: center;
+
+    svg {
+        margin-right: 8px;
+    }
+}
+
+.btn--offer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    
+    &[disabled] {
+        background-color: #D7DFE5;
+    }
+}
+
+.btn--offer-delete {
+    @include btn-style($color-error, $bg, #a73232);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+
+    // @media #{$mobile-widths} {
+    //     width: 100%;
+    // }
+}
+
+.btn--offer-edit {
+    @include btn-style($background-btn-secondary, $color-btn-secondary, $color-secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
