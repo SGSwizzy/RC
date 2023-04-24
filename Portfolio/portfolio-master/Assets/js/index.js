@@ -58,3 +58,16 @@ function scrollTop() {
     if(this.scrollY >= 560) scrollTop.classList.add('show-scroll'); else scrollTop.classList.remove('show-scroll')
 }
 window.addEventListener('scroll', scrollTop)
+
+/*==== MIXITUP FILTER PORTFOLIO ==== */
+
+const mixer = mixitup('.portfolio__container', {
+    selectors: {
+        target: '.portfolio__content'
+    },
+    animation: {
+        duration: 400
+    }
+});
+
+/*==== Link active portfolio ==== */

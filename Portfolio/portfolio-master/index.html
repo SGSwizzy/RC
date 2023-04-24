@@ -261,15 +261,15 @@
       <h2 class="section-title">Portfolio</h2>
 
       <div class="portfolio__nav">
-        <span class="portfolio__item">All</span>
-        <span class="portfolio__item">Web</span>
-        <span class="portfolio__item">Ui/Ux</span>
-        <span class="portfolio__item">App</span>
+        <span class="portfolio__item" data-filter="all">All</span>
+        <span class="portfolio__item" data-filter=".web">Web</span>
+        <span class="portfolio__item" data-filter=".ux">Ui/Ux</span>
+        <span class="portfolio__item" data-filter=".app">App</span>
       </div>
 
       <div class="portfolio__container bd-grid">
 
-        <div class="portfolio__content">
+        <div class="portfolio__content mix web">
           <a href="#"><img src="Assets/img/work1.jpg" alt="1" class="portfolio__img"></a>
           <div class="portfolio__data">
             <span class="portfolio__subtitle">Web development</span>
@@ -278,7 +278,7 @@
           </div>
         </div>
 
-        <div class="portfolio__content">
+        <div class="portfolio__content mix web">
           <a href="#"><img src="Assets/img/work2.jpg" alt="2" class="portfolio__img"></a>
           <div class="portfolio__data">
             <span class="portfolio__subtitle">Web development</span>
@@ -287,7 +287,7 @@
           </div>
         </div>
 
-        <div class="portfolio__content">
+        <div class="portfolio__content mix ux">
           <a href="#"><img src="Assets/img/work3.jpg" alt="3" class="portfolio__img"></a>
           <div class="portfolio__data">
             <span class="portfolio__subtitle">Web development</span>
@@ -296,7 +296,7 @@
           </div>
         </div>
         
-        <div class="portfolio__content">
+        <div class="portfolio__content mix ux">
           <a href="#"><img src="Assets/img/work4.jpg" alt="3" class="portfolio__img"></a>
           <div class="portfolio__data">
             <span class="portfolio__subtitle">Web development</span>
@@ -305,7 +305,7 @@
           </div>
         </div>
         
-        <div class="portfolio__content">
+        <div class="portfolio__content mix app">
           <a href="#"><img src="Assets/img/work5.jpg" alt="3" class="portfolio__img"></a>
           <div class="portfolio__data">
             <span class="portfolio__subtitle">Web development</span>
@@ -316,7 +316,7 @@
 
       </div>
     </section>
-
-    <script src="assets/js/index.js"></script>
+    <script src="Assets/js/mixitup.min.js"></script>
+    <script src="Assets/js/index.js"></script>
   </body>
 </html>
