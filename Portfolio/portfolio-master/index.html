@@ -9,7 +9,7 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="Assets/css/swiper-bundle.min.css" />
     <title>Portfolio Personal Complete</title>
   </head>
   <body>
@@ -55,7 +55,12 @@
           <span class="home__greeting">Hello, my name is</span>
           <h1 class="home__name">Vladimir Tolmachev</h1>
           <span class="home__profession">Web Developer</span>
-          <a download href="Assets/pdf/Clay-Doe-Cv.pdf" class="button button-light">Download Cv</a>
+          <a
+            download
+            href="Assets/pdf/Clay-Doe-Cv.pdf"
+            class="button button-light"
+            >Download Cv</a
+          >
         </div>
         <div class="home__social">
           <a href="#" class="home__social-icon"
@@ -261,62 +266,145 @@
       <h2 class="section-title">Portfolio</h2>
 
       <div class="portfolio__nav">
-        <span class="portfolio__item active-portfolio" data-filter="all">All</span>
-        <span class="portfolio__item " data-filter=".web">Web</span>
+        <span class="portfolio__item active-portfolio" data-filter="all"
+          >All</span
+        >
+        <span class="portfolio__item" data-filter=".web">Web</span>
         <span class="portfolio__item" data-filter=".ux">Ui/Ux</span>
         <span class="portfolio__item" data-filter=".app">App</span>
       </div>
 
       <div class="portfolio__container bd-grid">
-
         <div class="portfolio__content mix web">
-          <a href="#"><img src="Assets/img/work1.jpg" alt="1" class="portfolio__img"></a>
+          <a href="#"
+            ><img src="Assets/img/work1.jpg" alt="1" class="portfolio__img"
+          /></a>
           <div class="portfolio__data">
             <span class="portfolio__subtitle">Web development</span>
-            <a href=""><h2 class="portfolio__title"> New portfolio of work done for a client.</h2></a>
+            <a href=""
+              ><h2 class="portfolio__title">
+                New portfolio of work done for a client.
+              </h2></a
+            >
             <a href="" class="button button-link">View Details</a>
           </div>
         </div>
 
         <div class="portfolio__content mix web">
-          <a href="#"><img src="Assets/img/work2.jpg" alt="2" class="portfolio__img"></a>
+          <a href="#"
+            ><img src="Assets/img/work2.jpg" alt="2" class="portfolio__img"
+          /></a>
           <div class="portfolio__data">
             <span class="portfolio__subtitle">Web development</span>
-            <a href=""><h2 class="portfolio__title"> New portfolio of work done for a client.</h2></a>
+            <a href=""
+              ><h2 class="portfolio__title">
+                New portfolio of work done for a client.
+              </h2></a
+            >
             <a href="" class="button button-link">View Details</a>
           </div>
         </div>
 
         <div class="portfolio__content mix ux">
-          <a href="#"><img src="Assets/img/work3.jpg" alt="3" class="portfolio__img"></a>
+          <a href="#"
+            ><img src="Assets/img/work3.jpg" alt="3" class="portfolio__img"
+          /></a>
           <div class="portfolio__data">
             <span class="portfolio__subtitle">Web development</span>
-            <a href=""><h2 class="portfolio__title"> New portfolio of work done for a client.</h2></a>
+            <a href=""
+              ><h2 class="portfolio__title">
+                New portfolio of work done for a client.
+              </h2></a
+            >
             <a href="" class="button button-link">View Details</a>
           </div>
         </div>
-        
+
         <div class="portfolio__content mix ux">
-          <a href="#"><img src="Assets/img/work4.jpg" alt="3" class="portfolio__img"></a>
+          <a href="#"
+            ><img src="Assets/img/work4.jpg" alt="3" class="portfolio__img"
+          /></a>
           <div class="portfolio__data">
             <span class="portfolio__subtitle">Web development</span>
-            <a href=""><h2 class="portfolio__title"> New portfolio of work done for a client.</h2></a>
+            <a href=""
+              ><h2 class="portfolio__title">
+                New portfolio of work done for a client.
+              </h2></a
+            >
             <a href="" class="button button-link">View Details</a>
           </div>
         </div>
-        
+
         <div class="portfolio__content mix app">
-          <a href="#"><img src="Assets/img/work5.jpg" alt="3" class="portfolio__img"></a>
+          <a href="#"
+            ><img src="Assets/img/work5.jpg" alt="3" class="portfolio__img"
+          /></a>
           <div class="portfolio__data">
             <span class="portfolio__subtitle">Web development</span>
-            <a href=""><h2 class="portfolio__title"> New portfolio of work done for a client.</h2></a>
+            <a href=""
+              ><h2 class="portfolio__title">
+                New portfolio of work done for a client.
+              </h2></a
+            >
             <a href="" class="button button-link">View Details</a>
           </div>
         </div>
-
       </div>
     </section>
+
+    <!--=== TESTIMONIAL ===-->
+    <section class="testimonial section bd-container">
+      <span class="section-subtitle">My client saying</span>
+      <h2 class="section-title">Testimonial</h2>
+
+      <div class="testimonial__container swiper-container">
+        <div class="swiper-wrapper">
+          <div class="testimonial__content swiper-slide">
+            <img
+              src="Assets/img/testimonial1.jpg"
+              alt=""
+              class="testimonial__img"
+            />
+            <h3 class="testimonial__title">Nick Holly</h3>
+            <span class="testimonial__client">Client</span>
+            <p class="testimonial__description">
+              This company does a very good service, offers the best deals and
+              does a good job, I recommend it.
+            </p>
+          </div>
+          <div class="testimonial__content swiper-slide">
+            <img
+              src="Assets/img/testimonial2.jpg"
+              alt=""
+              class="testimonial__img"
+            />
+            <h3 class="testimonial__title">Sara Mill</h3>
+            <span class="testimonial__client">Client</span>
+            <p class="testimonial__description">
+              This company does a very good service, offers the best deals and
+              does a good job, I recommend it.
+            </p>
+          </div>
+          <div class="testimonial__content swiper-slide">
+            <img
+              src="Assets/img/testimonial3.jpg"
+              alt=""
+              class="testimonial__img"
+            />
+            <h3 class="testimonial__title">Clay Holl</h3>
+            <span class="testimonial__client">Client</span>
+            <p class="testimonial__description">
+              This company does a very good service, offers the best deals and
+              does a good job, I recommend it.
+            </p>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
     <script src="assets/js/mixitup.min.js"></script>
+    <script src="Assets/js/swiper-bundle.min.js"></script>
     <script src="Assets/js/index.js"></script>
   </body>
 </html>
